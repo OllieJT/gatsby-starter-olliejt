@@ -1,0 +1,62 @@
+{
+  "name": "olliejt-gatsby-quickstarter",
+  "private": true,
+  "description": "OllieJT Gatsby Quickstarter",
+  "version": "0.1.0",
+  "author": "Ollie Taylor <contact@olliejt.com>",
+  "dependencies": {
+    "babel-plugin-styled-components": "^1.10.6",
+    "dotenv": "^8.1.0",
+    "gatsby": "^2.15.15",
+    "gatsby-image": "^2.2.19",
+    "gatsby-plugin-manifest": "^2.2.16",
+    "gatsby-plugin-netlify": "^2.1.13",
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-offline": "^3.0.6",
+    "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
+    "gatsby-plugin-react-helmet": "^3.1.7",
+    "gatsby-plugin-sharp": "^2.2.22",
+    "gatsby-plugin-styled-components": "^3.1.5",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
+    "gatsby-source-behance-images": "^1.3.1",
+    "gatsby-source-filesystem": "^2.1.22",
+    "gatsby-transformer-javascript-frontmatter": "^2.1.7",
+    "gatsby-transformer-json": "^2.2.8",
+    "gatsby-transformer-remark": "^2.6.22",
+    "gatsby-transformer-sharp": "^2.2.14",
+    "prismic-dom": "^2.1.0",
+    "prismic-reactjs": "^1.1.0",
+    "prismjs": "^1.17.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "styled-components": "^4.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.18.2",
+    "gatsby-remark-prettier": "^1.0.0",
+    "@babel/core": "^7.6.0",
+    "babel-loader": "^8.0.6"
+  },
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "None",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write src/**/*.{js,jsx}",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "host": "gatsby develop -H 0.0.0.0",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/OllieJT/2019-portfolio-v1"
+  },
+  "bugs": {
+    "url": "https://github.com/OllieJT/2019-portfolio-v1/issues"
+  }
+}
