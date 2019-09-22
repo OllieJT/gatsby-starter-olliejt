@@ -33,6 +33,7 @@ export const layout = {
 		pageWidth: "1200px",
 		pageGutter: size.medium,
 		contentWidth: `calc(1200px - ${size.medium * 2})`,
+		contentPadding: size.small,
 	},
 	background: {
 		page: `var(--color-level-800)`,
