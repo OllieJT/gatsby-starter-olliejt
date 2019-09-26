@@ -1,11 +1,12 @@
 import { createGlobalStyle } from "styled-components"
 import { layout } from "./theme"
-import { setThemeColor } from "./functions"
+import { setThemeColor, setScaleSize } from "./functions"
 //import "./reset.css"
 
 const GlobalStyle = createGlobalStyle`
 	:root {
-		${setThemeColor("none")};
+		${setThemeColor("default")};
+		${setScaleSize("default")};
 	}
 
 	* {
@@ -31,19 +32,82 @@ const GlobalStyle = createGlobalStyle`
 		display: block;
 	}
 	ol,
-	ul {
+	ul,dl {
 		list-style: none;
 	}
 	blockquote,
 	q {
-		quotes: none;
+		quotes: '"' '"';
+		padding: var(--size-space-tiny);
+		background-color: var(--color-primary-800);
+		color: var(--color-primary-100);
 	}
 	blockquote:before,
 	blockquote:after,
 	q:before,
 	q:after {
-		content: "";
-		content: none;
+		display: inline;
+		font-weight: ${layout.text.weightBold};
+		content: '"';
+	}
+	blockquote:before,
+	blockquote:after {
+		font-size: var(--size-text-4);
+	}
+	q:before,
+	q:after {
+		font-size: var(--size-text-2);
+	}
+	hr{
+		border-color: var(--color-level-200)
+	}
+	strong{
+		color: var(--color-primary-400)
+	}
+	i {
+		font-style: italic;
+	}
+	b{
+		font-weight: ${layout.text.weightBold}
+	}
+	mark{    background-color: var(--color-primary-200);
+    color: var(--color-level-900);}
+
+	sub, sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+		}
+
+	sup {
+	/* Move the superscripted text up */
+	top: -0.5em;
+	}
+
+	sub {
+	bottom: -0.25em;
+	}
+	small{
+		font-size: 72%;
+		text-transform: uppercase;
+		letter-spacing: .1%;
+		font-weight: ${layout.text.weightBold};
+		opacity: .8;
+	}
+	kbd{
+		display: inline-block;
+		padding: 0 var(--size-space-tiny);
+		margin: 0 var(--size-space-tiny);
+		border-radius: ${layout.radius.medium}rem;
+		border: 1px solid var(--color-level-200);
+		background-color: var(--color-level-700);
+	}
+	code{
+		font-family: courier;
+		font-size: .8em;
+		letter-spacing: 0.1em;
+		font-weight: bolder;
 	}
 	table {
 		border-collapse: collapse;
@@ -264,19 +328,37 @@ const GlobalStyle = createGlobalStyle`
 		&strong,&b{font-weight: 600}
 	}
 	h1,h2,h3,h4,h5,h6{color: ${layout.text.titleColor}}
-	h1 {font-size: 6.4rem}
-	h2 {font-size: 5.6rem}
-	h3 {font-size: 4.8rem}
-	h4 {font-size: 3.2rem}
-	h5 {font-size: 2.4rem}
+	h1 {
+		font-size:  var(--size-text-6);
+		line-height:  var(--size-line-6)
+		}
+	h2 {
+		font-size:  var(--size-text-5);
+		line-height:  var(--size-line-5)
+		}
+	h3 {
+		font-size:  var(--size-text-4);
+		line-height:  var(--size-line-4)
+		}
+	h4 {
+		font-size:  var(--size-text-4);
+		line-height:  var(--size-line-4)
+		}
+	h5 {
+		font-size:  var(--size-text-3);
+		line-height:  var(--size-line-3)
+		}
 	h6 {
-		font-size: 1.6rem;
+		font-size:  var(--size-text-1);
+		line-height:  var(--size-line-1);
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 	}
-	p,li{font-size:2rem}
+	p,li,dt,dd{font-size: var(--size-text-2);
+		line-height:  var(--size-line-2)
+	}
 
-	ul,ol,blockquote{
+	ul,ol,dl,blockquote{
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;
 		-webkit-margin-start: 0;

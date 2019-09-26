@@ -2,8 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from "../utility/GlobalStyles"
-import Menu from "./Page/Menu"
-import Footer from "./Page/Footer"
+import { Menu, Footer } from "./Page"
 
 const PageContainer = styled.div`
 	display: flex;

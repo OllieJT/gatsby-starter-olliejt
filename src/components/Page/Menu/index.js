@@ -1,5 +1,5 @@
 import React from "react"
-import Container from "../Container"
+import { Container } from "../index"
 
 const Menu = () => (
 	<Container restrict role="navigation" as="nav">

@@ -1,14 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { setThemeColor } from "../../utility/functions"
-import { layout } from "../../utility/theme"
+import { setThemeColor, setScaleSize } from "../../../utility/functions"
+import { layout } from "../../../utility/theme"
+import { enableRichText } from "../../../utility/styles"
 
 const StyledContainer = styled.div`
 	${props =>
 		props.theme
 			? `
 			${setThemeColor(props.theme)};
+			${setScaleSize(props.scale)}
 		  	background-color: ${props.backgroundColor};
 		`
 			: `
@@ -22,7 +24,7 @@ const StyledContainer = styled.div`
 		margin-left: auto;
 		margin-right: auto;
 		${props =>
-			props.restrict
+			props.isRestricted
 				? `
 					max-width: ${layout.size.pageWidth}
 				`
@@ -30,10 +32,7 @@ const StyledContainer = styled.div`
 	  				max-width: none;
 				  `}
 	}
-
-	& article {
-		border: 10px solid magenta;
-	}
+	${props => (props.isRichText ? enableRichText(props.isRestricted) : ``)}
 `
 
 const Container = props => {
@@ -48,16 +47,20 @@ Container.propTypes = {
 	anchor: PropTypes.string,
 	as: PropTypes.oneOf(["div", "section", "article", "header", "footer", "nav"]),
 	theme: PropTypes.oneOf(["switch", "switch-invert", "invert", "none"]),
+	scale: PropTypes.oneOf(["small", "medium", "large", "fedault"]),
 	backgroundColor: PropTypes.string,
-	restrict: PropTypes.bool,
+	isRestricted: PropTypes.bool,
+	isRichText: PropTypes.bool,
 }
 
 Container.defaultProps = {
 	anchor: null,
 	as: "div",
 	theme: null,
+	scale: null,
 	backgroundColor: layout.background.page,
 	restrict: false,
+	isRichText: false,
 }
 
 export default Container

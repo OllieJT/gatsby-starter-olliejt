@@ -17,23 +17,45 @@ export const color = {
 }
 
 export const size = {
-	tiny: ".8rem",
-	xsmall: "1.2rem",
-	small: "1.6rem",
-	medium: "2.4rem",
-	large: "4rem",
-	xlarge: "8rem",
-	huge: "16rem",
-	xhuge: "24rem",
+	small: [0.4, 0.8, 1.2, 1.6, 2.4],
+	medium: [0.8, 1.6, 2.4, 4, 8],
+	large: [1.6, 3.2, 4, 8, 12],
+}
+
+export const typescale = {
+	small: [
+		{ size: 1.2, line: 2.25 },
+		{ size: 1.6, line: 1.75 },
+		{ size: 2, line: 1.6 },
+		{ size: 2.4, line: 1.4 },
+		{ size: 3.2, line: 1.3 },
+		{ size: 4, line: 1.2 },
+	],
+	medium: [
+		{ size: 1.6, line: 2 },
+		{ size: 2, line: 1.6 },
+		{ size: 2.4, line: 1.5 },
+		{ size: 3.2, line: 1.3 },
+		{ size: 4.8, line: 1.2 },
+		{ size: 5.6, line: 1.1 },
+	],
+	large: [
+		{ size: 2, line: 1.75 },
+		{ size: 2.4, line: 1.5 },
+		{ size: 3.6, line: 1.5 },
+		{ size: 4.8, line: 1.2 },
+		{ size: 5.6, line: 1.1 },
+		{ size: 8, line: 1.1 },
+	],
 }
 
 export const layout = {
 	size: {
 		maxWidth: "1920px",
 		pageWidth: "1200px",
-		pageGutter: size.medium,
-		contentWidth: `calc(1200px - ${size.medium * 2})`,
-		contentPadding: size.small,
+		pageGutter: `var(--size-space-medium)`,
+		contentWidth: `calc(1200px - ${`var(--size-space-medium)` * 2})`,
+		contentPadding: `var(--size-space-small)`,
 	},
 	background: {
 		page: `var(--color-level-800)`,
@@ -43,6 +65,9 @@ export const layout = {
 		font: `Chakra Petch, Roboto, Helvetica, Segoe UI`,
 		titleColor: `var(--color-level-000)`,
 		contentColor: `var(--color-level-050)`,
+		weightLight: 400,
+		weightRegular: 500,
+		weightBold: 600,
 	},
 	link: {
 		default: `var(--color-primary-400)`,
@@ -50,5 +75,9 @@ export const layout = {
 		focus: `var(--color-primary-600)`,
 		visited: `var(--color-primary-300)`,
 	},
-	radius: ".4rem",
+	radius: {
+		small: 0.4,
+		medium: 0.8,
+		large: 4,
+	},
 }

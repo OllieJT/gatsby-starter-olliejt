@@ -1,4 +1,5 @@
 import { css } from "styled-components"
+import { layout } from "./theme"
 
 export const cover = css`
 	position: absolute;
@@ -8,4 +9,154 @@ export const cover = css`
 	right: 0;
 	width: 100%;
 	height: 100%;
+`
+
+export const enableRichText = isRestricted => css`
+	/* ALL */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	ul,
+	ol,
+	dl,
+	pre,
+	legend {
+		${isRestricted
+			? `
+			width: 100%;
+			max-width: ${layout.size.contentWidth};
+			padding-left: ${layout.size.contentPadding};
+			padding-right: ${layout.size.contentPadding};
+			margin-left: auto;
+			margin-right: auto;
+			`
+			: `
+			margin-left: ${layout.size.contentPadding};
+			margin-right: ${layout.size.contentPadding};
+			`}
+	}
+	iframe,
+	figure,
+	img,
+	blockquote {
+		display: block;
+		margin: ${layout.size.contentPadding} auto;
+		img {
+			width: auto;
+			margin: auto;
+		}
+	}
+
+	/* TEXT */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--color-level-000);
+		margin-bottom: 0.25em;
+	}
+	p {
+		color: var(--color-level-050);
+		margin-top: 0.25em;
+		margin-bottom: 1em;
+		&:first-of-type {
+			margin-top: 0.25em;
+		}
+		&:last-of-type {
+			margin-bottom: 0.25em;
+		}
+	}
+	h2,
+	h4 {
+		opacity: 0.72;
+	}
+
+	/* BLOCK-QUOTES */
+	blockquote {
+		padding: var(--size-space-medium);
+	}
+
+	/* LISTS */
+	ul,
+	ol,
+	dl {
+		display: block;
+		margin-top: var(--size-space-medium);
+		margin-bottom: var(--size-space-medium);
+		li,
+		dt,
+		dd {
+			list-style-position: inside;
+			margin-top: var(--size-space-tiny);
+			margin-bottom: var(--size-space-tiny);
+		}
+		li,
+		dt {
+			color: var(--color-primary-400);
+			padding-left: var(--size-space-medium);
+		}
+		dd {
+			color: var(--color-level-000);
+			opacity: 0.72;
+			padding-left: var(--size-space-large);
+		}
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			display: inline;
+			margin-left: var(--size-space-tiny);
+			margin-right: 0;
+			padding-top: 0.5em;
+			padding-bottom: 0.5em;
+		}
+		ul,
+		ol,
+		dl {
+			margin-top: 0;
+			padding-left: var(--size-space-medium);
+			li {
+				color: var(--color-level-050);
+			}
+		}
+		ul li {
+			list-style-type: disc;
+		}
+	}
+	ul li {
+		list-style-type: square;
+	}
+	ol li {
+		list-style-type: decimal;
+	}
+	.embedMedia {
+		width: 100%;
+		position: relative;
+		&.embedYouTube {
+			padding-bottom: 56.25%;
+			iframe {
+				${cover};
+				position: absolute;
+			}
+		}
+	}
+	img,
+	.embedMedia {
+		display: block;
+		max-width: 100%;
+		margin: var(--size-space-medium) auto;
+	}
+	img {
+		width: auto;
+		height: auto;
+	}
 `

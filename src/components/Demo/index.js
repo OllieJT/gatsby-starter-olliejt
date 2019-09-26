@@ -1,5 +1,5 @@
 import React from "react"
-import Container from "../Page/Container"
+import { Container } from "../Page"
 import Blockquote from "../Widget/Quote"
 import Image from "../Widget/Image"
 import YouTube from "../Widget/YouTube"
@@ -7,13 +7,13 @@ import { Input, Option, Dropdown } from "../Form"
 
 const Demo = () => (
 	<main role="main">
-		<Container restrict as="section" anchor="text">
-			<header>
+		<Container isRestricted isRichText as="section" anchor="text">
+			<header style={{ padding: `4rem 0` }}>
 				<h1>Text</h1>
 			</header>
 			<article id="text__headings">
-				<header>
-					<h1>Headings</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Headings</h3>
 				</header>
 				<div>
 					<h1>Heading 1</h1>
@@ -30,10 +30,22 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__paragraphs">
-				<header>
-					<h1>Paragraphs</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Paragraphs</h3>
 				</header>
 				<div>
+					<p>
+						A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a
+						self-contained unit of a discourse in writing dealing with a particular point or idea. A
+						paragraph consists of one or more sentences. Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal writing, used to organize longer prose.
+					</p>
+					<p>
+						A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a
+						self-contained unit of a discourse in writing dealing with a particular point or idea. A
+						paragraph consists of one or more sentences. Though not required by the syntax of any language,
+						paragraphs are usually an expected part of formal writing, used to organize longer prose.
+					</p>
 					<p>
 						A paragraph (from the Greek paragraphos, “to write beside” or “written beside”) is a
 						self-contained unit of a discourse in writing dealing with a particular point or idea. A
@@ -48,8 +60,8 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__blockquotes">
-				<header>
-					<h1>Blockquotes</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Blockquotes</h3>
 				</header>
 				<div>
 					<Blockquote citeText="Said no one, ever." citeUrl={"."}>
@@ -70,13 +82,18 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__lists">
-				<header>
-					<h1>Lists</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Lists</h3>
 				</header>
 				<div>
 					<h3>Definition list</h3>
 					<dl>
 						<dt>Definition List Title</dt>
+						<dd>This is a definition list division.</dd>
+						<dd>This is a definition list division.</dd>
+						<dt>Definition List Title</dt>
+						<dd>This is a definition list division.</dd>
+						<dd>This is a definition list division.</dd>
 						<dd>This is a definition list division.</dd>
 					</dl>
 					<h3>Ordered List</h3>
@@ -84,12 +101,44 @@ const Demo = () => (
 						<li>List Item 1</li>
 						<li>List Item 2</li>
 						<li>List Item 3</li>
+						<li>
+							List Item 4
+							<ol>
+								<li>List Item 4.a</li>
+								<li>List Item 4.b</li>
+								<li>List Item 4.c</li>
+							</ol>
+						</li>
+						<li>
+							List Item 5
+							<ul>
+								<li>List Item 5.a</li>
+								<li>List Item 5.b</li>
+								<li>List Item 5.c</li>
+							</ul>
+						</li>
 					</ol>
 					<h3>Unordered List</h3>
 					<ul>
 						<li>List Item 1</li>
 						<li>List Item 2</li>
 						<li>List Item 3</li>
+						<li>
+							List Item 4
+							<ol>
+								<li>List Item 4.a</li>
+								<li>List Item 4.b</li>
+								<li>List Item 4.c</li>
+							</ol>
+						</li>
+						<li>
+							List Item 5
+							<ul>
+								<li>List Item 5.a</li>
+								<li>List Item 5.b</li>
+								<li>List Item 5.c</li>
+							</ul>
+						</li>
 					</ul>
 				</div>
 				<footer>
@@ -99,8 +148,8 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__hr">
-				<header>
-					<h1>Horizontal rules</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Horizontal rules</h3>
 				</header>
 				<div>
 					<hr />
@@ -112,8 +161,8 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__tables">
-				<header>
-					<h1>Tabular data</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Tabular data</h3>
 				</header>
 				<table>
 					<caption>Table Caption</caption>
@@ -173,8 +222,8 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__code">
-				<header>
-					<h1>Code</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Code</h3>
 				</header>
 				<div>
 					<p>
@@ -200,8 +249,8 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__inline">
-				<header>
-					<h1>Inline elements</h1>
+				<header style={{ padding: `4rem 0` }}>
+					<h3>Inline elements</h3>
 				</header>
 				<div>
 					<p>
@@ -271,12 +320,12 @@ const Demo = () => (
 			</article>
 		</Container>
 
-		<Container restrict as="section" anchor="embedded">
-			<header>
+		<Container isRestricted isRichText as="section" anchor="embedded">
+			<header style={{ padding: `4rem 0` }}>
 				<h1>Embedded content</h1>
 			</header>
 			<article id="embedded__images">
-				<header>
+				<header style={{ padding: `4rem 0` }}>
 					<h2>Images</h2>
 				</header>
 				<div>
@@ -307,7 +356,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="embedded__svg">
-				<header>
+				<header style={{ padding: `4rem 0` }}>
 					<h2>Inline SVG</h2>
 				</header>
 				<div>
@@ -322,7 +371,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="embedded__video">
-				<header>
+				<header style={{ padding: `4rem 0` }}>
 					<h2>Inline Video</h2>
 				</header>
 				<YouTube url="https://www.youtube.com/watch?v=8PA3Fg3oqgk&t=8s" />
@@ -334,8 +383,8 @@ const Demo = () => (
 			</article>
 		</Container>
 
-		<Container restrict as="section" anchor="forms">
-			<header>
+		<Container isRestricted isRichText as="section" anchor="forms">
+			<header style={{ padding: `4rem 0` }}>
 				<h1>Form elements</h1>
 			</header>
 			<form>
@@ -445,22 +494,22 @@ export default Demo
 
 
           <article id="embedded__iframe">
-            <header><h2>IFrame</h2></header>
+            <header style={{ padding: `4rem 0` }}><h2>IFrame</h2></header>
             <div><iframe title="Example embedded site" src="index.html" height="300"></iframe></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
           <article id="embedded__audio">
-            <header><h2>Audio</h2></header>
+            <header style={{ padding: `4rem 0` }}><h2>Audio</h2></header>
             <div><audio controls="">audio</audio></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
           <article id="embedded__video">
-            <header><h2>Video</h2></header>
+            <header style={{ padding: `4rem 0` }}><h2>Video</h2></header>
             <div><video controls="">video</video></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
           <article id="embedded__canvas">
-            <header><h2>Canvas</h2></header>
+            <header style={{ padding: `4rem 0` }}><h2>Canvas</h2></header>
             <div><canvas>canvas</canvas></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
