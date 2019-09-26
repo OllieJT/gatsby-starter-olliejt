@@ -58,11 +58,9 @@ export const enableRichText = isRestricted => css`
 	h4,
 	h5,
 	h6 {
-		color: var(--color-level-000);
 		margin-bottom: 0.25em;
 	}
 	p {
-		color: var(--color-level-050);
 		margin-top: 0.25em;
 		margin-bottom: 1em;
 		&:first-of-type {
@@ -71,10 +69,6 @@ export const enableRichText = isRestricted => css`
 		&:last-of-type {
 			margin-bottom: 0.25em;
 		}
-	}
-	h2,
-	h4 {
-		opacity: 0.72;
 	}
 
 	/* BLOCK-QUOTES */
@@ -98,7 +92,7 @@ export const enableRichText = isRestricted => css`
 		}
 		li,
 		dt {
-			color: var(--color-primary-400);
+			color: ${layout.text.highlightColorBright};
 			padding-left: var(--size-space-medium);
 		}
 		dd {

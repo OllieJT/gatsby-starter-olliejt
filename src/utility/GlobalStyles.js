@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
 	q {
 		quotes: '"' '"';
 		padding: var(--size-space-tiny);
-		background-color: var(--color-primary-800);
+		background-color: var(--color-primary-900);
 		color: var(--color-primary-100);
 	}
 	blockquote:before,
@@ -62,7 +62,7 @@ const GlobalStyle = createGlobalStyle`
 		border-color: var(--color-level-200)
 	}
 	strong{
-		color: var(--color-primary-400)
+		color: ${layout.text.highlightColorBright}
 	}
 	i {
 		font-style: italic;
@@ -291,7 +291,7 @@ const GlobalStyle = createGlobalStyle`
 		width: 100%;
 		max-width: 100vw;
 		background-color: ${layout.background.page};
-		color: ${layout.text.contentColor};
+		color: ${layout.text.color};
 		position: relative;
 		line-height: 1;
 	}
@@ -321,13 +321,13 @@ const GlobalStyle = createGlobalStyle`
 	Typography
 	**********/
 	h1,h2,h3,h4,h5,h6,p{
+		color: ${layout.text.color};
 		font-weight: 400;
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;
 		line-height: 1.15em;
 		&strong,&b{font-weight: 600}
 	}
-	h1,h2,h3,h4,h5,h6{color: ${layout.text.titleColor}}
 	h1 {
 		font-size:  var(--size-text-6);
 		line-height:  var(--size-line-6)
@@ -356,6 +356,9 @@ const GlobalStyle = createGlobalStyle`
 	}
 	p,li,dt,dd{font-size: var(--size-text-2);
 		line-height:  var(--size-line-2)
+	}
+	h2,h4,p{
+		opacity: ${layout.text.contentOpacity}
 	}
 
 	ul,ol,dl,blockquote{
