@@ -39,7 +39,7 @@ const GlobalStyle = createGlobalStyle`
 	q {
 		quotes: '"' '"';
 		padding: var(--size-space-tiny);
-		background-color: var(--color-primary-900);
+		background-color: var(--color-primary-800);
 		color: var(--color-primary-100);
 	}
 	blockquote:before,

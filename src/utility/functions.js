@@ -8,15 +8,15 @@ export function setThemeColor(s) {
 	switch (s) {
 		case "switch":
 			return `
-			--color-primary-050: ${color.secondary[8]};
-			--color-primary-100: ${color.secondary[7]};
-			--color-primary-200: ${color.secondary[6]};
-			--color-primary-300: ${color.secondary[5]};
+			--color-primary-050: ${color.secondary[0]};
+			--color-primary-100: ${color.secondary[1]};
+			--color-primary-200: ${color.secondary[2]};
+			--color-primary-300: ${color.secondary[3]};
 			--color-primary-400: ${color.secondary[4]};
-			--color-primary-500: ${color.secondary[3]};
-			--color-primary-600: ${color.secondary[2]};
-			--color-primary-700: ${color.secondary[1]};
-			--color-primary-800: ${color.secondary[0]};
+			--color-primary-500: ${color.secondary[5]};
+			--color-primary-600: ${color.secondary[6]};
+			--color-primary-700: ${color.secondary[7]};
+			--color-primary-800: ${color.secondary[8]};
 
 			--color-secondary-050: ${color.primary[0]};
 			--color-secondary-100: ${color.primary[1]};
@@ -99,24 +99,25 @@ export function setThemeColor(s) {
 		case "default":
 		default:
 			return `
-			--color-primary-050: ${color.primary[0]};
-			--color-primary-100: ${color.primary[1]};
-			--color-primary-200: ${color.primary[2]};
-			--color-primary-300: ${color.primary[3]};
-			--color-primary-400: ${color.primary[4]};
-			--color-primary-500: ${color.primary[5]};
-			--color-primary-600: ${color.primary[6]};
-			--color-primary-700: ${color.primary[7]};
-	  		--color-primary-800: ${color.primary[8]};
+			--color-primary-050: ${color.primary[1]};
+			--color-primary-100: ${color.primary[2]};
+			--color-primary-200: ${color.primary[3]};
+			--color-primary-300: ${color.primary[4]};
+			--color-primary-400: ${color.primary[5]};
+			--color-primary-500: ${color.primary[6]};
+			--color-primary-600: ${color.primary[7]};
+			--color-primary-700: ${color.primary[8]};
+	  		--color-primary-800: ${color.primary[9]};
 
-			--color-secondary-050: ${color.secondary[0]};
-			--color-secondary-100: ${color.secondary[1]};
-			--color-secondary-200: ${color.secondary[2]};
-			--color-secondary-300: ${color.secondary[3]};
-			--color-secondary-400: ${color.secondary[4]};
-			--color-secondary-500: ${color.secondary[5]};
-			--color-secondary-600: ${color.secondary[6]};
-			--color-secondary-700: ${color.secondary[7]};
+			--color-secondary-050: ${color.secondary[1]};
+			--color-secondary-100: ${color.secondary[2]};
+			--color-secondary-200: ${color.secondary[3]};
+			--color-secondary-300: ${color.secondary[4]};
+			--color-secondary-400: ${color.secondary[5]};
+			--color-secondary-500: ${color.secondary[6]};
+			--color-secondary-600: ${color.secondary[7]};
+			--color-secondary-700: ${color.secondary[8]};
+			--color-secondary-800: ${color.secondary[9]};
 			--color-secondary-800: ${color.secondary[8]};
 
 			--color-level-000: ${color.level[0]};
