@@ -1,11 +1,13 @@
 import React from "react"
 import Container from "../Page/Container"
 import Blockquote from "../Widget/Quote"
+import Image from "../Widget/Image"
+import YouTube from "../Widget/YouTube"
 import { Input, Option, Dropdown } from "../Form"
 
 const Demo = () => (
 	<main role="main">
-		<Container hidden restrict as="section" anchor="text">
+		<Container restrict as="section" anchor="text">
 			<header>
 				<h1>Text</h1>
 			</header>
@@ -282,49 +284,21 @@ const Demo = () => (
 						No <code>&lt;figure&gt;</code> element
 					</h3>
 					<p>
-						<img src="http://placekitten.com/480/480" alt="Description of this visual thing" />
+						<Image src="http://placekitten.com/200/287" alt="Description of this visual thing" />
 					</p>
 					<h3>
 						Wrapped in a <code>&lt;figure&gt;</code> element, no <code>&lt;figcaption&gt;</code>
 					</h3>
-					<figure>
-						<img src="http://placekitten.com/420/420" alt="Description of this visual thing" />
-					</figure>
+					<Image src="http://placekitten.com/200/286" alt="Description of this visual thing" caption="" />
+
 					<h3>
 						Wrapped in a <code>&lt;figure&gt;</code> element, with a <code>&lt;figcaption&gt;</code>
 					</h3>
-					<figure>
-						<img src="http://placekitten.com/420/420" alt="Description of this visual thing" />
-						<figcaption>Here is a caption for this image.</figcaption>
-					</figure>
-				</div>
-				<footer>
-					<p>
-						<a href="#top">[Top]</a>
-					</p>
-				</footer>
-			</article>
-			<article id="embedded__meter">
-				<header>
-					<h2>Meter</h2>
-				</header>
-				<div>
-					<meter defaultValue="2" min="0" max="10">
-						2 out of 10
-					</meter>
-				</div>
-				<footer>
-					<p>
-						<a href="#top">[Top]</a>
-					</p>
-				</footer>
-			</article>
-			<article id="embedded__progress">
-				<header>
-					<h2>Progress</h2>
-				</header>
-				<div>
-					<progress>progress</progress>
+					<Image
+						src="http://placekitten.com/200/138"
+						alt="Description of this visual thing"
+						caption="Here is a caption for this image."
+					/>
 				</div>
 				<footer>
 					<p>
@@ -347,6 +321,17 @@ const Demo = () => (
 					</p>
 				</footer>
 			</article>
+			<article id="embedded__video">
+				<header>
+					<h2>Inline Video</h2>
+				</header>
+				<YouTube url="https://www.youtube.com/watch?v=8PA3Fg3oqgk&t=8s" />
+				<footer>
+					<p>
+						<a href="#top">[Top]</a>
+					</p>
+				</footer>
+			</article>
 		</Container>
 
 		<Container restrict as="section" anchor="forms">
@@ -354,7 +339,7 @@ const Demo = () => (
 				<h1>Form elements</h1>
 			</header>
 			<form>
-				<fieldset id="forms__input" hidden>
+				<fieldset id="forms__input">
 					<legend>Input fields</legend>
 					<Input label="Text Input" type="text" />
 					<Input label="Password" type="password" placeholder="Type your Password" />
@@ -369,7 +354,7 @@ const Demo = () => (
 				<p>
 					<a href="#top">[Top]</a>
 				</p>
-				<fieldset id="forms__select" hidden>
+				<fieldset id="forms__select">
 					<legend>Select menus</legend>
 					<Dropdown
 						label="Select"
@@ -380,7 +365,7 @@ const Demo = () => (
 				<p>
 					<a href="#top">[Top]</a>
 				</p>
-				<fieldset id="forms__checkbox" hidden>
+				<fieldset id="forms__checkbox">
 					<legend>Checkboxes</legend>
 					<ul>
 						<li>
@@ -397,7 +382,7 @@ const Demo = () => (
 				<p>
 					<a href="#top">[Top]</a>
 				</p>
-				<fieldset id="forms__radio" hidden>
+				<fieldset id="forms__radio">
 					<legend>Radio buttons</legend>
 					<ul>
 						<li>
@@ -414,14 +399,14 @@ const Demo = () => (
 				<p>
 					<a href="#top">[Top]</a>
 				</p>
-				<fieldset id="forms__textareas" hidden>
+				<fieldset id="forms__textareas">
 					<legend>Textareas</legend>
 					<Input label="Textarea" type="textarea" placeholder="Enter your message here" />
 				</fieldset>
 				<p>
 					<a href="#top">[Top]</a>
 				</p>
-				<fieldset id="forms__html5" hidden>
+				<fieldset id="forms__html5">
 					<legend>HTML5 inputs</legend>
 					<Input label="Color input" type="color" placeholder="#123456" />
 					<Input label="Number input" type="number" placeholder="5" options={{ min: 0, max: 10 }} />
@@ -459,22 +444,22 @@ export default Demo
 /*
 
 
-          <article id="embedded__iframe" hidden>
+          <article id="embedded__iframe">
             <header><h2>IFrame</h2></header>
             <div><iframe title="Example embedded site" src="index.html" height="300"></iframe></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
-          <article id="embedded__audio" hidden>
+          <article id="embedded__audio">
             <header><h2>Audio</h2></header>
             <div><audio controls="">audio</audio></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
-          <article id="embedded__video" hidden>
+          <article id="embedded__video">
             <header><h2>Video</h2></header>
             <div><video controls="">video</video></div>
             <footer><p><a href="#top">[Top]</a></p></footer>
           </article>
-          <article id="embedded__canvas" hidden>
+          <article id="embedded__canvas">
             <header><h2>Canvas</h2></header>
             <div><canvas>canvas</canvas></div>
             <footer><p><a href="#top">[Top]</a></p></footer>

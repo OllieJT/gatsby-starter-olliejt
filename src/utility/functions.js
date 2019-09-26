@@ -150,3 +150,9 @@ export function slugify(text) {
 		.replace(/^-+/, "") // Trim - from start of text
 		.replace(/-+$/, "") // Trim - from end of text
 }
+
+export function getYoutubeID(url) {
+	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
+	var match = url.match(regExp)
+	return match && match[7].length == 11 ? match[7] : false
+}
