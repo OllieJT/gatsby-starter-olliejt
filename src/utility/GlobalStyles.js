@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components"
-import { layout } from "./theme"
 import { setThemeColor, setScaleSize } from "./functions"
 //import "./reset.css"
 
@@ -7,6 +6,21 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		${setThemeColor("default")};
 		${setScaleSize("default")};
+		--content-width: calc(1200px - 4.8rem);
+		--content-padding: 2.4rem;
+		--content-gutter: .8rem;
+
+		--screen-desktop: '960px';
+		--screen-tablet: '800px';
+		--screen-mobile: '480px';
+
+		--text-weight-normal: 400;
+		--text-weight-medium: 500;
+		--text-weight-bold: 500;
+
+		--border-radius-small: .4rem;
+		--border-radius-medium: .8rem;
+		--border-radius-large: 2.4rem;
 	}
 
 	* {
@@ -47,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
 	q:before,
 	q:after {
 		display: inline;
-		font-weight: ${layout.text.weightBold};
+		font-weight: var(--text-weight-bold);
 		content: '"';
 	}
 	blockquote:before,
@@ -62,13 +76,13 @@ const GlobalStyle = createGlobalStyle`
 		border-color: var(--color-level-200)
 	}
 	strong{
-		color: ${layout.text.highlightColorBright}
+		color: var(--color-text-title)
 	}
 	i {
 		font-style: italic;
 	}
 	b{
-		font-weight: ${layout.text.weightBold}
+		font-weight: var(--text-weight-bold)
 	}
 	mark{    background-color: var(--color-primary-200);
     color: var(--color-level-900);}
@@ -92,14 +106,14 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 72%;
 		text-transform: uppercase;
 		letter-spacing: .1%;
-		font-weight: ${layout.text.weightBold};
+		font-weight: var(--text-weight-bold);
 		opacity: .8;
 	}
 	kbd{
 		display: inline-block;
 		padding: 0 var(--size-space-tiny);
 		margin: 0 var(--size-space-tiny);
-		border-radius: ${layout.radius.medium}rem;
+		border-radius: var(--border-radius-medium);
 		border: 1px solid var(--color-level-200);
 		background-color: var(--color-level-700);
 	}
@@ -107,7 +121,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: courier;
 		font-size: .8em;
 		letter-spacing: 0.1em;
-		font-weight: bolder;
+		font-weight: var(--text-weight-bold);
 	}
 	table {
 		border-collapse: collapse;
@@ -283,15 +297,15 @@ const GlobalStyle = createGlobalStyle`
 
 
 	body{
-		font-family: ${layout.text.font}, -apple-system, BlinkMacSystemFont, sans-serif;
+		font-family: Chakra Petch, Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif;
 		font-style: normal;
-		font-weight: normal;
+		font-weight: var(--text-weight-normal);
 		height: auto;
 		min-height: 100vh;
 		width: 100%;
 		max-width: 100vw;
-		background-color: ${layout.background.page};
-		color: ${layout.text.color};
+		background-color: var(--color-page-background);
+		color: var(--color-text-content);
 		position: relative;
 		line-height: 1;
 	}
@@ -304,16 +318,9 @@ const GlobalStyle = createGlobalStyle`
 		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
-		color: ${layout.link.default};
+		color: var(--color-link-hover);
 		&:hover{
-			color: ${layout.link.hover};
-		}
-		&:focus{
-			color: ${layout.link.focus};
-			text-decoration: underline;
-		}
-		&:visited{
-			color: ${layout.link.visited};
+			color: var(--color-link-resting);
 		}
 	}
 
@@ -321,44 +328,53 @@ const GlobalStyle = createGlobalStyle`
 	Typography
 	**********/
 	h1,h2,h3,h4,h5,h6,p{
-		color: ${layout.text.color};
-		font-weight: 400;
+		color: var(--color-text-content);
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;
 		line-height: 1.15em;
-		&strong,&b{font-weight: 600}
 	}
 	h1 {
 		font-size:  var(--size-text-6);
-		line-height:  var(--size-line-6)
+		line-height:  var(--size-line-6);
+		font-weight: var(--text-weight-medium);
+		&strong,&b{font-weight: var(--text-weight-bold)}
 		}
 	h2 {
 		font-size:  var(--size-text-5);
-		line-height:  var(--size-line-5)
+		line-height:  var(--size-line-5);
+		font-weight: var(--text-weight-normal);
+		&strong,&b{font-weight: var(--text-weight-medium)}
 		}
 	h3 {
 		font-size:  var(--size-text-4);
-		line-height:  var(--size-line-4)
+		line-height:  var(--size-line-4);
+		font-weight: var(--text-weight-medium);
+		&strong,&b{font-weight: var(--text-weight-bold)}
 		}
 	h4 {
 		font-size:  var(--size-text-4);
-		line-height:  var(--size-line-4)
+		line-height:  var(--size-line-4);
+		font-weight: var(--text-weight-normal);
+		&strong,&b{font-weight: var(--text-weight-medium)}
 		}
 	h5 {
 		font-size:  var(--size-text-3);
-		line-height:  var(--size-line-3)
+		line-height:  var(--size-line-3);
+		font-weight: var(--text-weight-medium);
+		&strong,&b{font-weight: var(--text-weight-bold)}
 		}
 	h6 {
 		font-size:  var(--size-text-1);
 		line-height:  var(--size-line-1);
+		font-weight: var(--text-weight-medium);;
+		&strong,&b{font-weight: var(--text-weight-bold)}
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 	}
 	p,li,dt,dd{font-size: var(--size-text-2);
-		line-height:  var(--size-line-2)
-	}
-	h2,h4,p{
-		opacity: ${layout.text.contentOpacity}
+		line-height:  var(--size-line-2);
+		font-weight: var(--text-weight-normal);
+		&strong,&b{font-weight: var(--text-weight-medium)}
 	}
 
 	ul,ol,dl,blockquote{

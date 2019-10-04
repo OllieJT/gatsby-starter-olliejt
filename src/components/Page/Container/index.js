@@ -2,7 +2,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import { setThemeColor, setScaleSize } from "../../../utility/functions"
-import { layout } from "../../../utility/theme"
 import { enableRichText } from "../../../utility/styles"
 
 const StyledContainer = styled.div`
@@ -16,8 +15,8 @@ const StyledContainer = styled.div`
 			: `
 			background-color: transparent;
 	  	`};
-	padding-left: ${layout.size.pageGutter};
-	padding-right: ${layout.size.pageGutter};
+	padding-left: var(--content-padding);
+	padding-right: var(--content-padding);
 	width: 100%;
 	.content-container {
 		position: relative;
@@ -26,7 +25,7 @@ const StyledContainer = styled.div`
 		${props =>
 			props.isRestricted
 				? `
-					max-width: ${layout.size.pageWidth}
+					max-width: var(--content-width);
 				`
 				: `
 	  				max-width: none;
@@ -58,7 +57,7 @@ Container.defaultProps = {
 	as: "div",
 	theme: null,
 	scale: null,
-	backgroundColor: layout.background.page,
+	backgroundColor: `var(--color-page-background)`,
 	restrict: false,
 	isRichText: false,
 }

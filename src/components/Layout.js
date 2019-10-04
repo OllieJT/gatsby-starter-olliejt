@@ -5,6 +5,7 @@ import GlobalStyle from "../utility/GlobalStyles"
 import { Menu, Footer } from "./Page"
 
 const PageContainer = styled.div`
+	${props => props.theme}
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;

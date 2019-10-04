@@ -48,38 +48,3 @@ export const typescale = {
 		{ size: 8, line: 1.1 },
 	],
 }
-
-export const layout = {
-	size: {
-		maxWidth: "1920px",
-		pageWidth: "1200px",
-		pageGutter: `var(--size-space-medium)`,
-		contentWidth: `calc(1200px - ${`var(--size-space-medium)` * 2})`,
-		contentPadding: `var(--size-space-small)`,
-	},
-	background: {
-		page: `var(--color-level-900)`,
-		content: `var(--color-level-800)`,
-	},
-	text: {
-		font: `Chakra Petch, Roboto, Helvetica, Segoe UI`,
-		color: `var(--color-level-000)`,
-		contentOpacity: 0.8,
-		highlightColorBright: `var(--color-primary-200)`,
-		highlightColorDark: `var(--color-primary-400)`,
-		weightLight: 400,
-		weightRegular: 500,
-		weightBold: 600,
-	},
-	link: {
-		default: `var(--color-secondary-100)`,
-		focus: `var(--color-secondary-400)`,
-		hover: `var(--color-secondary-600)`,
-		visited: `var(--color-secondary-100)`,
-	},
-	radius: {
-		small: 0.4,
-		medium: 0.8,
-		large: 4,
-	},
-}

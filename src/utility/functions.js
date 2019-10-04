@@ -27,6 +27,9 @@ export function setThemeColor(s) {
 			--color-secondary-600: ${color.primary[6]};
 			--color-secondary-700: ${color.primary[7]};
 			--color-secondary-800: ${color.primary[8]};
+
+			--color-link-resting: ${color.secondary[2]};
+			--color-link-hover: ${color.secondary[7]};
 		`
 		case "switch-invert":
 			return `
@@ -49,6 +52,13 @@ export function setThemeColor(s) {
 			--color-secondary-600: ${color.primary[2]};
 			--color-secondary-700: ${color.primary[1]};
 			--color-secondary-800: ${color.primary[0]};
+
+			--color-page-background: ${color.level[0]};
+			--color-text-content: ${color.level[8]};
+			--color-text-title: ${color.level[10]};
+
+			--color-link-resting: ${color.primary[7]};
+			--color-link-hover: ${color.primary[2]};
 
 			--color-level-000: ${color.level[10]};
 			--color-level-050: ${color.level[9]};
@@ -83,6 +93,13 @@ export function setThemeColor(s) {
 			--color-secondary-600: ${color.secondary[2]};
 			--color-secondary-700: ${color.secondary[1]};
 			--color-secondary-800: ${color.secondary[0]};
+
+			--color-page-background: ${color.level[0]};
+			--color-text-content: ${color.level[8]};
+			--color-text-title: ${color.level[10]};
+
+			--color-link-resting: ${color.primary[7]};
+			--color-link-hover: ${color.primary[2]};
 
 			--color-level-000: ${color.level[10]};
 			--color-level-050: ${color.level[9]};
@@ -119,6 +136,13 @@ export function setThemeColor(s) {
 			--color-secondary-700: ${color.secondary[8]};
 			--color-secondary-800: ${color.secondary[9]};
 			--color-secondary-800: ${color.secondary[8]};
+
+			--color-page-background: ${color.level[10]};
+			--color-text-content: ${color.level[1]};
+			--color-text-title: ${color.level[0]};
+
+			--color-link-resting: ${color.primary[2]};
+			--color-link-hover: ${color.primary[7]};
 
 			--color-level-000: ${color.level[0]};
 			--color-level-050: ${color.level[1]};
@@ -235,4 +259,24 @@ export function getYoutubeID(url) {
 	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/
 	var match = url.match(regExp)
 	return match && match[7].length == 11 ? match[7] : false
+}
+
+export function shuffle(array) {
+	var currentIndex = array.length,
+		temporaryValue,
+		randomIndex
+
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex)
+		currentIndex -= 1
+
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex]
+		array[currentIndex] = array[randomIndex]
+		array[randomIndex] = temporaryValue
+	}
+
+	return array
 }

@@ -1,13 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { layout } from "../../utility/theme"
 import { cover } from "../../utility/styles"
 
 const StyledBlockquote = styled.blockquote`
 	display: inline-block;
 	position: relative;
-	padding: ${layout.size.contentPadding};
+	padding: var(--size-space-medium);
 	h1,
 	h2,
 	h3,

@@ -1,5 +1,4 @@
 import { css } from "styled-components"
-import { layout } from "./theme"
 
 export const cover = css`
 	position: absolute;
@@ -28,15 +27,15 @@ export const enableRichText = isRestricted => css`
 		${isRestricted
 			? `
 			width: 100%;
-			max-width: ${layout.size.contentWidth};
-			padding-left: ${layout.size.contentPadding};
-			padding-right: ${layout.size.contentPadding};
+			max-width: var(--content-width);
+			padding-left: var(--content-padding);
+			padding-right: var(--content-padding);
 			margin-left: auto;
 			margin-right: auto;
 			`
 			: `
-			margin-left: ${layout.size.contentPadding};
-			margin-right: ${layout.size.contentPadding};
+			margin-left: var(--content-padding);
+			margin-right: var(--content-padding);
 			`}
 	}
 	iframe,
@@ -44,7 +43,7 @@ export const enableRichText = isRestricted => css`
 	img,
 	blockquote {
 		display: block;
-		margin: ${layout.size.contentPadding} auto;
+		margin: var(--content-padding) auto;
 		img {
 			width: auto;
 			margin: auto;
@@ -92,7 +91,7 @@ export const enableRichText = isRestricted => css`
 		}
 		li,
 		dt {
-			color: ${layout.text.highlightColorBright};
+			color: var(--color-text-title);
 			padding-left: var(--size-space-medium);
 		}
 		dd {
