@@ -323,10 +323,11 @@ const GlobalStyle = createGlobalStyle`
 	a{
 		display: inline-block;
 		text-decoration: none;
+		text-emphasis: none;
 		cursor: pointer;
-		color: var(--color-link-hover);
+		color: var(--color-link-resting);
 		&:hover{
-			color: var(--color-link-resting);
+			color: var(--color-link-hover);
 		}
 	}
 
@@ -385,7 +386,7 @@ const GlobalStyle = createGlobalStyle`
 		&strong,&b{font-weight: var(--font-weight-medium)}
 		a{
 			letter-spacing: 0.08em;
-			text-transform: uppercase;
+			font-weight: var(--font-weight-medium)
 		}
 	}
 
