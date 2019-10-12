@@ -1,6 +1,6 @@
 /* eslint-disable */
 import PropTypes from "prop-types"
-import { color, size, typescale } from "./theme"
+import { color, size } from "./theme"
 
 export const IS_BROWSER = typeof window !== "undefined"
 
@@ -174,20 +174,6 @@ export function setScaleSize(s) {
 			--size-space-medium:${size.small[2]}rem;
 			--size-space-large: ${size.small[3]}rem;
 			--size-space-huge: ${size.small[4]}rem;
-
-			--size-text-1: ${typescale.small[0].size}rem;
-			--size-text-2: ${typescale.small[1].size}rem;
-			--size-text-3: ${typescale.small[2].size}rem;
-			--size-text-4: ${typescale.small[3].size}rem;
-			--size-text-5: ${typescale.small[4].size}rem;
-			--size-text-6: ${typescale.small[5].size}rem;
-
-			--size-line-1: ${typescale.small[0].line}em;
-			--size-line-2: ${typescale.small[1].line}em;
-			--size-line-3: ${typescale.small[2].line}em;
-			--size-line-4: ${typescale.small[3].line}em;
-			--size-line-5: ${typescale.small[4].line}em;
-			--size-line-6: ${typescale.small[5].line}em;
 		`
 		case "large":
 			return `
@@ -196,20 +182,6 @@ export function setScaleSize(s) {
 			--size-space-medium:${size.large[2]}rem;
 			--size-space-large: ${size.large[3]}rem;
 			--size-space-huge: ${size.large[4]}rem;
-
-			--size-text-1: ${typescale.large[0].size}rem;
-			--size-text-2: ${typescale.large[1].size}rem;
-			--size-text-3: ${typescale.large[2].size}rem;
-			--size-text-4: ${typescale.large[3].size}rem;
-			--size-text-5: ${typescale.large[4].size}rem;
-			--size-text-6: ${typescale.large[5].size}rem;
-
-			--size-line-1: ${typescale.large[0].line}em;
-			--size-line-2: ${typescale.large[1].line}em;
-			--size-line-3: ${typescale.large[2].line}em;
-			--size-line-4: ${typescale.large[3].line}em;
-			--size-line-5: ${typescale.large[4].line}em;
-			--size-line-6: ${typescale.large[5].line}em;
 			`
 		case "medium":
 		case "default":
@@ -220,20 +192,6 @@ export function setScaleSize(s) {
 			--size-space-medium:${size.medium[2]}rem;
 			--size-space-large: ${size.medium[3]}rem;
 			--size-space-huge: ${size.medium[4]}rem;
-
-			--size-text-1: ${typescale.medium[0].size}rem;
-			--size-text-2: ${typescale.medium[1].size}rem;
-			--size-text-3: ${typescale.medium[2].size}rem;
-			--size-text-4: ${typescale.medium[3].size}rem;
-			--size-text-5: ${typescale.medium[4].size}rem;
-			--size-text-6: ${typescale.medium[5].size}rem;
-
-			--size-line-1: ${typescale.medium[0].line}em;
-			--size-line-2: ${typescale.medium[1].line}em;
-			--size-line-3: ${typescale.medium[2].line}em;
-			--size-line-4: ${typescale.medium[3].line}em;
-			--size-line-5: ${typescale.medium[4].line}em;
-			--size-line-6: ${typescale.medium[5].line}em;
 		`
 	}
 }

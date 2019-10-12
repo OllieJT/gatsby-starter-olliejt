@@ -1,8 +1,8 @@
 import React from "react"
 import { Container } from "../Page"
-import Blockquote from "../Widget/Quote"
-import Image from "../Widget/Image"
-import YouTube from "../Widget/YouTube"
+import Blockquote from "../Module/Quote"
+import Image from "../Module/Image"
+import YouTube from "../Module/YouTube"
 import { Input, Option, Dropdown } from "../Form"
 
 const Demo = () => (

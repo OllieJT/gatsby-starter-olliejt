@@ -65,7 +65,7 @@ module.exports = {
 			resolve: "gatsby-plugin-web-font-loader",
 			options: {
 				google: {
-					families: ["Chakra Petch:500,600"],
+					families: ["Bai Jamjuree:400,700"],
 				},
 			},
 		},

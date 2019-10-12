@@ -6,21 +6,24 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		${setThemeColor("default")};
 		${setScaleSize("default")};
-		--content-width: calc(1200px - 4.8rem);
-		--content-padding: 2.4rem;
-		--content-gutter: .8rem;
+		--size-container-content: calc(1200px - 4.8rem);
+		--size-container-edges: 2.4rem;
 
-		--screen-desktop: '960px';
-		--screen-tablet: '800px';
-		--screen-mobile: '480px';
-
-		--text-weight-normal: 400;
-		--text-weight-medium: 500;
-		--text-weight-bold: 500;
+		--font-weight-normal: 400;
+		--font-weight-medium: 500;
+		--font-weight-bold: 500;
 
 		--border-radius-small: .4rem;
-		--border-radius-medium: .8rem;
-		--border-radius-large: 2.4rem;
+		--border-radius-medium: 1.6rem;
+		--border-radius-large: 4rem;
+
+		--size-text-p: 2rem;
+		--size-text-h6: 1.4rem;
+		--size-text-h5: 2.4rem;
+		--size-text-h4: 4rem;
+		--size-text-h3: 4rem;
+		--size-text-h2: 5.6rem;
+		--size-text-h1: 7.2rem;
 	}
 
 	* {
@@ -61,7 +64,7 @@ const GlobalStyle = createGlobalStyle`
 	q:before,
 	q:after {
 		display: inline;
-		font-weight: var(--text-weight-bold);
+		font-weight: var(--font-weight-bold);
 		content: '"';
 	}
 	blockquote:before,
@@ -82,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
 		font-style: italic;
 	}
 	b{
-		font-weight: var(--text-weight-bold)
+		font-weight: var(--font-weight-bold)
 	}
 	mark{    background-color: var(--color-primary-200);
     color: var(--color-level-900);}
@@ -106,7 +109,7 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 72%;
 		text-transform: uppercase;
 		letter-spacing: .1%;
-		font-weight: var(--text-weight-bold);
+		font-weight: var(--font-weight-bold);
 		opacity: .8;
 	}
 	kbd{
@@ -121,7 +124,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: courier;
 		font-size: .8em;
 		letter-spacing: 0.1em;
-		font-weight: var(--text-weight-bold);
+		font-weight: var(--font-weight-bold);
 	}
 	table {
 		border-collapse: collapse;
@@ -299,7 +302,7 @@ const GlobalStyle = createGlobalStyle`
 	body{
 		font-family: Chakra Petch, Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif;
 		font-style: normal;
-		font-weight: var(--text-weight-normal);
+		font-weight: var(--font-weight-normal);
 		height: auto;
 		min-height: 100vh;
 		width: 100%;
@@ -336,45 +339,45 @@ const GlobalStyle = createGlobalStyle`
 	h1 {
 		font-size:  var(--size-text-6);
 		line-height:  var(--size-line-6);
-		font-weight: var(--text-weight-medium);
-		&strong,&b{font-weight: var(--text-weight-bold)}
+		font-weight: var(--font-weight-medium);
+		&strong,&b{font-weight: var(--font-weight-bold)}
 		}
 	h2 {
 		font-size:  var(--size-text-5);
 		line-height:  var(--size-line-5);
-		font-weight: var(--text-weight-normal);
-		&strong,&b{font-weight: var(--text-weight-medium)}
+		font-weight: var(--font-weight-normal);
+		&strong,&b{font-weight: var(--font-weight-medium)}
 		}
 	h3 {
 		font-size:  var(--size-text-4);
 		line-height:  var(--size-line-4);
-		font-weight: var(--text-weight-medium);
-		&strong,&b{font-weight: var(--text-weight-bold)}
+		font-weight: var(--font-weight-medium);
+		&strong,&b{font-weight: var(--font-weight-bold)}
 		}
 	h4 {
 		font-size:  var(--size-text-4);
 		line-height:  var(--size-line-4);
-		font-weight: var(--text-weight-normal);
-		&strong,&b{font-weight: var(--text-weight-medium)}
+		font-weight: var(--font-weight-normal);
+		&strong,&b{font-weight: var(--font-weight-medium)}
 		}
 	h5 {
 		font-size:  var(--size-text-3);
 		line-height:  var(--size-line-3);
-		font-weight: var(--text-weight-medium);
-		&strong,&b{font-weight: var(--text-weight-bold)}
+		font-weight: var(--font-weight-medium);
+		&strong,&b{font-weight: var(--font-weight-bold)}
 		}
 	h6 {
 		font-size:  var(--size-text-1);
 		line-height:  var(--size-line-1);
-		font-weight: var(--text-weight-medium);;
-		&strong,&b{font-weight: var(--text-weight-bold)}
+		font-weight: var(--font-weight-medium);;
+		&strong,&b{font-weight: var(--font-weight-bold)}
 		letter-spacing: 0.04em;
 		text-transform: uppercase;
 	}
 	p,li,dt,dd{font-size: var(--size-text-2);
 		line-height:  var(--size-line-2);
-		font-weight: var(--text-weight-normal);
-		&strong,&b{font-weight: var(--text-weight-medium)}
+		font-weight: var(--font-weight-normal);
+		&strong,&b{font-weight: var(--font-weight-medium)}
 	}
 
 	ul,ol,dl,blockquote{

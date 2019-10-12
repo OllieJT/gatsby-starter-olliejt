@@ -1,36 +1,43 @@
 export const color = {
-	primary: ["#FFC2C2", "#FF9999", "#FF7A70", "#FF5447", "#FF3D1F", "#FF1100", "#B81800", "#8F0013", "#66000E"],
-	secondary: ["#C2C2FF", "#9999FF", "#9585FF", "#6047FF", "#5A1FFF", "#3300FF", "#1E00E0", "#0C00B8", "#11118F"],
-	level: [
-		"hsl(215,0%,100%)",
-		"hsl(215,0%,85%)",
-		"hsl(215,0%,75%)",
-		"hsl(215,5%,50%)",
-		"hsl(215,10%,40%)",
-		"hsl(215,15%,30%)",
-		"hsl(215,20%,20%)",
-		"hsl(215,25%,15%)",
-		"hsl(215,30%,10%)",
-		"hsl(215,35%,5%)",
-		"hsl(215,40%,0%)",
-	],
+	primary: {
+		light: "rgba(255,133,71,1.0)",
+		medium: "rgba(255,74,38,1.0)",
+		dark: "rgba(184,0,0,1.0)",
+		highlight: "rgba(255,180,150,1.0)",
+		subtle: "rgba(255,74,38,0.32)",
+	},
+	secondary: {
+		light: "rgba(112,255,184,1.0)",
+		medium: "rgba(0,240,140,1.0)",
+		dark: "rgba(0,143,83,1.0)",
+		highlight: "rgba(155,255,210,1.0)",
+		subtle: "rgba(0,255,149,0.32)",
+	},
+	mono: {
+		lightest: "rgba(245,255,252,1.0)",
+		lighter: "rgba(188,204,199,1.0)",
+		light: "rgba(141,153,149,1.0)",
+		dark: "rgba(29,38,35,1.0)",
+		darker: "rgba(19,25,23,1.0)",
+		darkest: "rgba(10,13,12,1.0)",
+	},
 }
 
 export const size = {
-	small: [0.4, 0.8, 1.2, 1.6, 2.4],
-	medium: [0.8, 1.6, 2.4, 4, 8],
-	large: [1.6, 3.2, 4, 8, 12],
+	small: ["0.4rem", "0.8rem", "1.2rem", "1.6rem", "2.4rem"],
+	medium: ["0.8rem", "1.6rem", "2.4rem", "4rem", "8rem"],
+	large: ["1.6rem", "3.2rem", "4rem", "8rem", "12rem"],
 }
 
 export const typescale = {
-	small: [
-		{ size: 1.2, line: 2.25 },
-		{ size: 1.6, line: 1.75 },
-		{ size: 2, line: 1.6 },
-		{ size: 2.4, line: 1.4 },
-		{ size: 3.2, line: 1.3 },
-		{ size: 4, line: 1.2 },
-	],
+	small: {
+		h6: { size: 1.2, line: 2.25 },
+		p: { size: 1.6, line: 1.75 },
+		h5: { size: 2, line: 1.6 },
+		h3: { size: 2.4, line: 1.4 },
+		h2: { size: 3.2, line: 1.3 },
+		h1: { size: 4, line: 1.2 },
+	},
 	medium: [
 		{ size: 1.6, line: 2 },
 		{ size: 2, line: 1.6 },
