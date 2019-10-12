@@ -2,12 +2,11 @@ import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import { setThemeColor } from "../utility/functions"
 import Header from "../components/Page/Header"
 import Demo from "../components/Demo"
 
 const IndexPage = ({ data }) => (
-	<Layout theme={setThemeColor("switch-invert")}>
+	<Layout theme={null}>
 		<SEO
 			title="OllieJT"
 			keywords={[

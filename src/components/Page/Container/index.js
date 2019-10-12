@@ -5,16 +5,21 @@ import { setThemeColor, setScaleSize } from "../../../utility/functions"
 import { enableRichText } from "../../../utility/styles"
 
 const StyledContainer = styled.div`
-	${props =>
-		props.theme
-			? `
-			${setThemeColor(props.theme)};
-			${setScaleSize(props.scale)}
-		  	background-color: ${props.backgroundColor};
-		`
-			: `
-			background-color: transparent;
-	  	`};
+	${props => {
+		switch (props.theme) {
+			case "dark":
+			case "light":
+				return `
+					${setThemeColor(props.theme)};
+					${setScaleSize(props.scale)}
+					background-color: ${props.backgroundColor};
+				`
+			case null:
+			case undefined:
+			default:
+				return `background-color: transparent;`
+		}
+	}};
 	padding-left: var(--content-padding);
 	padding-right: var(--content-padding);
 	width: 100%;
@@ -45,7 +50,7 @@ const Container = props => {
 Container.propTypes = {
 	anchor: PropTypes.string,
 	as: PropTypes.oneOf(["div", "section", "article", "header", "footer", "nav"]),
-	theme: PropTypes.oneOf(["switch", "switch-invert", "invert", "none"]),
+	theme: PropTypes.oneOf(["dark", "light"]),
 	scale: PropTypes.oneOf(["small", "medium", "large", "fedault"]),
 	backgroundColor: PropTypes.string,
 	isRestricted: PropTypes.bool,
@@ -57,7 +62,7 @@ Container.defaultProps = {
 	as: "div",
 	theme: null,
 	scale: null,
-	backgroundColor: `var(--color-page-background)`,
+	backgroundColor: `var(--color-level-background)`,
 	restrict: false,
 	isRichText: false,
 }

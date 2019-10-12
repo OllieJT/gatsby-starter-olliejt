@@ -4,14 +4,14 @@ import { setThemeColor, setScaleSize } from "./functions"
 
 const GlobalStyle = createGlobalStyle`
 	:root {
-		${setThemeColor("default")};
-		${setScaleSize("default")};
+		${setThemeColor("dark")};
+		${setScaleSize("medium")};
 		--size-container-content: calc(1200px - 4.8rem);
 		--size-container-edges: 2.4rem;
 
 		--font-weight-normal: 400;
-		--font-weight-medium: 500;
-		--font-weight-bold: 500;
+		--font-weight-medium: 700;
+		--font-weight-bold: 700;
 
 		--border-radius-small: .4rem;
 		--border-radius-medium: 1.6rem;
@@ -69,14 +69,14 @@ const GlobalStyle = createGlobalStyle`
 	}
 	blockquote:before,
 	blockquote:after {
-		font-size: var(--size-text-4);
+		font-size: var(--size-text-h4);
 	}
 	q:before,
 	q:after {
-		font-size: var(--size-text-2);
+		font-size: var(--size-text-p);
 	}
 	hr{
-		border-color: var(--color-level-200)
+		border-color: var(--color-level-accent)
 	}
 	strong{
 		color: var(--color-text-title)
@@ -87,8 +87,10 @@ const GlobalStyle = createGlobalStyle`
 	b{
 		font-weight: var(--font-weight-bold)
 	}
-	mark{    background-color: var(--color-primary-200);
-    color: var(--color-level-900);}
+	mark{
+		background-color: var(--color-primary-subtle);
+		color: var(--color-primary-highlight);
+	}
 
 	sub, sup {
 		font-size: 75%;
@@ -117,8 +119,9 @@ const GlobalStyle = createGlobalStyle`
 		padding: 0 var(--size-space-tiny);
 		margin: 0 var(--size-space-tiny);
 		border-radius: var(--border-radius-medium);
-		border: 1px solid var(--color-level-200);
-		background-color: var(--color-level-700);
+		color: var(--color-secondary-highlight);
+		border: 1px solid var(--color-secondary-highlight);
+		background-color: var(--color-secondary-subtle);
 	}
 	code{
 		font-family: courier;
@@ -300,14 +303,14 @@ const GlobalStyle = createGlobalStyle`
 
 
 	body{
-		font-family: Chakra Petch, Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif;
+		font-family: Bai Jamjuree, Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif;
 		font-style: normal;
 		font-weight: var(--font-weight-normal);
 		height: auto;
 		min-height: 100vh;
 		width: 100%;
 		max-width: 100vw;
-		background-color: var(--color-page-background);
+		background-color: var(--color-level-background);
 		color: var(--color-text-content);
 		position: relative;
 		line-height: 1;
@@ -331,53 +334,59 @@ const GlobalStyle = createGlobalStyle`
 	Typography
 	**********/
 	h1,h2,h3,h4,h5,h6,p{
-		color: var(--color-text-content);
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;
-		line-height: 1.15em;
+	}
+	h1,h2,h3,h4,h5,h6{
+		color: var(--color-text-title);
 	}
 	h1 {
-		font-size:  var(--size-text-6);
-		line-height:  var(--size-line-6);
+		font-size:  var(--size-text-h1);
+		line-height:  1em;
 		font-weight: var(--font-weight-medium);
 		&strong,&b{font-weight: var(--font-weight-bold)}
 		}
 	h2 {
-		font-size:  var(--size-text-5);
-		line-height:  var(--size-line-5);
+		font-size:  var(--size-text-h2);
+		line-height:  1em;
 		font-weight: var(--font-weight-normal);
 		&strong,&b{font-weight: var(--font-weight-medium)}
 		}
 	h3 {
-		font-size:  var(--size-text-4);
-		line-height:  var(--size-line-4);
+		font-size:  var(--size-text-h3);
+		line-height:  1.1em;
 		font-weight: var(--font-weight-medium);
 		&strong,&b{font-weight: var(--font-weight-bold)}
 		}
 	h4 {
-		font-size:  var(--size-text-4);
-		line-height:  var(--size-line-4);
+		font-size:  var(--size-text-h4);
+		line-height:  1.2em;
 		font-weight: var(--font-weight-normal);
 		&strong,&b{font-weight: var(--font-weight-medium)}
 		}
 	h5 {
-		font-size:  var(--size-text-3);
-		line-height:  var(--size-line-3);
+		font-size:  var(--size-text-h5);
+		line-height:  1.3em;
 		font-weight: var(--font-weight-medium);
 		&strong,&b{font-weight: var(--font-weight-bold)}
 		}
 	h6 {
-		font-size:  var(--size-text-1);
-		line-height:  var(--size-line-1);
+		font-size:  var(--size-text-h6);
+		line-height:  1.5em;
 		font-weight: var(--font-weight-medium);;
 		&strong,&b{font-weight: var(--font-weight-bold)}
-		letter-spacing: 0.04em;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
 	}
-	p,li,dt,dd{font-size: var(--size-text-2);
-		line-height:  var(--size-line-2);
+	p,li,dt,dd{font-size: var(--size-text-p);
+		line-height:  1.4em;
 		font-weight: var(--font-weight-normal);
+		color: var(--color-text-content);
 		&strong,&b{font-weight: var(--font-weight-medium)}
+		a{
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+		}
 	}
 
 	ul,ol,dl,blockquote{

@@ -95,7 +95,7 @@ export const enableRichText = isRestricted => css`
 			padding-left: var(--size-space-medium);
 		}
 		dd {
-			color: var(--color-level-000);
+			color: var(--color-text-content);
 			opacity: 0.72;
 			padding-left: var(--size-space-large);
 		}
@@ -118,7 +118,7 @@ export const enableRichText = isRestricted => css`
 			margin-top: 0;
 			padding-left: var(--size-space-medium);
 			li {
-				color: var(--color-level-050);
+				color: var(--color-text-content);
 			}
 		}
 		ul li {

@@ -6,155 +6,68 @@ export const IS_BROWSER = typeof window !== "undefined"
 
 export function setThemeColor(s) {
 	switch (s) {
-		case "switch":
+		case "light":
 			return `
-			--color-primary-050: ${color.secondary[0]};
-			--color-primary-100: ${color.secondary[1]};
-			--color-primary-200: ${color.secondary[2]};
-			--color-primary-300: ${color.secondary[3]};
-			--color-primary-400: ${color.secondary[4]};
-			--color-primary-500: ${color.secondary[5]};
-			--color-primary-600: ${color.secondary[6]};
-			--color-primary-700: ${color.secondary[7]};
-			--color-primary-800: ${color.secondary[8]};
+			--color-primary-light: ${color.primary.light};
+			--color-primary-medium: ${color.primary.medium};
+			--color-primary-dark: ${color.primary.dark};
+			--color-primary-highlight: ${color.primary.highlight};
+			--color-primary-subtle: ${color.primary.subtle};
 
-			--color-secondary-050: ${color.primary[0]};
-			--color-secondary-100: ${color.primary[1]};
-			--color-secondary-200: ${color.primary[2]};
-			--color-secondary-300: ${color.primary[3]};
-			--color-secondary-400: ${color.primary[4]};
-			--color-secondary-500: ${color.primary[5]};
-			--color-secondary-600: ${color.primary[6]};
-			--color-secondary-700: ${color.primary[7]};
-			--color-secondary-800: ${color.primary[8]};
+			--color-secondary-light: ${color.secondary.light};
+			--color-secondary-medium: ${color.secondary.medium};
+			--color-secondary-dark: ${color.secondary.dark};
+			--color-secondary-highlight: ${color.secondary.highlight};
+			--color-secondary-subtle: ${color.secondary.subtle};
 
-			--color-link-resting: ${color.secondary[2]};
-			--color-link-hover: ${color.secondary[7]};
+			--color-text-content: ${color.mono.dark};
+			--color-text-title: ${color.mono.darkest};
+			--color-link-resting:  ${color.primary.medium};
+			--color-link-hover:  ${color.primary.light};
+
+			--color-level-background: ${color.mono.lightest};
+			--color-level-accent: ${color.mono.light};
+
+			--color-level-0: white;
+			--color-level-1: ${color.mono.lightest};
+			--color-level-2: ${color.mono.lighter};
+			--color-level-3: ${color.mono.light};
+			--color-level-4: ${color.mono.dark};
+			--color-level-5: ${color.mono.darker};
+			--color-level-6: ${color.mono.darkest};
+			--color-level-7: black;
 		`
-		case "switch-invert":
-			return `
-			--color-primary-050: ${color.secondary[8]};
-			--color-primary-100: ${color.secondary[7]};
-			--color-primary-200: ${color.secondary[6]};
-			--color-primary-300: ${color.secondary[5]};
-			--color-primary-400: ${color.secondary[4]};
-			--color-primary-500: ${color.secondary[3]};
-			--color-primary-600: ${color.secondary[2]};
-			--color-primary-700: ${color.secondary[1]};
-			--color-primary-800: ${color.secondary[0]};
-
-			--color-secondary-050: ${color.primary[8]};
-			--color-secondary-100: ${color.primary[7]};
-			--color-secondary-200: ${color.primary[6]};
-			--color-secondary-300: ${color.primary[5]};
-			--color-secondary-400: ${color.primary[4]};
-			--color-secondary-500: ${color.primary[3]};
-			--color-secondary-600: ${color.primary[2]};
-			--color-secondary-700: ${color.primary[1]};
-			--color-secondary-800: ${color.primary[0]};
-
-			--color-page-background: ${color.level[0]};
-			--color-text-content: ${color.level[8]};
-			--color-text-title: ${color.level[10]};
-
-			--color-link-resting: ${color.primary[7]};
-			--color-link-hover: ${color.primary[2]};
-
-			--color-level-000: ${color.level[10]};
-			--color-level-050: ${color.level[9]};
-			--color-level-100: ${color.level[8]};
-			--color-level-200: ${color.level[7]};
-			--color-level-300: ${color.level[6]};
-			--color-level-400: ${color.level[5]};
-			--color-level-500: ${color.level[4]};
-			--color-level-600: ${color.level[3]};
-			--color-level-700: ${color.level[2]};
-			--color-level-800: ${color.level[1]};
-			--color-level-900: ${color.level[0]};
-			`
-		case "invert":
-			return `
-			--color-primary-050: ${color.primary[8]};
-			--color-primary-100: ${color.primary[7]};
-			--color-primary-200: ${color.primary[6]};
-			--color-primary-300: ${color.primary[5]};
-			--color-primary-400: ${color.primary[4]};
-			--color-primary-500: ${color.primary[3]};
-			--color-primary-600: ${color.primary[2]};
-			--color-primary-700: ${color.primary[1]};
-	  		--color-primary-800: ${color.primary[0]};
-
-			--color-secondary-050: ${color.secondary[8]};
-			--color-secondary-100: ${color.secondary[7]};
-			--color-secondary-200: ${color.secondary[6]};
-			--color-secondary-300: ${color.secondary[5]};
-			--color-secondary-400: ${color.secondary[4]};
-			--color-secondary-500: ${color.secondary[3]};
-			--color-secondary-600: ${color.secondary[2]};
-			--color-secondary-700: ${color.secondary[1]};
-			--color-secondary-800: ${color.secondary[0]};
-
-			--color-page-background: ${color.level[0]};
-			--color-text-content: ${color.level[8]};
-			--color-text-title: ${color.level[10]};
-
-			--color-link-resting: ${color.primary[7]};
-			--color-link-hover: ${color.primary[2]};
-
-			--color-level-000: ${color.level[10]};
-			--color-level-050: ${color.level[9]};
-			--color-level-100: ${color.level[8]};
-			--color-level-200: ${color.level[7]};
-			--color-level-300: ${color.level[6]};
-			--color-level-400: ${color.level[5]};
-			--color-level-500: ${color.level[4]};
-			--color-level-600: ${color.level[3]};
-			--color-level-700: ${color.level[2]};
-			--color-level-800: ${color.level[1]};
-			--color-level-900: ${color.level[0]};
-		`
-		case "default":
+		case "dark":
 		default:
 			return `
-			--color-primary-050: ${color.primary[1]};
-			--color-primary-100: ${color.primary[2]};
-			--color-primary-200: ${color.primary[3]};
-			--color-primary-300: ${color.primary[4]};
-			--color-primary-400: ${color.primary[5]};
-			--color-primary-500: ${color.primary[6]};
-			--color-primary-600: ${color.primary[7]};
-			--color-primary-700: ${color.primary[8]};
-	  		--color-primary-800: ${color.primary[9]};
+			--color-primary-light: ${color.primary.light};
+			--color-primary-medium: ${color.primary.medium};
+			--color-primary-dark: ${color.primary.dark};
+			--color-primary-highlight: ${color.primary.highlight};
+			--color-primary-subtle: ${color.primary.subtle};
 
-			--color-secondary-050: ${color.secondary[1]};
-			--color-secondary-100: ${color.secondary[2]};
-			--color-secondary-200: ${color.secondary[3]};
-			--color-secondary-300: ${color.secondary[4]};
-			--color-secondary-400: ${color.secondary[5]};
-			--color-secondary-500: ${color.secondary[6]};
-			--color-secondary-600: ${color.secondary[7]};
-			--color-secondary-700: ${color.secondary[8]};
-			--color-secondary-800: ${color.secondary[9]};
-			--color-secondary-800: ${color.secondary[8]};
+			--color-secondary-light: ${color.secondary.light};
+			--color-secondary-medium: ${color.secondary.medium};
+			--color-secondary-dark: ${color.secondary.dark};
+			--color-secondary-highlight: ${color.secondary.highlight};
+			--color-secondary-subtle: ${color.secondary.subtle};
 
-			--color-page-background: ${color.level[10]};
-			--color-text-content: ${color.level[1]};
-			--color-text-title: ${color.level[0]};
+			--color-text-content: ${color.mono.light};
+			--color-text-title: ${color.mono.lightest};
+			--color-link-resting:  ${color.primary.medium};
+			--color-link-hover:  ${color.primary.light};
 
-			--color-link-resting: ${color.primary[2]};
-			--color-link-hover: ${color.primary[7]};
+			--color-level-background: ${color.mono.darkest};
+			--color-level-accent: ${color.mono.dark};
 
-			--color-level-000: ${color.level[0]};
-			--color-level-050: ${color.level[1]};
-			--color-level-100: ${color.level[2]};
-			--color-level-200: ${color.level[3]};
-			--color-level-300: ${color.level[4]};
-			--color-level-400: ${color.level[5]};
-			--color-level-500: ${color.level[6]};
-			--color-level-600: ${color.level[7]};
-			--color-level-700: ${color.level[8]};
-			--color-level-800: ${color.level[9]};
-			--color-level-900: ${color.level[10]};
+			--color-level-0: black;
+			--color-level-1: ${color.mono.darkest};
+			--color-level-2: ${color.mono.darker};
+			--color-level-3: ${color.mono.dark};
+			--color-level-4: ${color.mono.light};
+			--color-level-5: ${color.mono.lighter};
+			--color-level-6: ${color.mono.lightest};
+			--color-level-7: white;
 		`
 	}
 }
