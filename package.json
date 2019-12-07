@@ -5,6 +5,7 @@
 	"version": "0.1.0",
 	"author": "Ollie Taylor <contact@olliejt.com>",
 	"dependencies": {
+		"@storybook/addon-knobs": "^5.2.8",
 		"babel-plugin-styled-components": "^1.10.6",
 		"dotenv": "^8.1.0",
 		"gatsby": "^2.15.36",
@@ -30,9 +31,14 @@
 	},
 	"devDependencies": {
 		"prettier": "^1.18.2",
+		"@storybook/addon-actions": "^5.2.8",
+		"@storybook/addon-links": "^5.2.8",
+		"@storybook/addons": "^5.2.8",
+		"@storybook/react": "^5.2.8",
 		"gatsby-remark-prettier": "^1.0.0",
 		"@babel/core": "^7.6.4",
 		"babel-loader": "^8.0.6"
+		"storybook-addon-smart-knobs": "^6.0.0"
 	},
 	"keywords": [
 		"gatsby",
@@ -48,6 +54,8 @@
 		"serve": "gatsby serve",
 		"host": "gatsby develop -H 0.0.0.0",
 		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+		"storybook": "NODE_ENV=production start-storybook -s public",
+		"build-storybook": "NODE_ENV=production build-storybook -s public"
 	},
 	"repository": {
 		"type": "git",
