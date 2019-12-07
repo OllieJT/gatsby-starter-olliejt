@@ -7,37 +7,39 @@
 	"dependencies": {
 		"@storybook/addon-knobs": "^5.2.8",
 		"babel-plugin-styled-components": "^1.10.6",
-		"dotenv": "^8.1.0",
-		"gatsby": "^2.15.36",
-		"gatsby-image": "^2.2.27",
-		"gatsby-plugin-manifest": "^2.2.21",
-		"gatsby-plugin-netlify": "^2.1.19",
+		"dotenv": "^8.2.0",
+		"gatsby": "^2.18.7",
+		"gatsby-image": "^2.2.34",
+		"gatsby-plugin-manifest": "^2.2.31",
+		"gatsby-plugin-netlify": "^2.1.27",
 		"gatsby-plugin-netlify-cache": "^1.2.0",
-		"gatsby-plugin-offline": "^3.0.14",
+		"gatsby-plugin-offline": "^3.0.27",
 		"gatsby-plugin-prefetch-google-fonts": "^1.4.3",
-		"gatsby-plugin-react-helmet": "^3.1.11",
-		"gatsby-plugin-sharp": "^2.2.29",
-		"gatsby-plugin-styled-components": "^3.1.9",
+		"gatsby-plugin-react-helmet": "^3.1.16",
+		"gatsby-plugin-sharp": "^2.3.5",
+		"gatsby-plugin-styled-components": "^3.1.14",
 		"gatsby-plugin-web-font-loader": "^1.0.4",
-		"gatsby-source-filesystem": "^2.1.31",
-		"gatsby-transformer-json": "^2.2.13",
-		"gatsby-transformer-remark": "^2.6.28",
-		"gatsby-transformer-sharp": "^2.2.21",
+		"gatsby-source-filesystem": "^2.1.40",
+		"gatsby-transformer-json": "^2.2.20",
+		"gatsby-transformer-remark": "^2.6.39",
+		"gatsby-transformer-sharp": "^2.3.7",
 		"prop-types": "^15.7.2",
-		"react": "^16.10.2",
-		"react-dom": "^16.10.2",
+		"react": "^16.12.0",
+		"react-dom": "^16.12.0",
 		"react-helmet": "^5.2.1",
-		"styled-components": "^4.4.0"
+		"react-icons": "^3.8.0",
+		"styled-components": "^4.4.1"
 	},
 	"devDependencies": {
-		"prettier": "^1.18.2",
+		"@babel/core": "^7.7.5",
 		"@storybook/addon-actions": "^5.2.8",
 		"@storybook/addon-links": "^5.2.8",
 		"@storybook/addons": "^5.2.8",
 		"@storybook/react": "^5.2.8",
+		"babel-loader": "^8.0.6",
+		"babel-plugin-react-docgen": "^3.2.0",
 		"gatsby-remark-prettier": "^1.0.0",
-		"@babel/core": "^7.6.4",
-		"babel-loader": "^8.0.6"
+		"prettier": "^1.19.1",
 		"storybook-addon-smart-knobs": "^6.0.0"
 	},
 	"keywords": [
@@ -53,15 +55,14 @@
 		"start": "npm run develop",
 		"serve": "gatsby serve",
 		"host": "gatsby develop -H 0.0.0.0",
-		"test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
 		"storybook": "NODE_ENV=production start-storybook -s public",
 		"build-storybook": "NODE_ENV=production build-storybook -s public"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OllieJT/2019-portfolio-v1"
+		"url": "https://github.com/OllieJT/olliejt-gatsby-quickstart"
 	},
 	"bugs": {
-		"url": "https://github.com/OllieJT/2019-portfolio-v1/issues"
+		"url": "https://github.com/OllieJT/olliejt-gatsby-quickstart/issues"
 	}
 }
