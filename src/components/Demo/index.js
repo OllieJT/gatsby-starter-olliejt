@@ -8,11 +8,11 @@ import { Input, Option, Dropdown } from "../Form"
 const Demo = () => (
 	<main role="main">
 		<Container isRestricted isRichText as="section" anchor="text">
-			<header style={{ padding: `4rem 0` }}>
+			<header style={{ padding: "4rem 0" }}>
 				<h1>Text</h1>
 			</header>
 			<article id="text__headings">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Headings</h3>
 				</header>
 				<div>
@@ -30,7 +30,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__paragraphs">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Paragraphs</h3>
 				</header>
 				<div>
@@ -60,7 +60,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__blockquotes">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Blockquotes</h3>
 				</header>
 				<div>
@@ -82,7 +82,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__lists">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Lists</h3>
 				</header>
 				<div>
@@ -148,7 +148,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__hr">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Horizontal rules</h3>
 				</header>
 				<div>
@@ -161,7 +161,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__tables">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Tabular data</h3>
 				</header>
 				<table>
@@ -222,7 +222,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__code">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Code</h3>
 				</header>
 				<div>
@@ -249,7 +249,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="text__inline">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h3>Inline elements</h3>
 				</header>
 				<div>
@@ -321,11 +321,11 @@ const Demo = () => (
 		</Container>
 
 		<Container isRestricted isRichText as="section" anchor="embedded">
-			<header style={{ padding: `4rem 0` }}>
+			<header style={{ padding: "4rem 0" }}>
 				<h1>Embedded content</h1>
 			</header>
 			<article id="embedded__images">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h2>Images</h2>
 				</header>
 				<div>
@@ -356,7 +356,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="embedded__svg">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h2>Inline SVG</h2>
 				</header>
 				<div>
@@ -371,7 +371,7 @@ const Demo = () => (
 				</footer>
 			</article>
 			<article id="embedded__video">
-				<header style={{ padding: `4rem 0` }}>
+				<header style={{ padding: "4rem 0" }}>
 					<h2>Inline Video</h2>
 				</header>
 				<YouTube url="https://www.youtube.com/watch?v=8PA3Fg3oqgk&t=8s" />
@@ -384,7 +384,7 @@ const Demo = () => (
 		</Container>
 
 		<Container isRestricted isRichText as="section" anchor="forms">
-			<header style={{ padding: `4rem 0` }}>
+			<header style={{ padding: "4rem 0" }}>
 				<h1>Form elements</h1>
 			</header>
 			<form>

@@ -34,7 +34,7 @@ export const Video = ({ url, width, height, title, autoplay, controls, annotatio
 			allow="autoplay"
 			frameBorder="0"
 			allowFullScreen="1"
-			allowtransparency="1"
+			allowTransparency="1"
 		></iframe>
 	)
 }

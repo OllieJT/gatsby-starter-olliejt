@@ -6,18 +6,18 @@ const CoreImage = ({ src, alt, width, height }) => <img src={src} alt={alt} widt
 const Image = props => {
 	const hasCaption = props.caption ? true : false
 	switch (hasCaption) {
-		case true:
-			return (
-				<figure>
-					<CoreImage {...props} />
-					<figcaption>
-						<p>{props.caption}</p>
-					</figcaption>
-				</figure>
-			)
-		case false:
-		default:
-			return <CoreImage {...props} />
+	case true:
+		return (
+			<figure>
+				<CoreImage {...props} />
+				<figcaption>
+					<p>{props.caption}</p>
+				</figcaption>
+			</figure>
+		)
+	case false:
+	default:
+		return <CoreImage {...props} />
 	}
 }
 

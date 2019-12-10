@@ -6,42 +6,42 @@ import FormItem, { uniqueId } from "../FormItem"
 
 const FormInput = ({ type, label, placeholder, key, valid, options }) => {
 	switch (type) {
-		case "color":
-		case "number":
-		case "range":
-		case "date":
-		case "month":
-		case "week":
-		case "datetime":
-		case "datetime-local":
-			return (
-				<FormItem id={uniqueId(type, label, key)} label={label}>
-					<input
-						id={uniqueId(type, label, key)}
-						type={type}
-						defaultValue={placeholder || label}
-						min={options && options.min}
-						max={options && options.max}
-					/>
-				</FormItem>
-			)
-		case "textarea":
-			return (
-				<FormItem id={uniqueId(type, label, key)} label={label}>
-					<textarea
-						id={uniqueId(type, label, key)}
-						rows="8"
-						cols="48"
-						placeholder={placeholder || label}
-					></textarea>
-				</FormItem>
-			)
-		default:
-			return (
-				<FormItem id={uniqueId(type, label, key)} label={label}>
-					<input id={uniqueId(type, label, key)} type={type} placeholder={placeholder || label} />
-				</FormItem>
-			)
+	case "color":
+	case "number":
+	case "range":
+	case "date":
+	case "month":
+	case "week":
+	case "datetime":
+	case "datetime-local":
+		return (
+			<FormItem id={uniqueId(type, label, key)} label={label}>
+				<input
+					id={uniqueId(type, label, key)}
+					type={type}
+					defaultValue={placeholder || label}
+					min={options && options.min}
+					max={options && options.max}
+				/>
+			</FormItem>
+		)
+	case "textarea":
+		return (
+			<FormItem id={uniqueId(type, label, key)} label={label}>
+				<textarea
+					id={uniqueId(type, label, key)}
+					rows="8"
+					cols="48"
+					placeholder={placeholder || label}
+				></textarea>
+			</FormItem>
+		)
+	default:
+		return (
+			<FormItem id={uniqueId(type, label, key)} label={label}>
+				<input id={uniqueId(type, label, key)} type={type} placeholder={placeholder || label} />
+			</FormItem>
+		)
 	}
 }
 

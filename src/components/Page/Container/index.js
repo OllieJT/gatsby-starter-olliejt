@@ -7,17 +7,17 @@ import { enableRichText } from "../../../utility/styles"
 const StyledContainer = styled.div`
 	${props => {
 		switch (props.theme) {
-			case "dark":
-			case "light":
-				return `
+		case "dark":
+		case "light":
+			return `
 					${setThemeColor(props.theme)};
 					${setScaleSize(props.scale)}
 					background-color: ${props.backgroundColor};
 				`
-			case null:
-			case undefined:
-			default:
-				return `background-color: transparent;`
+		case null:
+		case undefined:
+		default:
+			return "background-color: transparent;"
 		}
 	}};
 	padding-left: var(--content-padding);
@@ -28,15 +28,15 @@ const StyledContainer = styled.div`
 		margin-left: auto;
 		margin-right: auto;
 		${props =>
-			props.isRestricted
-				? `
+		props.isRestricted
+			? `
 					max-width: var(--content-width);
 				`
-				: `
+			: `
 	  				max-width: none;
 				  `}
 	}
-	${props => (props.isRichText ? enableRichText(props.isRestricted) : ``)}
+	${props => (props.isRichText ? enableRichText(props.isRestricted) : "")}
 `
 
 const Container = props => {
@@ -62,7 +62,7 @@ Container.defaultProps = {
 	as: "div",
 	theme: null,
 	scale: null,
-	backgroundColor: `var(--color-level-background)`,
+	backgroundColor: "var(--color-level-background)",
 	restrict: false,
 	isRichText: false,
 }

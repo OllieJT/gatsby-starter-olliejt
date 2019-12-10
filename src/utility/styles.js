@@ -25,7 +25,7 @@ export const enableRichText = isRestricted => css`
 	pre,
 	legend {
 		${isRestricted
-			? `
+		? `
 			width: 100%;
 			max-width: var(--content-width);
 			padding-left: var(--content-padding);
@@ -33,7 +33,7 @@ export const enableRichText = isRestricted => css`
 			margin-left: auto;
 			margin-right: auto;
 			`
-			: `
+		: `
 			margin-left: var(--content-padding);
 			margin-right: var(--content-padding);
 			`}
