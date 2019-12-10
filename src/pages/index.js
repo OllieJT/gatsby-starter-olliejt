@@ -1,9 +1,9 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/seo"
-import Header from "../components/Page/Header"
-import Demo from "../components/Demo"
+import React from 'react';
+import { graphql } from 'gatsby';
+import Layout from '../components/Layout';
+import SEO from '../components/Layout/SEO';
+import Header from '../components/Page/Header';
+import Demo from '../components/Demo';
 
 const IndexPage = ({ data }) => (
 	<Layout theme={null}>
@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => (
 		<Header />
 		<Demo />
 	</Layout>
-)
+);
 
 export const query = graphql`
 	query homePageQuery {
@@ -37,6 +37,6 @@ export const query = graphql`
 			}
 		}
 	}
-`
+`;
 
-export default IndexPage
+export default IndexPage;
