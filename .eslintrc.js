@@ -3,52 +3,61 @@ module.exports = {
 		browser: true,
 		es6: true,
 	},
-	extends: ['eslint:recommended', 'plugin:react/recommended'],
+	extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
 	globals: {
 		__PATH_PREFIX__: true,
-		Atomics: 'readonly',
-		SharedArrayBuffer: 'readonly',
+		Atomics: "readonly",
+		SharedArrayBuffer: "readonly",
 	},
 	parserOptions: {
 		ecmaFeatures: {
 			jsx: true,
 		},
 		ecmaVersion: 2018,
-		sourceType: 'module',
+		sourceType: "module",
 	},
 
 	settings: {
 		react: {
-			createClass: 'createReactClass', // Regex for Component Factory to use,
+			createClass: "createReactClass", // Regex for Component Factory to use,
 			// default to "createReactClass"
-			pragma: 'React', // Pragma to use, default to "React"
-			version: 'detect', // React version. "detect" automatically picks the version you have installed.
+			pragma: "React", // Pragma to use, default to "React"
+			version: "detect", // React version. "detect" automatically picks the version you have installed.
 			// You can also use `16.0`, `16.3`, etc, if you want to override the detected value.
 			// default to latest and warns if missing
 			// It will default to "detect" in the future
-			flowVersion: '0.53', // Flow version
+			flowVersion: "0.53", // Flow version
 		},
 		propWrapperFunctions: [
 			// The names of any function used to wrap propTypes, e.g. `forbidExtraProps`. If this isn't set, any propTypes wrapped in a function will be skipped.
-			'forbidExtraProps',
-			{ property: 'freeze', object: 'Object' },
-			{ property: 'myFavoriteWrapper' },
+			"forbidExtraProps",
+			{ property: "freeze", object: "Object" },
+			{ property: "myFavoriteWrapper" },
 		],
 		linkComponents: [
 			// Components used as alternatives to <a> for linking, eg. <Link to={ url } />
-			'Hyperlink',
-			{ name: 'Link', linkAttribute: 'to' },
+			"Hyperlink",
+			{ name: "Link", linkAttribute: "to" },
 		],
 	},
-	plugins: ['react'],
-	ignorePatterns: ['public/', 'node_modules/'],
+	plugins: ["react", "jsx-a11y"],
+	ignorePatterns: ["public/", "node_modules/"],
 	rules: {
 		strict: 0,
-		indent: ['error', 'tab'],
-		'linebreak-style': ['error', 'unix'],
-		quotes: ['error', 'double'],
-		semi: ['error', 'never'],
-		'react/jsx-uses-react': 'error',
-		'react/jsx-uses-vars': 'error',
+		indent: ["error", "tab"],
+		"linebreak-style": ["error", "unix"],
+		quotes: ["error", "double"],
+		semi: ["error", "never"],
+		"react/jsx-uses-react": "error",
+		"react/jsx-uses-vars": "error",
+		"react/boolean-prop-naming": ["error", { rule: "^(is|has)[A-Z]([A-Za-z0-9]?)+" }],
+		"react/default-props-match-prop-types": [1, { allowRequiredDefaults: false }],
+		"react/self-closing-comp": [
+			"error",
+			{
+				component: true,
+				html: true,
+			},
+		],
 	},
-};
+}
