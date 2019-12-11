@@ -15,7 +15,7 @@ export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasA
 		//thisPage = website.url;
 	}
 
-	const yt_videoID = getYoutubeID(url)
+	const yt_videoID = url && getYoutubeID(url)
 	const yt_autoplay = `&amp;autoplay=${isAutoplay ? 1 : 0}`
 	const yt_controls = `&amp;controls=${hasControls ? 1 : 0}`
 	const yt_annotations = `&amp;iv_load_policy=${hasAnnotations ? 3 : 1}`

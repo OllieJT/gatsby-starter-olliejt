@@ -75,12 +75,19 @@ module.exports = {
 		},
 		//`gatsby-plugin-offline`,
 		{
-			resolve: "gatsby-plugin-web-font-loader",
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {
-				google: {
-					families: ["Bai Jamjuree:400,700"],
-				},
+				fonts: [
+					{
+						family: `Oswald`,
+						subsets: [`latin`],
+					},
+					{
+						family: `Bai Jamjuree`,
+						variants: [`400`, `700`]
+					},
+				],
 			},
-		},
+		}
 	],
 }
