@@ -1,21 +1,19 @@
 import React from 'react';
 import { configure, addDecorator } from '@storybook/react';
 import { withA11y } from "@storybook/addon-a11y"
-import centered from '@storybook/addon-centered/react';
 import { action } from '@storybook/addon-actions';
 import GlobalStyle from '../src/utility/GlobalStyles';
 
 // automatically import all files ending in *.stories.js
 configure(require.context('../src', true, /\.stories\.js$/), module);
 
-addDecorator(s => {
+addDecorator(s => (
   <>
     <GlobalStyle />
     {s()}
   </>
-});
+));
 addDecorator(withA11y);
-addDecorator(centered);
 
 // Gatsby's Link overrides:
 // Gatsby defines a global called ___loader to prevent its method calls from creating console errors you override it here
