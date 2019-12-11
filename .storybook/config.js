@@ -1,5 +1,5 @@
 import React from 'react';
-import { configure, addDecorator } from '@storybook/react';
+import { configure, addDecorator, addParameters } from '@storybook/react';
 import { withA11y } from "@storybook/addon-a11y"
 import { action } from '@storybook/addon-actions';
 import GlobalStyle from '../src/utility/GlobalStyles';
@@ -8,12 +8,21 @@ import GlobalStyle from '../src/utility/GlobalStyles';
 configure(require.context('../src', true, /\.stories\.js$/), module);
 
 addDecorator(s => (
-  <>
+  <>v
     <GlobalStyle />
     {s()}
   </>
 ));
 addDecorator(withA11y);
+
+addParameters({
+  darkMode: {
+    // Override the default dark theme
+    dark: { ...themes.dark, appBg: 'black' },
+    // Override the default light theme
+    light: { ...themes.normal, appBg: 'red' }
+  }
+});
 
 // Gatsby's Link overrides:
 // Gatsby defines a global called ___loader to prevent its method calls from creating console errors you override it here

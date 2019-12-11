@@ -48,7 +48,8 @@
 		"gatsby-plugin-eslint": "^2.0.8",
 		"gatsby-remark-prettier": "^1.0.0",
 		"prettier": "^1.19.1",
-		"storybook-addon-smart-knobs": "^6.0.0"
+		"storybook-addon-smart-knobs": "^6.0.0",
+		"storybook-dark-mode": "^0.2.0"
 	},
 	"keywords": [
 		"gatsby",
