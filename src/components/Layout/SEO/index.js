@@ -4,11 +4,12 @@ import PropTypes from "prop-types"
 //import { useStaticQuery, graphql } from 'gatsby';
 import Facebook from "./Facebook"
 import Twitter from "./Twitter"
+// eslint-disable-next-line
 const website = require("../../../utility/config")
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
-const SEO = ({ title, desc, banner, pathname, article, firstDate, lastDate }) => {
+const SEO = ({ title, desc, banner, pathname, isArticle, firstDate, lastDate }) => {
 	const metadata = {
 		title: title ? title : website.title,
 		titleTemplate: website.titleTemplate,
@@ -23,7 +24,7 @@ const SEO = ({ title, desc, banner, pathname, article, firstDate, lastDate }) =>
 		facebookUsername: website.facebook,
 		datePublished: firstDate ? firstDate : website.originDate,
 		dateUpdated: lastDate ? lastDate : new Date(),
-		isArticle: article,
+		isArticle: isArticle,
 	}
 
 	// schema.org in JSONLD format
@@ -77,7 +78,7 @@ const SEO = ({ title, desc, banner, pathname, article, firstDate, lastDate }) =>
 
 	let schemaArticle = null
 
-	if (article) {
+	if (metadata.isArticle) {
 		schemaArticle = {
 			"@context": "http://schema.org",
 			"@type": "Article",
@@ -141,8 +142,8 @@ const SEO = ({ title, desc, banner, pathname, article, firstDate, lastDate }) =>
 			<meta name="description" content={metadata.description} />
 			<meta name="image" content={metadata.image} />
 
-			{!article && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
-			{article && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
+			{!metadata.isArticle && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
+			{metadata.isArticle && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
 
 			<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
 
@@ -150,7 +151,7 @@ const SEO = ({ title, desc, banner, pathname, article, firstDate, lastDate }) =>
 				desc={metadata.description}
 				image={metadata.image}
 				title={metadata.title}
-				type={article ? "article" : "website"}
+				type={metadata.isArticle ? "article" : "website"}
 				url={metadata.pageUrl}
 				locale={metadata.language}
 				name={metadata.facebookUsername}
@@ -170,7 +171,7 @@ SEO.propTypes = {
 	desc: PropTypes.string,
 	banner: PropTypes.string,
 	pathname: PropTypes.string,
-	article: PropTypes.bool,
+	isArticle: PropTypes.bool,
 	firstDate: PropTypes.string,
 	lastDate: PropTypes.string,
 }

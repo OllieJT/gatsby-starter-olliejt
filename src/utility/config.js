@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
 	pathPrefix: "/", // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
 	title: "Ollie Taylor", // Navigation and Site Title
@@ -7,12 +8,12 @@ module.exports = {
 	titleTemplate: "%s | OllieJT",
 	url: "https://olliejt.com", // Domain of your site. No trailing slash!
 	siteLanguage: "en", // Language Tag on <html> element
-	logo: "src/media/images/logo.png", // Used for SEO
-	banner: "src/media/images/photo-shanghai-s.jpg", // Used for SEO
+	logo: "src/images/logo.png", // Used for SEO
+	banner: "src/images/photo-shanghai-s.jpg", // Used for SEO
 	ogLanguage: "en_US", // Facebook Language
 
 	// JSONLD / Manifest
-	favicon: "src/media/images/manifest-icon.png", // Used for manifest favicon generation
+	favicon: "src/images/manifest-icon.png", // Used for manifest favicon generation
 	shortName: "OllieJT", // shortname for manifest. MUST be shorter than 12 characters
 	author: "Ollie Tsylor", // Author for schemaORGJSONLD
 	themeColor: "#FF3D1F",

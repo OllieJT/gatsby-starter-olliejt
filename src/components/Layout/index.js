@@ -2,7 +2,8 @@ import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import GlobalStyle from "../../utility/GlobalStyles"
-import { Menu, Footer } from "../Page"
+import Footer from "./Footer"
+import Menu from "./Menu"
 import SEO from "./SEO"
 
 const PageContainer = styled.div`
@@ -26,15 +27,15 @@ const ContentContainer = styled.main`
 `
 
 export const ThemeContext = React.createContext({
-	theme: "dark",
+	theme: "dark"
 })
 
-const Layout = ({ children, customSEO }) => {
+const Layout = ({ children, hasSEO }) => {
 	const theme = useContext(ThemeContext)
 	console.log(theme)
 	return (
 		<PageContainer>
-			{!customSEO && <SEO />}
+			{!hasSEO && <SEO />}
 			<GlobalStyle />
 			<Menu />
 			<ContentContainer id="reach-skip-nav">{children}</ContentContainer>
@@ -45,7 +46,7 @@ const Layout = ({ children, customSEO }) => {
 
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
-	customSEO: PropTypes.bool,
+	hasSEO: PropTypes.bool
 }
 
 export default Layout

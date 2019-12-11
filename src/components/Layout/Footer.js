@@ -1,5 +1,5 @@
 import React from "react"
-import { Container } from "../index"
+import Container from "../Container"
 
 const Footer = () => (
 	<Container restrict as="footer" role="contentinfo">

@@ -1,8 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import { setThemeColor, setScaleSize } from "../../../utility/functions"
-import { enableRichText } from "../../../utility/styles"
+import { setThemeColor, setScaleSize } from "../utility/functions"
+import { enableRichText } from "../utility/styles"
 
 const StyledContainer = styled.div`
 	${props => {
@@ -48,6 +48,7 @@ const Container = props => {
 }
 
 Container.propTypes = {
+	children: PropTypes.any.isRequired,
 	anchor: PropTypes.string,
 	as: PropTypes.oneOf(["div", "section", "article", "header", "footer", "nav"]),
 	theme: PropTypes.oneOf(["dark", "light"]),
@@ -63,7 +64,6 @@ Container.defaultProps = {
 	theme: null,
 	scale: null,
 	backgroundColor: "var(--color-level-background)",
-	restrict: false,
 	isRichText: false,
 }
 

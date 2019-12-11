@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { IS_BROWSER, getYoutubeID } from "../../utility/functions"
-const website = require("../../utility/config")
+import { IS_BROWSER, getYoutubeID } from "../utility/functions"
+// eslint-disable-next-line
+const website = require("../utility/config")
 
-export const Video = ({ url, width, height, title, autoplay, controls, annotations, loop }) => {
+export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasAnnotations, isLooped }) => {
 	var thisSite = ""
 	//var thisPage = '';
 	if (IS_BROWSER) {
@@ -15,10 +16,10 @@ export const Video = ({ url, width, height, title, autoplay, controls, annotatio
 	}
 
 	const yt_videoID = getYoutubeID(url)
-	const yt_autoplay = `&amp;autoplay=${autoplay ? 1 : 0}`
-	const yt_controls = `&amp;controls=${controls ? 1 : 0}`
-	const yt_annotations = `&amp;iv_load_policy=${annotations ? 3 : 1}`
-	const yt_loop = `&amp;loop=${loop ? 1 : 0}`
+	const yt_autoplay = `&amp;autoplay=${isAutoplay ? 1 : 0}`
+	const yt_controls = `&amp;controls=${hasControls ? 1 : 0}`
+	const yt_annotations = `&amp;iv_load_policy=${hasAnnotations ? 3 : 1}`
+	const yt_loop = `&amp;loop=${isLooped ? 1 : 0}`
 
 	const options = yt_autoplay + yt_controls + yt_annotations + yt_loop
 
@@ -35,16 +36,16 @@ export const Video = ({ url, width, height, title, autoplay, controls, annotatio
 			frameBorder="0"
 			allowFullScreen="1"
 			allowTransparency="1"
-		></iframe>
+		/>
 	)
 }
 
 Video.propTypes = {
 	url: PropTypes.string.isRequired,
-	autoplay: PropTypes.bool,
-	controls: PropTypes.bool,
-	annotations: PropTypes.bool,
-	loop: PropTypes.bool,
+	isAutoplay: PropTypes.bool,
+	hasControls: PropTypes.bool,
+	hasAnnotations: PropTypes.bool,
+	isLooped: PropTypes.bool,
 
 	width: PropTypes.number,
 	height: PropTypes.number,
@@ -52,12 +53,10 @@ Video.propTypes = {
 	title: PropTypes.string,
 }
 Video.defaultProps = {
-	url: null,
-	autoplay: false,
-	controls: false,
-	annotations: true,
-	loop: true,
-
+	isAutoplay: false,
+	hasControls: false,
+	hasAnnotations: true,
+	isLooped: true,
 	width: 960,
 	height: 540,
 
