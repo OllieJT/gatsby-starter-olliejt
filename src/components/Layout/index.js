@@ -35,7 +35,7 @@ const Layout = ({ children, hasSEO }) => {
 	console.log(theme)
 	return (
 		<PageContainer>
-			{!hasSEO && <SEO />}
+			{!hasSEO && (<SEO title="Hello World" />)}
 			<GlobalStyle />
 			<Menu />
 			<ContentContainer id="reach-skip-nav">{children}</ContentContainer>
@@ -47,6 +47,10 @@ const Layout = ({ children, hasSEO }) => {
 Layout.propTypes = {
 	children: PropTypes.node.isRequired,
 	hasSEO: PropTypes.bool
+}
+
+Layout.defaultProps = {
+	hasSEO: false
 }
 
 export default Layout

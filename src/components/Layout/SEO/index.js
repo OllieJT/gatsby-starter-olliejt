@@ -1,178 +1,228 @@
 import React from "react"
 import Helmet from "react-helmet"
 import PropTypes from "prop-types"
+//import Schema from "./Schema"
 //import { useStaticQuery, graphql } from 'gatsby';
-import Facebook from "./Facebook"
-import Twitter from "./Twitter"
 // eslint-disable-next-line
 const website = require("../../../utility/config")
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
-const SEO = ({ title, desc, banner, pathname, isArticle, firstDate, lastDate }) => {
-	const metadata = {
-		title: title ? title : website.title,
-		titleTemplate: website.titleTemplate,
-		headline: website.headline,
-		description: desc ? desc : website.description,
-		image: `${website.url}${banner ? banner : website.banner}`,
-		siteUrl: website.url,
-		pageUrl: `${website.url}${pathname ? pathname : "/"}`,
-		language: website.ogLanguage,
-		author: website.author,
-		twitterUsername: website.twitter,
-		facebookUsername: website.facebook,
-		datePublished: firstDate ? firstDate : website.originDate,
-		dateUpdated: lastDate ? lastDate : new Date(),
-		isArticle: isArticle,
-	}
-
-	// schema.org in JSONLD format
-	// https://developers.google.com/search/docs/guides/intro-structured-data
-	// You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
-
-	const schemaOrgWebPage = {
-		"@context": "http://schema.org",
-		"@type": "WebPage",
-		url: metadata.siteUrl,
-		headline: metadata.headline,
-		inLanguage: metadata.language,
-		mainEntityOfPage: metadata.pageUrl,
-		description: metadata.description,
-		name: metadata.title,
-		author: {
-			"@type": "Person",
-			name: metadata.author,
-		},
-		copyrightHolder: {
-			"@type": "Person",
-			name: metadata.author,
-		},
-		copyrightYear: new Date().getFullYear(),
-		creator: {
-			"@type": "Person",
-			name: metadata.author,
-		},
-		publisher: {
-			"@type": "Person",
-			name: metadata.author,
-		},
-		datePublished: metadata.datePublished,
-		dateModified: metadata.dateUpdated,
-		image: {
-			"@type": "ImageObject",
-			url: metadata.image,
-		},
-	}
-
-	const itemListElement = [
-		{
-			"@type": "ListItem",
-			item: {
-				"@id": metadata.siteUrl,
-				name: "Homepage",
-			},
-			position: 1,
-		},
-	]
-
-	let schemaArticle = null
-
-	if (metadata.isArticle) {
-		schemaArticle = {
-			"@context": "http://schema.org",
-			"@type": "Article",
-			author: {
-				"@type": "Person",
-				name: metadata.author,
-			},
-			copyrightHolder: {
-				"@type": "Person",
-				name: metadata.author,
-			},
-			copyrightYear: new Date().getFullYear(),
-			creator: {
-				"@type": "Person",
-				name: metadata.author,
-			},
-			publisher: {
-				"@type": "Organization",
-				name: metadata.author,
-				logo: {
-					"@type": "ImageObject",
-					url: metadata.image,
-				},
-			},
-			datePublished: firstDate ? firstDate : null,
-			dateModified: lastDate ? lastDate : Date(),
-			description: desc,
-			headline: title,
-			inLanguage: "en",
-			url: pathname,
-			name: title,
-			image: {
-				"@type": "ImageObject",
-				url: banner,
-			},
-			mainEntityOfPage: pathname,
-		}
-		// Push current blogpost into breadcrumb list
-		itemListElement.push({
-			"@type": "ListItem",
-			item: {
-				"@id": pathname,
-				name: metadata.title,
-			},
-			position: 2,
-		})
-	}
-
-	const breadcrumb = {
-		"@context": "http://schema.org",
-		"@type": "BreadcrumbList",
-		description: "Breadcrumbs list",
-		name: "Breadcrumbs",
-		itemListElement,
-	}
-
+const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords }) => {
+	const authorName = typeArticle.author || typeProfile.nameFirst + " " + typeProfile.nameLast
+	//const pageUrl = `${website.url}${pathname ? pathname : "/"}`,
 	return (
-		<Helmet title={metadata.title} titleTemplate={metadata.titleTemplate}>
-			<html lang={metadata.language} />
+		<Helmet
+			htmlAttributes={{
+				lang: "en"
+			}}
+			title={title}
+			titleTemplate={`%s | ${website.siteName}`}
 
-			<meta name="description" content={metadata.description} />
-			<meta name="image" content={metadata.image} />
+			meta={[
+				{
+					name: "description",
+					content: desc
+				},
+				{
+					name: "image",
+					content: image
+				},
+				{
+					name: "author",
+					content: authorName,
+				},
+				/* ----
+					ARTICLE
+				---- */
+				{
+					name: "article:published_time",
+					content: typeArticle.datePublished,
+				},
+				{
+					name: "article:modified_time",
+					content: typeArticle.dateModified,
+				},
+				{
+					name: "article:expiration_time",
+					content: typeArticle.dateExpire,
+				},
+				{
+					name: "article:author",
+					content: authorName,
+				},
+				{
+					name: "article:section",
+					content: typeArticle.section,
+				},
+				{
+					name: "article:tag",
+					content: typeArticle.tag,
+				},
+				/* ----
+					PROFILE
+				---- */
+				{
+					name: "profile:first_name",
+					content: typeProfile.nameFirst,
+				},
+				{
+					name: "profile:last_name",
+					content: typeProfile.nameLast,
+				},
+				{
+					name: "profile:username",
+					content: typeProfile.username,
+				},
+				{
+					name: "profile:gender",
+					content: typeProfile.gender,
+				},
 
-			{!metadata.isArticle && <script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>}
-			{metadata.isArticle && <script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>}
+				/* ----
+					TWITTER
+				---- */
+				/* ----
+					Open Graph
+				---- */
+				{
+					property: "og:site_name",
+					content: website.siteName,
+				},
+				{
+					property: "og:locale",
+					content: website.ogLanguage,
+				},
+				{
+					property: "og:url",
+					content: url,
+				},
+				{
+					property: "og:type",
+					content: type,
+				},
+				{
+					property: "og:title",
+					content: title,
+				},
+				{
+					property: "og:description",
+					content: desc,
+				},
+				{
+					property: "og:image",
+					content: image,
+				},
+				{
+					property: "og:image:alt",
+					content: desc,
+				},
+				/* ----
+					TWITTER
+				---- */
+				{
+					name: "twitter:card",
+					content: "summary",
+				},
+				{
+					name: "twitter:creator",
+					content: website.twitter,
+				},
+				{
+					name: "twitter:title",
+					content: title,
+				},
+				{
+					name: "twitter:description",
+					content: desc,
+				},
+				{
+					name: "twitter:image",
+					content: image,
+				},
+				{
+					name: "twitter:image:alt",
+					content: desc,
+				},
+			]
+				.concat(
+					keywords.length > 0
+						? {
+							name: "keywords",
+							content: keywords.join(", "),
+						}
+						: []
+				)
+			}
 
-			<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
-
-			<Facebook
-				desc={metadata.description}
-				image={metadata.image}
-				title={metadata.title}
-				type={metadata.isArticle ? "article" : "website"}
-				url={metadata.pageUrl}
-				locale={metadata.language}
-				name={metadata.facebookUsername}
-			/>
-			<Twitter
-				title={metadata.title}
-				image={metadata.image}
-				desc={metadata.description}
-				username={metadata.twitterUsername}
-			/>
-		</Helmet>
+		/>
 	)
 }
 
 SEO.propTypes = {
-	title: PropTypes.string,
+	title: PropTypes.string.isRequired,
+	type: PropTypes.oneOf(["website", "article", "profile"]),
+	image: PropTypes.string,
+	url: PropTypes.string,
 	desc: PropTypes.string,
-	banner: PropTypes.string,
-	pathname: PropTypes.string,
-	isArticle: PropTypes.bool,
-	firstDate: PropTypes.string,
-	lastDate: PropTypes.string,
+	typeProfile: PropTypes.shape(
+		{
+			nameFirst: PropTypes.string,
+			nameLast: PropTypes.string,
+			username: PropTypes.string,
+			gender: PropTypes.string
+		}
+	),
+	typeArticle: PropTypes.shape(
+		{
+			datePublished: PropTypes.date,
+			dateModified: PropTypes.date,
+			dateExpire: PropTypes.date,
+			author: PropTypes.string,
+			section: PropTypes.string,
+			tag: PropTypes.string,
+		}
+	),
+	keywords: PropTypes.arrayOf(PropTypes.string)
 }
+
+SEO.defaultProps = {
+	type: "website",
+	image: website.banner,
+	url: website.url,
+	desc: website.description,
+	typeProfile: {
+		nameFirst: website.nameFirst,
+		nameLast: website.nameLast,
+		username: website.alias,
+		gender: website.gender
+	}
+	,
+	typeArticle: {
+		dateModified: new Date(),
+		author: website.author,
+		section: website.industry,
+	},
+	keywords: []
+}
+
+
 export default SEO
+
+
+/*
+< Schema
+	type = { type }
+	title = { title }
+	headline = { website.headline }
+	desc = { desc }
+	author = { authorName }
+	image = { image }
+	siteUrl = { website.url }
+	pageUrl = { url }
+	lang = { website.ogLanguage }
+	logo = { website.logo }
+	datePublished = { typeArticle.datePublished }
+	dateModified = { typeArticle.dateModified }
+/>
+ */
