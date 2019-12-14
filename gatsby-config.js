@@ -52,8 +52,8 @@ module.exports = {
 		"gatsby-plugin-sharp",
 		"gatsby-transformer-sharp",
 		"gatsby-transformer-remark",
-		"gatsby-transformer-json",
 		"gatsby-plugin-styled-components",
+		"gatsby-transformer-json",
 		{
 			resolve: "gatsby-plugin-netlify-cache",
 			options: {
@@ -64,7 +64,7 @@ module.exports = {
 			resolve: "gatsby-plugin-manifest",
 			options: {
 				name: config.title,
-				short_name: config.titleAlt,
+				short_name: config.siteName,
 				description: config.description,
 				start_url: pathPrefix,
 				background_color: config.backgroundColor,
