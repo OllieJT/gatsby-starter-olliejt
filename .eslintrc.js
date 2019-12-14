@@ -3,7 +3,11 @@ module.exports = {
 		browser: true,
 		es6: true,
 	},
-	extends: ["eslint:recommended", "plugin:react/recommended", "plugin:jsx-a11y/recommended"],
+	extends: [
+		"eslint:recommended",
+		"plugin:react/recommended",
+		"plugin:jsx-a11y/recommended"
+	],
 	globals: {
 		__PATH_PREFIX__: true,
 		Atomics: "readonly",
@@ -40,8 +44,14 @@ module.exports = {
 			{ name: "Link", linkAttribute: "to" },
 		],
 	},
-	plugins: ["react", "jsx-a11y"],
-	ignorePatterns: ["public/", "node_modules/"],
+	plugins: [
+		"react",
+		"jsx-a11y"
+	],
+	ignorePatterns: [
+		"public/",
+		"node_modules/"
+	],
 	rules: {
 		strict: 0,
 		indent: ["error", "tab"],
