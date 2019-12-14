@@ -1,8 +1,9 @@
 // eslint-disable-next-line
 import React, { useState, useEffect } from "react"
 import storage from "local-storage-fallback"
+import { darkMode } from "../../utility/theme"
 
-export default function useTheme(defaultTheme = { mode: "dark" }) {
+export default function useTheme(defaultTheme = { mode: "dark", color: darkMode }) {
 
 	const [theme,_setTheme] = useState(getInitialTheme)
 

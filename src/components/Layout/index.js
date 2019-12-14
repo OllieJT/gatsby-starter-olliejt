@@ -5,11 +5,10 @@ import GlobalStyle from "../../utility/GlobalStyles"
 import Footer from "./Footer"
 import Menu from "./Menu"
 import SEO from "./SEO"
-import ToggleMode from "./ToggleMode"
 import useTheme from "./useTheme"
 
+
 const PageContainer = styled.div`
-	${props => props.theme}
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -31,14 +30,12 @@ const ContentContainer = styled.main`
 
 const Layout = ({ children, hasSEO }) => {
 	const theme = useTheme()
-	console.log(theme)
 
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
 			{!hasSEO && (<SEO title="Hello World" />)}
 			<PageContainer>
-				<ToggleMode />
 				<Menu />
 				<ContentContainer id="reach-skip-nav">{children}</ContentContainer>
 				<Footer />

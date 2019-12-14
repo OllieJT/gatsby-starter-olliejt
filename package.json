@@ -28,6 +28,7 @@
 		"react-icons": "^3.8.0",
 		"react-structured-data": "0.0.14",
 		"styled-components": "^4.4.1",
+		"styled-normalize": "^8.0.6",
 		"styled-theming": "^2.2.0"
 	},
 	"devDependencies": {

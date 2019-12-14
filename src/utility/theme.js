@@ -1,26 +1,46 @@
-export const color = {
-	primary: {
-		light: "rgba(255,133,71,1.0)",
-		medium: "rgba(255,74,38,1.0)",
-		dark: "rgba(184,0,0,1.0)",
-		highlight: "rgba(255,180,150,1.0)",
-		subtle: "rgba(255,74,38,0.32)",
-	},
-	secondary: {
-		light: "rgba(112,255,184,1.0)",
-		medium: "rgba(0,240,140,1.0)",
-		dark: "rgba(0,143,83,1.0)",
-		highlight: "rgba(155,255,210,1.0)",
-		subtle: "rgba(0,255,149,0.32)",
-	},
-	mono: {
-		lightest: "rgba(245,255,252,1.0)",
-		lighter: "rgba(188,204,199,1.0)",
-		light: "rgba(141,153,149,1.0)",
-		dark: "rgba(29,38,35,1.0)",
-		darker: "rgba(19,25,23,1.0)",
-		darkest: "rgba(10,13,12,1.0)",
-	},
+export const lightMode = {
+	mono: [
+		/* Lightest First */
+		"hsl(220, 10%, 100%)",
+		"hsl(220, 10%, 80%)",
+		"hsl(220, 10%, 60%)",
+		"hsl(220, 20%, 30%)",
+		"hsl(220, 20%, 20%)",
+	],
+	primary: [
+		/* Clearest ON LIGHT First */
+		"hsl(10, 100%, 30%)",
+		"hsl(10, 100%, 50%)",
+		"hsl(5, 100%, 75%)",
+	],
+	content: [
+		/* Clearest ON LIGHT First */
+		"hsl(220, 40%, 0%)",
+		"hsl(220, 20%, 10%)",
+		"hsl(220, 15%, 20%)",
+	]
+}
+export const darkMode = {
+	mono: [
+		/* Darkest First */
+		"hsl(220, 25%, 5%)",
+		"hsl(220, 20%, 20%)",
+		"hsl(220, 20%, 30%)",
+		"hsl(220, 10%, 60%)",
+		"hsl(220, 10%, 80%)",
+	],
+	primary: [
+		/* Clearest ON DARK First */
+		"hsl(5, 100%, 75%)",
+		"hsl(10, 100%, 50%)",
+		"hsl(10, 75%, 25%)",
+	],
+	content: [
+		/* Clearest ON DARK First */
+		"hsl(220, 10%, 100%)",
+		"hsl(220, 10%, 80%)",
+		"hsl(220, 10%, 60%)",
+	]
 }
 
 export const size = {
