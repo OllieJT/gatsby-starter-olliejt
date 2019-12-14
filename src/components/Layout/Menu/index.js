@@ -2,6 +2,7 @@ import React from "react"
 import Container from "../../Container"
 import MenuLink from "./MenuLink"
 import styled from "styled-components"
+import ToggleMode from "../ToggleMode"
 
 const Menubar = styled.ul`
 	position: relative;
@@ -9,7 +10,12 @@ const Menubar = styled.ul`
 	flex-direction: row;
 	justify-content: flex-end;
 	width: 100%;
-	z-index: 10000
+	z-index: 10000;
+	li{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 `
 
 const Menu = () => (
@@ -26,6 +32,10 @@ const Menu = () => (
 					<MenuLink label="Charlie" link="/three" />
 				</MenuLink>
 			</MenuLink>
+			<MenuLink label="404 Error" link="/404" />
+			<li>
+				<ToggleMode />
+			</li>
 			<MenuLink label="404 Error" link="/404" />
 		</Menubar>
 	</Container>

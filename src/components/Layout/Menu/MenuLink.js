@@ -9,6 +9,7 @@ const StyledItem = styled.li`
 	display: flex;
 	align-items: stretch;
 	justify-content: stretch;
+	padding: 0;
 	ul{
 		position: absolute;
 		top: 100%;
