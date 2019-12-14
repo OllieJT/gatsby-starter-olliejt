@@ -37,7 +37,6 @@ const Menu = () => (
 			<li>
 				<ToggleMode />
 			</li>
-			<MenuLink label="404 Error" link="/404" />
 		</Menubar>
 	</Container>
 )
