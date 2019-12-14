@@ -21,7 +21,6 @@ const IndexPage = ({ data }) => (
 				"gaming",
 			]}
 		/>
-		{console.log(data)}
 		<Header />
 	</Layout>
 )

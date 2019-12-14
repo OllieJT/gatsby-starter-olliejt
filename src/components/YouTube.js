@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { IS_BROWSER, getYoutubeID } from "../utility/functions"
 // eslint-disable-next-line
-const website = require("../utility/config")
+const config = require("../utility/config")
 
 export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasAnnotations, isLooped }) => {
 	var thisSite = ""
@@ -11,8 +11,8 @@ export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasA
 		thisSite = window.location.origin
 		//thisPage = window.location.href;
 	} else {
-		thisSite = website.url
-		//thisPage = website.url;
+		thisSite = config.url
+		//thisPage = config.url;
 	}
 
 	const yt_videoID = url && getYoutubeID(url)

@@ -4,20 +4,20 @@ import PropTypes from "prop-types"
 //import Schema from "./Schema"
 //import { useStaticQuery, graphql } from 'gatsby';
 // eslint-disable-next-line
-const website = require("../../../utility/config")
+const config = require("../../../utility/config")
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords }) => {
 	const authorName = typeArticle.author || typeProfile.nameFirst + " " + typeProfile.nameLast
-	//const pageUrl = `${website.url}${pathname ? pathname : "/"}`,
+	//const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
 	return (
 		<Helmet
 			htmlAttributes={{
 				lang: "en"
 			}}
 			title={title}
-			titleTemplate={`%s | ${website.siteName}`}
+			titleTemplate={`%s | ${config.siteName}`}
 
 			meta={[
 				{
@@ -87,11 +87,11 @@ const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords
 				---- */
 				{
 					property: "og:site_name",
-					content: website.siteName,
+					content: config.siteName,
 				},
 				{
 					property: "og:locale",
-					content: website.ogLanguage,
+					content: config.ogLanguage,
 				},
 				{
 					property: "og:url",
@@ -126,7 +126,7 @@ const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords
 				},
 				{
 					name: "twitter:creator",
-					content: website.twitter,
+					content: config.twitter,
 				},
 				{
 					name: "twitter:title",
@@ -188,20 +188,20 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
 	type: "website",
-	image: website.banner,
-	url: website.url,
-	desc: website.description,
+	image: config.banner,
+	url: config.url,
+	desc: config.description,
 	typeProfile: {
-		nameFirst: website.nameFirst,
-		nameLast: website.nameLast,
-		username: website.alias,
-		gender: website.gender
+		nameFirst: config.nameFirst,
+		nameLast: config.nameLast,
+		username: config.alias,
+		gender: config.gender
 	}
 	,
 	typeArticle: {
 		dateModified: new Date(),
-		author: website.author,
-		section: website.industry,
+		author: config.author,
+		section: config.industry,
 	},
 	keywords: []
 }
@@ -214,14 +214,14 @@ export default SEO
 < Schema
 	type = { type }
 	title = { title }
-	headline = { website.headline }
+	headline = { config.headline }
 	desc = { desc }
 	author = { authorName }
 	image = { image }
-	siteUrl = { website.url }
+	siteUrl = { config.url }
 	pageUrl = { url }
-	lang = { website.ogLanguage }
-	logo = { website.logo }
+	lang = { config.ogLanguage }
+	logo = { config.logo }
 	datePublished = { typeArticle.datePublished }
 	dateModified = { typeArticle.dateModified }
 />
