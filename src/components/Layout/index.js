@@ -1,10 +1,12 @@
-import React, { useContext } from "react"
+import React from "react"
 import PropTypes from "prop-types"
-import styled from "styled-components"
+import styled, { ThemeProvider } from "styled-components"
+import GlobalStyle from "../../utility/GlobalStyles"
 import Footer from "./Footer"
 import Menu from "./Menu"
 import SEO from "./SEO"
-import ContextProvider from "./ContextProvider"
+import ToggleMode from "./ToggleMode"
+import useTheme from "./useTheme"
 
 const PageContainer = styled.div`
 	${props => props.theme}
@@ -26,22 +28,22 @@ const ContentContainer = styled.main`
 	flex-shrink: 0;
 `
 
-export const ThemeContext = React.createContext({
-	color: "dark",
-	size: "big"
-})
 
 const Layout = ({ children, hasSEO }) => {
-	const theme = useContext(ThemeContext)
+	const theme = useTheme()
+	console.log(theme)
+
 	return (
-		<ContextProvider>
+		<ThemeProvider theme={theme}>
+			<GlobalStyle />
+			{!hasSEO && (<SEO title="Hello World" />)}
 			<PageContainer>
-				{!hasSEO && (<SEO title="Hello World" />)}
+				<ToggleMode />
 				<Menu />
 				<ContentContainer id="reach-skip-nav">{children}</ContentContainer>
 				<Footer />
 			</PageContainer>
-		</ContextProvider>
+		</ThemeProvider>
 	)
 }
 

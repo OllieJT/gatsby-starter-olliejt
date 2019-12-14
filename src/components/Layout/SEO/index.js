@@ -160,7 +160,7 @@ const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords
 }
 
 SEO.propTypes = {
-	title: PropTypes.string.isRequired,
+	title: PropTypes.string,
 	type: PropTypes.oneOf(["website", "article", "profile"]),
 	image: PropTypes.string,
 	url: PropTypes.string,
@@ -187,6 +187,7 @@ SEO.propTypes = {
 }
 
 SEO.defaultProps = {
+	title: config.title,
 	type: "website",
 	image: config.banner,
 	url: config.url,
