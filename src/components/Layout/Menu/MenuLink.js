@@ -4,32 +4,11 @@ import { Link } from "gatsby"
 import styled from "styled-components"
 import { MdArrowDropDown } from "react-icons/md"
 
-const MenuItem = styled.li`
+const StyledItem = styled.li`
 	position: relative;
 	display: flex;
 	align-items: stretch;
 	justify-content: stretch;
-	.item-link{
-		width: 100%;
-		padding: var(--size-space-small);
-		cursor: pointer;
-		background-color: var(--color-level-darkest);
-		p{
-			display: flex;
-			align-items: center;
-			justify-content: flex-start;
-			color: var(--color-level-light);
-		}
-		svg{
-			font-size:1.2em;
-		}
-		&:hover{
-			background-color: var(--color-level-dark);
-			p{color: var(--color-level-lightest);}
-		}
-		z-index: 500;
-	}
-
 	ul{
 		position: absolute;
 		top: 100%;
@@ -63,42 +42,57 @@ const MenuItem = styled.li`
 	}
 `
 
-const MenuLink = ({label,link,children,isExternal}) => (
-	<MenuItem>
-		{link ? isExternal ? (
-			<a className="item-link" href={link}>
-				<p>{label}{children && (<MdArrowDropDown />)}</p>
-			</a>
-		) : (
-			<Link className="item-link" to={link}>
-				<p>{label}{children && (<MdArrowDropDown />)}</p>
-			</Link>
-		) : (
-			<div className="item-link">
-				<p>{label}{children && (<MdArrowDropDown />)}</p>
-			</div>
-		)}
+const StyledItemLink = styled(Link)`
+	width: 100%;
+	padding: var(--size-space-small);
+	cursor: pointer;
+	background-color: var(--color-level-lightest);
+	z-index: 500;
+	p{
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		color: var(--color-level-dark);
+	}
+	svg{
+		font-size:1.2em;
+	}
+	&:hover{
+		background-color: var(--color-level-light);
+		p{
+			color: var(--color-level-darkest);
+		}
+	}
+`
 
-		{children && (
-			<ul>
-				{children}
-			</ul>
-		)}
-	</MenuItem>
-)
+const MenuItem = ({ label, link, children, isExternal }) => {
+	const inside = (<p>{label}{children && (<MdArrowDropDown />)}</p>)
+	return(
+		<StyledItem>
+			{link ? isExternal ? (
+				<StyledItemLink as="a"  href={link} target="_blank" rel="noopener noreferrer">{inside}</StyledItemLink>
+			) : (
+				<StyledItemLink  to={link}>{inside}</StyledItemLink>
+			) : (
+				<StyledItemLink as="div" >{inside}</StyledItemLink>
+			)}
 
-MenuLink.propTypes = {
+			{children && (<ul>{children}</ul>)}
+		</StyledItem>
+	)}
+
+MenuItem.propTypes = {
 	label: PropTypes.string.isRequired,
 	link: PropTypes.string,
 	children: PropTypes.any,
 	isExternal: PropTypes.bool,
 }
 
-MenuLink.defaultProps = {
+MenuItem.defaultProps = {
 	link: null,
 	children: null,
 	isExternal: false
 }
 
 
-export default MenuLink
+export default MenuItem

@@ -13,12 +13,8 @@ const StyledContainer = styled.div`
 		margin-right: auto;
 		${props =>
 		props.isRestricted
-			? `
-					max-width: var(--content-width);
-				`
-			: `
-	  				max-width: none;
-				  `}
+			? "max-width: var(--content-width);"
+			: "max-width: none;"}
 	}
 	${props => (props.isRichText ? enableRichText(props.isRestricted) : "")}
 `
