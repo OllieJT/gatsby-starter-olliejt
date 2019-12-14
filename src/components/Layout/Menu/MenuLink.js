@@ -5,11 +5,6 @@ import styled from "styled-components"
 import { MdArrowDropDown } from "react-icons/md"
 
 const StyledItem = styled.li`
-	position: relative;
-	display: flex;
-	align-items: stretch;
-	justify-content: stretch;
-	padding: 0;
 	ul{
 		position: absolute;
 		top: 100%;

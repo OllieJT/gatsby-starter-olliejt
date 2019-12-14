@@ -12,9 +12,10 @@ const Menubar = styled.ul`
 	width: 100%;
 	z-index: 10000;
 	li{
+		position: relative;
 		display: flex;
-		align-items: center;
-		justify-content: center;
+		align-items: stretch;
+		justify-content: stretch;
 	}
 `
 
