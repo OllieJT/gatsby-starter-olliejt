@@ -23,6 +23,12 @@ const GlobalStyle = createGlobalStyle`
 		--color-background: ${props => props.theme.color.mono[0]};
 		--color-accent: ${props => props.theme.color.mono[2]};
 
+		--size-space-smallest: .8rem;
+		--size-space-small: 1.6rem;
+		--size-space-medium: 2.4rem;
+		--size-space-large: 4rem;
+		--size-space-largest: 8rem;
+
 		--size-container-content: calc(1200px - 4.8rem);
 		--size-container-edges: 2.4rem;
 
