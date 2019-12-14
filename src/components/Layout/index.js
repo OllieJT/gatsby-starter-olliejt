@@ -1,10 +1,10 @@
 import React, { useContext } from "react"
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import GlobalStyle from "../../utility/GlobalStyles"
 import Footer from "./Footer"
 import Menu from "./Menu"
 import SEO from "./SEO"
+import ContextProvider from "./ContextProvider"
 
 const PageContainer = styled.div`
 	${props => props.theme}
@@ -27,20 +27,21 @@ const ContentContainer = styled.main`
 `
 
 export const ThemeContext = React.createContext({
-	theme: "dark"
+	color: "dark",
+	size: "big"
 })
 
 const Layout = ({ children, hasSEO }) => {
 	const theme = useContext(ThemeContext)
-	console.log(theme)
 	return (
-		<PageContainer>
-			{!hasSEO && (<SEO title="Hello World" />)}
-			<GlobalStyle />
-			<Menu />
-			<ContentContainer id="reach-skip-nav">{children}</ContentContainer>
-			<Footer />
-		</PageContainer>
+		<ContextProvider>
+			<PageContainer>
+				{!hasSEO && (<SEO title="Hello World" />)}
+				<Menu />
+				<ContentContainer id="reach-skip-nav">{children}</ContentContainer>
+				<Footer />
+			</PageContainer>
+		</ContextProvider>
 	)
 }
 

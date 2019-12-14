@@ -2,24 +2,24 @@
 require("dotenv").config({
 	path: ".env", //`.env.${process.env.NODE_ENV}`
 })
-const website = require("./src/utility/config")
-const pathPrefix = website.pathPrefix === "/" ? "" : website.pathPrefix
+const config = require("./src/utility/config")
+const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix
 
 module.exports = {
-	pathPrefix: website.pathPrefix,
+	pathPrefix: config.pathPrefix,
 	siteMetadata: {
-		siteUrl: website.url + website.pathPrefix, // For gatsby-plugin-sitemap
+		siteUrl: config.url + config.pathPrefix, // For gatsby-plugin-sitemap
 		pathPrefix,
-		title: website.title,
-		titleAlt: website.titleAlt,
-		description: website.description,
-		banner: website.logo,
-		headline: website.headline,
-		siteLanguage: website.siteLanguage,
-		ogLanguage: website.ogLanguage,
-		author: website.author,
-		twitter: website.twitter,
-		facebook: website.facebook,
+		title: config.title,
+		titleAlt: config.titleAlt,
+		description: config.description,
+		banner: config.logo,
+		headline: config.headline,
+		siteLanguage: config.siteLanguage,
+		ogLanguage: config.ogLanguage,
+		author: config.author,
+		twitter: config.twitter,
+		facebook: config.facebook,
 	},
 	plugins: [
 		{
@@ -63,14 +63,14 @@ module.exports = {
 		{
 			resolve: "gatsby-plugin-manifest",
 			options: {
-				name: website.title,
-				short_name: website.titleAlt,
-				description: website.description,
+				name: config.title,
+				short_name: config.titleAlt,
+				description: config.description,
 				start_url: pathPrefix,
-				background_color: website.backgroundColor,
-				theme_color: website.themeColor,
+				background_color: config.backgroundColor,
+				theme_color: config.themeColor,
 				display: "standalone",
-				icon: website.favicon,
+				icon: config.favicon,
 			},
 		},
 		//`gatsby-plugin-offline`,
