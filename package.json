@@ -5,7 +5,6 @@
 	"version": "0.1.0",
 	"author": "Ollie Taylor <contact@olliejt.com>",
 	"dependencies": {
-		"@types/react": "^16.9.16",
 		"@types/react-helmet": "^5.0.14",
 		"@types/styled-components": "^4.4.1",
 		"babel-plugin-styled-components": "^1.10.6",
@@ -38,6 +37,9 @@
 	},
 	"devDependencies": {
 		"@babel/core": "^7.7.5",
+		"@types/node": "^12.12.18",
+		"@types/react": "^16.9.16",
+		"@types/react-dom": "^16.9.4",
 		"@typescript-eslint/eslint-plugin": "^2.12.0",
 		"@typescript-eslint/parser": "^2.12.0",
 		"babel-eslint": "^10.0.3",
@@ -49,9 +51,11 @@
 		"eslint-plugin-jsx-a11y": "^6.2.3",
 		"eslint-plugin-react": "^7.17.0",
 		"eslint-plugin-react-hooks": "^2.3.0",
+		"fork-ts-checker-webpack-plugin": "^3.1.1",
 		"gatsby-plugin-eslint": "^2.0.8",
 		"gatsby-remark-prettier": "^1.0.0",
 		"prettier": "^1.19.1",
+		"ts-loader": "^6.2.1"
 	},
 	"keywords": [
 		"gatsby",
