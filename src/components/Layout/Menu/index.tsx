@@ -1,10 +1,11 @@
 import React from "react"
-import Container from "../../Container"
+import { styledContainer } from "../../../utility/styles"
 import MenuLink from "./MenuLink"
 import styled from "styled-components"
 import ToggleMode from "../ToggleMode"
 
 const Menubar = styled.ul`
+	${styledContainer(true)};
 	position: relative;
 	display: flex;
 	flex-direction: row;
@@ -20,25 +21,23 @@ const Menubar = styled.ul`
 `
 
 const Menu = () => (
-	<Container isRestricted={true} role="navigation" as="nav">
-		<Menubar>
-			<MenuLink label="Home" link="/" />
-			<MenuLink label="Dropdown" link="/dropdown" >
-				<MenuLink label="One" link="/one" />
-				<MenuLink label="Two" link="/two" />
-				<MenuLink label="Three" link="/three" />
-				<MenuLink label="Four" >
-					<MenuLink label="Alpha" link="/one" />
-					<MenuLink label="Bravo" link="/two" />
-					<MenuLink label="Charlie" link="/three" />
-				</MenuLink>
+	<Menubar role="navigation">
+		<MenuLink label="Home" link="/" />
+		<MenuLink label="Dropdown" link="/dropdown" >
+			<MenuLink label="One" link="/one" />
+			<MenuLink label="Two" link="/two" />
+			<MenuLink label="Three" link="/three" />
+			<MenuLink label="Four" >
+				<MenuLink label="Alpha" link="/one" />
+				<MenuLink label="Bravo" link="/two" />
+				<MenuLink label="Charlie" link="/three" />
 			</MenuLink>
-			<MenuLink label="404 Error" link="/404" />
-			<li>
-				<ToggleMode />
-			</li>
-		</Menubar>
-	</Container>
+		</MenuLink>
+		<MenuLink label="404 Error" link="/404" />
+		<li>
+			<ToggleMode />
+		</li>
+	</Menubar>
 )
 
 export default Menu

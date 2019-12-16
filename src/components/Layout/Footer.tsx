@@ -1,12 +1,17 @@
 import React from "react"
-import Container from "../Container"
+import styled from "styled-components"
+import { styledContainer } from "../../utility/styles"
+
+const StyledFooter = styled.footer`
+	${styledContainer(true)}
+`
 
 const Footer = () => (
-	<Container isRestricted as="footer" role="contentinfo">
+	<StyledFooter role="contentinfo">
 		<p>
 			Made by <a href="http://twitter.com/TheOllieJT">@TheOllieJT</a>.
 		</p>
-	</Container>
+	</StyledFooter>
 )
 
 export default Footer

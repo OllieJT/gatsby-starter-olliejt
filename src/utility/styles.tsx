@@ -1,6 +1,6 @@
 import { css } from "styled-components"
 
-export const cover = css`
+export const styledCover = () => css`
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -10,34 +10,8 @@ export const cover = css`
 	height: 100%;
 `
 
-export const enableRichText = isRestricted => css`
-	/* ALL */
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	dl,
-	pre,
-	legend {
-		${isRestricted
-		? `
-			width: 100%;
-			max-width: var(--content-width);
-			padding-left: var(--content-padding);
-			padding-right: var(--content-padding);
-			margin-left: auto;
-			margin-right: auto;
-			`
-		: `
-			margin-left: var(--content-padding);
-			margin-right: var(--content-padding);
-			`}
-	}
+
+export const styledRichText = () => css`
 	iframe,
 	figure,
 	img,
@@ -137,7 +111,7 @@ export const enableRichText = isRestricted => css`
 		&.embedYouTube {
 			padding-bottom: 56.25%;
 			iframe {
-				${cover};
+				${styledCover};
 				position: absolute;
 			}
 		}
@@ -152,4 +126,22 @@ export const enableRichText = isRestricted => css`
 		width: auto;
 		height: auto;
 	}
+`
+
+export const styledContainer = (isRestricted: boolean = false) => css`
+	position: relative;
+	width: 100%;
+	${isRestricted ?
+		`
+			max-width: var(--content-width);
+			padding-left: var(--content-padding);
+			padding-right: var(--content-padding);
+			margin-left: auto;
+			margin-right: auto;
+		` : `
+			-left: var(--content-padding);
+			margin-right: var(--content-padding);
+		`
+	}
+
 `

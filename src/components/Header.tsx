@@ -1,14 +1,19 @@
 import React from "react"
-import Container from "./Container"
+import styled from "styled-components"
+import { styledContainer } from "../utility/styles"
+
+const StyledHeader = styled.footer`
+	${styledContainer(true)}
+`
 
 const Header = () => (
-	<Container isRestricted role="banner" as="header">
+	<StyledHeader role="banner">
 		<h1>HTML5 Test Page</h1>
 		<p>
 			This is a test page filled with common HTML elements to be used to provide visual feedback whilst building
 			CSS systems and frameworks.
 		</p>
-	</Container>
+	</StyledHeader>
 )
 
 export default Header
