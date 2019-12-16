@@ -1,4 +1,4 @@
-import { css } from "styled-components"
+import { css } from 'styled-components'
 
 export const styledCover = () => css`
 	position: absolute;
@@ -128,7 +128,7 @@ export const styledRichText = () => css`
 	}
 `
 
-export const styledContainer = (isRestricted: boolean = false) => css`
+export const styledContainer = (isRestricted = false) => css`
 	position: relative;
 	width: 100%;
 	${isRestricted ?
@@ -142,6 +142,6 @@ export const styledContainer = (isRestricted: boolean = false) => css`
 			-left: var(--content-padding);
 			margin-right: var(--content-padding);
 		`
-	}
+}
 
 `

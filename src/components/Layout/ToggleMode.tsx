@@ -1,8 +1,8 @@
-import React from "react"
-import { ThemeConsumer } from "styled-components"
-import { lightMode, darkMode } from "../../utility/theme"
-import { emojiCursor } from "../../utility/functions"
-import styled from "styled-components"
+import React from 'react'
+import styled, { ThemeConsumer } from 'styled-components'
+
+import { emojiCursor } from '../../utility/functions'
+import { darkMode, lightMode } from '../../utility/theme'
 
 
 

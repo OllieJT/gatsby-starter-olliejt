@@ -1,7 +1,20 @@
-import { createGlobalStyle } from "styled-components"
-//import { setThemeColor, setScaleSize } from "./functions"
-import reset from "styled-reset"
-//import { color } from "./theme"
+import 'styled-components'
+
+import { createGlobalStyle } from 'styled-components'
+import reset from 'styled-reset'
+
+// and extend them!
+declare module "styled-components" {
+	export interface DefaultTheme {
+		mode: string;
+		color: {
+			mono: Array<string>;
+			primary: Array<string>;
+			content: Array<string>;
+		};
+		setTheme: Function;
+	}
+}
 
 
 

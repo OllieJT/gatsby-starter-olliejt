@@ -1,5 +1,6 @@
-import React from "react"
-import Helmet from "react-helmet"
+import React from 'react'
+import Helmet from 'react-helmet'
+
 //import Schema from "./Schema"
 //import { useStaticQuery, graphql } from 'gatsby';
 // eslint-disable-next-line

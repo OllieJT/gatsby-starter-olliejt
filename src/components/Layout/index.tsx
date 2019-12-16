@@ -1,10 +1,11 @@
-import React, { ReactNode } from "react"
-import styled, { ThemeProvider } from "styled-components"
-import GlobalStyle from "../../utility/GlobalStyles"
-import Footer from "./Footer"
-import Menu from "./Menu"
-import SEO from "./SEO"
-import useTheme from "./useTheme"
+import React, { ReactNode } from 'react'
+import styled, { ThemeProvider } from 'styled-components'
+
+import GlobalStyle from '../../utility/GlobalStyles'
+import Footer from './Footer'
+import Menu from './Menu'
+import SEO from './SEO'
+import useTheme from './useTheme'
 
 interface Props {
 	children: ReactNode;

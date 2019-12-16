@@ -1,12 +1,13 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/Layout/index"
-import SEO from "../components/Layout/SEO/index"
-import Header from "../components/Header"
-import ToggleMode from "../components/Layout/ToggleMode"
+import { graphql } from 'gatsby'
+import React from 'react'
+
+import Header from '../components/Header'
+import Layout from '../components/Layout'
+import SEO from '../components/Layout/SEO'
+import ToggleMode from '../components/Layout/ToggleMode'
 
 interface Props {
-	data: object
+	data: object;
 }
 
 const IndexPage = ({ data }: Props) => (
