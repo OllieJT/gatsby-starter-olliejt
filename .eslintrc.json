@@ -3,6 +3,12 @@
 		"browser": true,
 		"es6": true
 	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint",
+		"react",
+		"jsx-a11y"
+	],
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
@@ -15,7 +21,6 @@
 		"Atomics": "readonly",
 		"SharedArrayBuffer": "readonly"
 	},
-	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {
 			"jsx": true
@@ -56,11 +61,6 @@
 			}
 		]
 	},
-	"plugins": [
-		"react",
-		"jsx-a11y",
-		"@typescript-eslint"
-	],
 	"ignorePatterns": [
 		"public/",
 		"node_modules/"

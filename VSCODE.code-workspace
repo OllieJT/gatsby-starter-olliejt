@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "src/components"
+		},
+		{
+			"path": "src/pages"
+		},
+		{
+			"path": "src/templates"
+		},
+		{
+			"path": "src/utility",
+		},
+		{
+			"path": "static"
+		}
+	],
+	"settings": {}
+}
