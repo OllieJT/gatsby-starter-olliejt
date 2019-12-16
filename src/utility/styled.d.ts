@@ -1,16 +1,15 @@
-import 'styled-components'
-import { darkMode } from "./theme"
+import "styled-components"
 
 // and extend them!
-declare module 'styled-components' {
+declare module "styled-components" {
 	export interface DefaultTheme {
-		mode: string
+		mode: string;
 
 		color: {
-			mono: Array<string>
-			primary: Array<string>
-			content: Array<string>
-		}
-		setTheme: Function
+			mono: Array<string>;
+			primary: Array<string>;
+			content: Array<string>;
+		};
+		setTheme: Function;
 	}
 }

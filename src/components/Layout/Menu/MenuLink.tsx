@@ -1,13 +1,13 @@
-import React, { ReactNode } from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import { MdArrowDropDown } from "react-icons/md"
+import { Link } from 'gatsby'
+import React, { ReactNode } from 'react'
+import { MdArrowDropDown } from 'react-icons/md'
+import styled from 'styled-components'
 
 interface Props {
-	label: string,
-	link: string,
-	children: ReactNode,
-	isExternal: boolean,
+	label: string;
+	link: string;
+	children: ReactNode;
+	isExternal: boolean;
 }
 
 const StyledItem = styled.li`
@@ -74,10 +74,10 @@ const MenuItem = ({ label, link, children, isExternal }: Props) => {
 			{link ? isExternal ? (
 				<StyledItemLink as="a" href={link} target="_blank" rel="noopener noreferrer">{inside}</StyledItemLink>
 			) : (
-					<StyledItemLink to={link}>{inside}</StyledItemLink>
-				) : (
-					<StyledItemLink as="div" >{inside}</StyledItemLink>
-				)}
+				<StyledItemLink to={link}>{inside}</StyledItemLink>
+			) : (
+				<StyledItemLink as="div" >{inside}</StyledItemLink>
+			)}
 
 			{children && (<ul>{children}</ul>)}
 		</StyledItem>

@@ -8,26 +8,26 @@ const config = require("../../../utility/config")
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 interface Props {
-	title: string
-	type: (["website", "article", "profile"])
-	image: string
-	url: string
-	desc: string
+	title: string;
+	type: (["website", "article", "profile"]);
+	image: string;
+	url: string;
+	desc: string;
 	typeProfile: {
-		nameFirst: string,
-		nameLast: string,
-		username: string,
-		gender: ["male", "female"]
-	}
+		nameFirst: string;
+		nameLast: string;
+		username: string;
+		gender: ["male", "female"];
+	};
 	typeArticle: {
-		datePublished: Date,
-		dateModified: Date,
-		dateExpire: Date,
-		author: string,
-		section: string,
-		tag: string,
-	}
-	keywords: Array<string>
+		datePublished: Date;
+		dateModified: Date;
+		dateExpire: Date;
+		author: string;
+		section: string;
+		tag: string;
+	};
+	keywords: Array<string>;
 }
 
 const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords }: Props) => {

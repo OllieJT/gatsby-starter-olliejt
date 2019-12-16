@@ -27,8 +27,7 @@
 		},
 		"ecmaVersion": 2018,
 		"sourceType": "module",
-		"useJSXTextNode": true,
-		"project": "./tsconfig.json"
+		"useJSXTextNode": true
 	},
 	"settings": {
 		"react": {
@@ -75,10 +74,6 @@
 			"error",
 			"unix"
 		],
-		"quotes": [
-			"error",
-			"double"
-		],
 		"semi": [
 			"error",
 			"never"
@@ -97,6 +92,8 @@
 				"component": true,
 				"html": true
 			}
-		]
+		],
+		"@typescript-eslint/explicit-function-return-type": "off",
+	"@typescript-eslint/no-var-requires": 0
 	}
 }

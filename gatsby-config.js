@@ -22,11 +22,12 @@ module.exports = {
 		facebook: config.facebook,
 	},
 	plugins: [
+		'gatsby-plugin-eslint',
 		`gatsby-plugin-typescript`,
 		{
 			resolve: "gatsby-plugin-eslint",
 			options: {
-				test: /\.js$|\.jsx$/,
+				test: /\.js$|\.jsx$|\.tsx$|\.ts$/,
 				exclude: /(node_modules|.cache|public)/,
 				stages: ["develop"],
 				options: {

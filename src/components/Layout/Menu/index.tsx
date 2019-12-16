@@ -1,8 +1,9 @@
-import React from "react"
-import { styledContainer } from "../../../utility/styles"
-import MenuLink from "./MenuLink"
-import styled from "styled-components"
-import ToggleMode from "../ToggleMode"
+import React from 'react'
+import styled from 'styled-components'
+
+import { styledContainer } from '../../../utility/styles'
+import ToggleMode from '../ToggleMode'
+import MenuLink from './MenuLink'
 
 const Menubar = styled.ul`
 	${styledContainer(true)};

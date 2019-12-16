@@ -1,4 +1,4 @@
-import React from "react"
+import React, { ReactNode } from "react"
 import styled, { ThemeProvider } from "styled-components"
 import GlobalStyle from "../../utility/GlobalStyles"
 import Footer from "./Footer"
@@ -7,8 +7,8 @@ import SEO from "./SEO"
 import useTheme from "./useTheme"
 
 interface Props {
-	children: any,
-	hasSEO: boolean,
+	children: ReactNode;
+	hasSEO?: boolean;
 }
 
 

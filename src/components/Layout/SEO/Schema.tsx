@@ -1,20 +1,21 @@
-import React from "react"
-import Helmet from "react-helmet"
+import React from 'react'
+import Helmet from 'react-helmet'
+
 // eslint-disable-next-line
 
 interface Props {
-	type: "website" | "article" | "profile"
-	title: string
-	headline: string
-	desc: string
-	author: string
-	image: string
-	siteUrl: string
-	pageUrl: string
-	lang: string
-	logo: string
-	datePublished: Date
-	dateModified: Date
+	type: "website" | "article" | "profile";
+	title: string;
+	headline: string;
+	desc: string;
+	author: string;
+	image: string;
+	siteUrl: string;
+	pageUrl: string;
+	lang: string;
+	logo: string;
+	datePublished: Date;
+	dateModified: Date;
 
 }
 
@@ -91,15 +92,15 @@ const Schema = ({
 			"@type": "Article",
 			schemaDefault
 		},
-			// Push current blogpost into breadcrumb list
-			itemListElement.push({
-				"@type": "ListItem",
-				item: {
-					"@id": pageUrl,
-					name: title,
-				},
-				position: 2,
-			})
+		// Push current blogpost into breadcrumb list
+		itemListElement.push({
+			"@type": "ListItem",
+			item: {
+				"@id": pageUrl,
+				name: title,
+			},
+			position: 2,
+		})
 	}
 	const breadcrumb = {
 		"@context": "http://schema.org",
@@ -119,8 +120,8 @@ const Schema = ({
 			{type === "article" ? (
 				<script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
 			) : (
-					<script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
-				)}
+				<script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
+			)}
 
 			<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
 		</Helmet>
