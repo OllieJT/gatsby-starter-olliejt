@@ -52,8 +52,8 @@ export default function ToggleMode() {
 	return (<ThemeConsumer>{theme => (
 		<ToggleButton onClick={() => theme.setTheme(
 			theme.mode === "dark"
-				? { mode: "light", color: lightMode}
-				: { mode: "dark", color: darkMode}
+				? { mode: "light", color: lightMode }
+				: { mode: "dark", color: darkMode }
 		)}>
 			<h6>
 				<span className="mode">

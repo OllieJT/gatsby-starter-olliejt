@@ -6,7 +6,6 @@ import reset from "styled-reset"
 
 
 const GlobalStyle = createGlobalStyle`
-	${props => console.log(props.theme.color)}
 	${reset}
 	:root {
 		--color-primary-light: ${props => props.theme.color.primary[0]};
@@ -22,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 		--color-level-darkest: ${props => props.theme.color.mono[4]};
 		--color-background: ${props => props.theme.color.mono[0]};
 		--color-accent: ${props => props.theme.color.mono[2]};
+
 
 		--size-space-smallest: .8rem;
 		--size-space-small: 1.6rem;

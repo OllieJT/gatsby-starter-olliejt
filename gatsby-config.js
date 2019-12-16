@@ -22,6 +22,8 @@ module.exports = {
 		facebook: config.facebook,
 	},
 	plugins: [
+		'gatsby-plugin-tslint',
+		`gatsby-plugin-typescript`,
 		{
 			resolve: "gatsby-plugin-eslint",
 			options: {

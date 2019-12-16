@@ -1,11 +1,15 @@
 import React from "react"
-import PropTypes from "prop-types"
 import styled, { ThemeProvider } from "styled-components"
 import GlobalStyle from "../../utility/GlobalStyles"
 import Footer from "./Footer"
 import Menu from "./Menu"
 import SEO from "./SEO"
 import useTheme from "./useTheme"
+
+interface Props {
+	children: any,
+	hasSEO: boolean,
+}
 
 
 const PageContainer = styled.div`
@@ -28,7 +32,9 @@ const ContentContainer = styled.main`
 `
 
 
-const Layout = ({ children, hasSEO }) => {
+
+
+const Layout = ({ children, hasSEO }: Props) => {
 	const theme = useTheme()
 
 	return (
@@ -42,15 +48,6 @@ const Layout = ({ children, hasSEO }) => {
 			</PageContainer>
 		</ThemeProvider>
 	)
-}
-
-Layout.propTypes = {
-	children: PropTypes.node.isRequired,
-	hasSEO: PropTypes.bool
-}
-
-Layout.defaultProps = {
-	hasSEO: false
 }
 
 export default Layout

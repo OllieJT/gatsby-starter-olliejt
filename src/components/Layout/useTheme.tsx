@@ -1,11 +1,11 @@
 // eslint-disable-next-line
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import storage from "local-storage-fallback"
 import { darkMode } from "../../utility/theme"
 
 export default function useTheme(defaultTheme = { mode: "dark", color: darkMode }) {
 
-	const [theme,_setTheme] = useState(getInitialTheme)
+	const [theme, _setTheme] = useState(getInitialTheme)
 
 	function getInitialTheme() {
 		const savedTheme = storage.getItem("theme")
@@ -19,6 +19,6 @@ export default function useTheme(defaultTheme = { mode: "dark", color: darkMode 
 	return {
 		...theme,
 		// eslint-disable-next-line
-		setTheme: ({setTheme,...theme}) => _setTheme(theme)
+		setTheme: ({ setTheme, ...theme }) => _setTheme(theme)
 	}
 }

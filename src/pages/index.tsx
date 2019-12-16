@@ -1,13 +1,17 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { graphql } from "gatsby"
-import Layout from "../components/Layout"
-import SEO from "../components/Layout/SEO"
+import Layout from "../components/Layout/index"
+import SEO from "../components/Layout/SEO/index"
 import Header from "../components/Header"
 import ToggleMode from "../components/Layout/ToggleMode"
 
-const IndexPage = ({ data }) => (
-	<Layout theme={null}>
+interface Props {
+	data: object
+}
+
+const IndexPage = ({ data }: Props) => (
+	<Layout hasSEO={false}>
 		<SEO
 			title="OllieJT"
 			keywords={[
@@ -25,7 +29,7 @@ const IndexPage = ({ data }) => (
 		{console.log(data)}
 		<Header />
 		<ToggleMode />
-		<article style={{maxWidth: "800px", margin:"0 auto"}}>
+		<article style={{ maxWidth: "800px", margin: "0 auto" }}>
 			<h1>
 				Heading One<br />
 				Creativity is a fucking work-ethic.

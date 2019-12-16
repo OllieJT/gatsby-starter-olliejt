@@ -1,8 +1,14 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React, { ReactNode } from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
 import { MdArrowDropDown } from "react-icons/md"
+
+interface Props {
+	label: string,
+	link: string,
+	children: ReactNode,
+	isExternal: boolean,
+}
 
 const StyledItem = styled.li`
 	ul{
@@ -61,28 +67,25 @@ const StyledItemLink = styled(Link)`
 	}
 `
 
-const MenuItem = ({ label, link, children, isExternal }) => {
+const MenuItem = ({ label, link, children, isExternal }: Props) => {
 	const inside = (<p>{label}{children && (<MdArrowDropDown />)}</p>)
-	return(
+	return (
 		<StyledItem>
 			{link ? isExternal ? (
-				<StyledItemLink as="a"  href={link} target="_blank" rel="noopener noreferrer">{inside}</StyledItemLink>
+				<StyledItemLink as="a" href={link} target="_blank" rel="noopener noreferrer">{inside}</StyledItemLink>
 			) : (
-				<StyledItemLink  to={link}>{inside}</StyledItemLink>
-			) : (
-				<StyledItemLink as="div" >{inside}</StyledItemLink>
-			)}
+					<StyledItemLink to={link}>{inside}</StyledItemLink>
+				) : (
+					<StyledItemLink as="div" >{inside}</StyledItemLink>
+				)}
 
 			{children && (<ul>{children}</ul>)}
 		</StyledItem>
-	)}
-
-MenuItem.propTypes = {
-	label: PropTypes.string.isRequired,
-	link: PropTypes.string,
-	children: PropTypes.any,
-	isExternal: PropTypes.bool,
+	)
 }
+
+
+
 
 MenuItem.defaultProps = {
 	link: null,

@@ -20,7 +20,7 @@ const Menubar = styled.ul`
 `
 
 const Menu = () => (
-	<Container restrict role="navigation" as="nav">
+	<Container isRestricted={true} role="navigation" as="nav">
 		<Menubar>
 			<MenuLink label="Home" link="/" />
 			<MenuLink label="Dropdown" link="/dropdown" >

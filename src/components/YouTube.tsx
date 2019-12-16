@@ -1,10 +1,19 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { IS_BROWSER, getYoutubeID } from "../utility/functions"
-// eslint-disable-next-line
 const config = require("../utility/config")
 
-export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasAnnotations, isLooped }) => {
+interface Props {
+	url: string,
+	isAutoplay: boolean,
+	hasControls: boolean,
+	hasAnnotations: boolean,
+	isLooped: boolean,
+	width: number,
+	height: number,
+	title: string,
+}
+
+export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasAnnotations, isLooped }: Props) => {
 	var thisSite = ""
 	//var thisPage = '';
 	if (IS_BROWSER) {
@@ -38,29 +47,6 @@ export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasA
 			allowTransparency="1"
 		/>
 	)
-}
-
-Video.propTypes = {
-	url: PropTypes.string.isRequired,
-	isAutoplay: PropTypes.bool,
-	hasControls: PropTypes.bool,
-	hasAnnotations: PropTypes.bool,
-	isLooped: PropTypes.bool,
-
-	width: PropTypes.number,
-	height: PropTypes.number,
-
-	title: PropTypes.string,
-}
-Video.defaultProps = {
-	isAutoplay: false,
-	hasControls: false,
-	hasAnnotations: true,
-	isLooped: true,
-	width: 960,
-	height: 540,
-
-	title: null,
 }
 
 export default Video
