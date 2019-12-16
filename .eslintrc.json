@@ -91,12 +91,6 @@
 				"rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+"
 			}
 		],
-		"react/default-props-match-prop-types": [
-			1,
-			{
-				"allowRequiredDefaults": false
-			}
-		],
 		"react/self-closing-comp": [
 			"error",
 			{

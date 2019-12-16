@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout/index"
 import SEO from "../components/Layout/SEO/index"
@@ -59,10 +58,6 @@ const IndexPage = ({ data }: Props) => (
 		</article>
 	</Layout>
 )
-
-IndexPage.propTypes = {
-	data: PropTypes.any.isRequired,
-}
 
 export const query = graphql`
 	query homePageQuery {

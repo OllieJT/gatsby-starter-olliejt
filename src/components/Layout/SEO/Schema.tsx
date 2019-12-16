@@ -1,7 +1,22 @@
 import React from "react"
-import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 // eslint-disable-next-line
+
+interface Props {
+	type: "website" | "article" | "profile"
+	title: string
+	headline: string
+	desc: string
+	author: string
+	image: string
+	siteUrl: string
+	pageUrl: string
+	lang: string
+	logo: string
+	datePublished: Date
+	dateModified: Date
+
+}
 
 const Schema = ({
 	type,
@@ -16,7 +31,7 @@ const Schema = ({
 	logo,
 	datePublished,
 	dateModified
-}) => {
+}: Props) => {
 	// schema.org in JSONLD format
 	// https://developers.google.com/search/docs/guides/intro-structured-data
 	// You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
@@ -76,15 +91,15 @@ const Schema = ({
 			"@type": "Article",
 			schemaDefault
 		},
-		// Push current blogpost into breadcrumb list
-		itemListElement.push({
-			"@type": "ListItem",
-			item: {
-				"@id": pageUrl,
-				name: title,
-			},
-			position: 2,
-		})
+			// Push current blogpost into breadcrumb list
+			itemListElement.push({
+				"@type": "ListItem",
+				item: {
+					"@id": pageUrl,
+					name: title,
+				},
+				position: 2,
+			})
 	}
 	const breadcrumb = {
 		"@context": "http://schema.org",
@@ -104,27 +119,12 @@ const Schema = ({
 			{type === "article" ? (
 				<script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
 			) : (
-				<script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
-			)}
+					<script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
+				)}
 
 			<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
 		</Helmet>
 	)
-}
-
-Schema.propTypes = {
-	type: PropTypes.oneOf(["website", "article", "profile"]).isRequired,
-	title: PropTypes.string.isRequired,
-	headline: PropTypes.string.isRequired,
-	desc: PropTypes.string.isRequired,
-	author: PropTypes.string.isRequired,
-	image: PropTypes.string.isRequired,
-	siteUrl: PropTypes.string.isRequired,
-	pageUrl: PropTypes.string,
-	lang: PropTypes.string.isRequired,
-	logo: PropTypes.string,
-	datePublished: PropTypes.any,
-	dateModified: PropTypes.any,
 }
 
 export default Schema
