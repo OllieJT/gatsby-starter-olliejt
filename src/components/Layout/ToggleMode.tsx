@@ -1,10 +1,8 @@
-import React from 'react'
-import styled, { ThemeConsumer } from 'styled-components'
+import React from 'react';
+import styled, { ThemeConsumer } from 'styled-components';
 
-import { emojiCursor } from '../../utility/functions'
-import { darkMode, lightMode } from '../../utility/theme'
-
-
+import { emojiCursor } from '../../utility/functions';
+import { darkMode, lightMode } from '../../utility/theme';
 
 const ToggleButton = styled.button`
 	position: relative;
@@ -20,48 +18,64 @@ const ToggleButton = styled.button`
 	padding: var(--size-space-smallest) var(--size-space-small);
 	font-size: 40px;
 	overflow: hidden;
-	cursor: ${props => props.theme.mode === "dark" ? emojiCursor("☀️") : emojiCursor("🌙")};
-	transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+	cursor: ${props =>
+		props.theme.mode === 'dark' ? emojiCursor('☀️') : emojiCursor('🌙')};
+	transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-	.mode{
+	.mode {
 		display: inline-flex;
 		flex-direction: column;
 		margin-bottom: -50%;
 		align-items: flex-end;
 		justify-content: flex-start;
-		span:last-child{
+		span:last-child {
 			opacity: 0;
-			transition: all .4s cubic-bezier(0.075, 0.82, 0.165, 1);
+			transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 		}
 	}
 
-	&:hover{
-		background-color: ${props => props.theme.mode === "dark" ? "white" : "black"};
-		*{color: ${props => props.theme.mode === "dark" ? "black" : "white"};}
-		.mode span{
+	&:hover {
+		background-color: ${props =>
+			props.theme.mode === 'dark' ? 'white' : 'black'};
+		* {
+			color: ${props =>
+				props.theme.mode === 'dark' ? 'black' : 'white'};
+		}
+		.mode span {
 			transform: translateY(-100%);
-				opacity: 0;
-			&:last-child{
+			opacity: 0;
+			&:last-child {
 				opacity: 1;
 			}
 		}
 	}
-`
+`;
 
 export default function ToggleMode() {
-	return (<ThemeConsumer>{theme => (
-		<ToggleButton onClick={() => theme.setTheme(
-			theme.mode === "dark"
-				? { mode: "light", color: lightMode }
-				: { mode: "dark", color: darkMode }
-		)}>
-			<h6>
-				<span className="mode">
-					<span>{theme.mode === "dark" ? "dark" : "light"}</span>
-					<span>{theme.mode === "dark" ? "light" : "dark"}</span>
-				</span>
-				mode
-			</h6>
-		</ToggleButton>
-	)}</ThemeConsumer>)
+	return (
+		<ThemeConsumer>
+			{theme => (
+				<ToggleButton
+					onClick={() =>
+						theme.setTheme(
+							theme.mode === 'dark'
+								? { mode: 'light', color: lightMode }
+								: { mode: 'dark', color: darkMode },
+						)
+					}>
+					<h6>
+						<span className="mode">
+							<span>
+								{theme.mode === 'dark' ? 'dark' : 'light'}
+							</span>
+							<span>
+								{theme.mode === 'dark' ? 'light' : 'dark'}
+							</span>
+						</span>
+						mode
+					</h6>
+				</ToggleButton>
+			)}
+		</ThemeConsumer>
+	);
 }

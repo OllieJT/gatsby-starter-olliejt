@@ -1,7 +1,7 @@
-import { Link } from 'gatsby'
-import React, { ReactNode } from 'react'
-import { MdArrowDropDown } from 'react-icons/md'
-import styled from 'styled-components'
+import { Link } from 'gatsby';
+import React, { ReactNode } from 'react';
+import { MdArrowDropDown } from 'react-icons/md';
+import styled from 'styled-components';
 
 interface Props {
 	label: string;
@@ -11,7 +11,7 @@ interface Props {
 }
 
 const StyledItem = styled.li`
-	ul{
+	ul {
 		position: absolute;
 		top: 100%;
 		left: 0;
@@ -20,29 +20,28 @@ const StyledItem = styled.li`
 		width: 100%;
 		transform: translateY(-100%);
 		opacity: 0;
-		transition: all .24s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: all 0.24s cubic-bezier(0.075, 0.82, 0.165, 1);
 		z-index: 400;
-		svg{
-			transform: rotate(-90deg)
+		svg {
+			transform: rotate(-90deg);
 		}
 		li {
 			overflow: hidden;
-			&:hover{
+			&:hover {
 				overflow: visible;
 			}
-			ul{
+			ul {
 				top: 0;
 				left: 100%;
 				transform: translateY(0%);
-
 			}
 		}
 	}
-	&:hover ul{
+	&:hover ul {
 		transform: translateY(0);
 		opacity: 1;
 	}
-`
+`;
 
 const StyledItemLink = styled(Link)`
 	width: 100%;
@@ -50,48 +49,57 @@ const StyledItemLink = styled(Link)`
 	cursor: pointer;
 	background-color: var(--color-level-lightest);
 	z-index: 500;
-	p{
+	p {
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
 		color: var(--color-level-dark);
 	}
-	svg{
-		font-size:1.2em;
+	svg {
+		font-size: 1.2em;
 	}
-	&:hover{
+	&:hover {
 		background-color: var(--color-level-light);
-		p{
+		p {
 			color: var(--color-level-darkest);
 		}
 	}
-`
+`;
 
 const MenuItem = ({ label, link, children, isExternal }: Props) => {
-	const inside = (<p>{label}{children && (<MdArrowDropDown />)}</p>)
+	const inside = (
+		<p>
+			{label}
+			{children && <MdArrowDropDown />}
+		</p>
+	);
 	return (
 		<StyledItem>
-			{link ? isExternal ? (
-				<StyledItemLink as="a" href={link} target="_blank" rel="noopener noreferrer">{inside}</StyledItemLink>
+			{link ? (
+				isExternal ? (
+					<StyledItemLink
+						as="a"
+						href={link}
+						target="_blank"
+						rel="noopener noreferrer">
+						{inside}
+					</StyledItemLink>
+				) : (
+					<StyledItemLink to={link}>{inside}</StyledItemLink>
+				)
 			) : (
-				<StyledItemLink to={link}>{inside}</StyledItemLink>
-			) : (
-				<StyledItemLink as="div" >{inside}</StyledItemLink>
+				<StyledItemLink as="div">{inside}</StyledItemLink>
 			)}
 
-			{children && (<ul>{children}</ul>)}
+			{children && <ul>{children}</ul>}
 		</StyledItem>
-	)
-}
-
-
-
+	);
+};
 
 MenuItem.defaultProps = {
 	link: null,
 	children: null,
-	isExternal: false
-}
+	isExternal: false,
+};
 
-
-export default MenuItem
+export default MenuItem;

@@ -1,16 +1,16 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
 //import Schema from "./Schema"
 //import { useStaticQuery, graphql } from 'gatsby';
 // eslint-disable-next-line
-const config = require("../../../utility/config")
+const config = require('../../../utility/config');
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 interface Props {
 	title: string;
-	type: (["website", "article", "profile"]);
+	type: ['website', 'article', 'profile'];
 	image: string;
 	url: string;
 	desc: string;
@@ -18,7 +18,7 @@ interface Props {
 		nameFirst: string;
 		nameLast: string;
 		username: string;
-		gender: ["male", "female"];
+		gender: ['male', 'female'];
 	};
 	typeArticle: {
 		datePublished: Date;
@@ -31,74 +31,84 @@ interface Props {
 	keywords: Array<string>;
 }
 
-const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords }: Props) => {
-	const authorName = typeArticle.author || typeProfile.nameFirst + " " + typeProfile.nameLast
+const SEO = ({
+	title,
+	type,
+	image,
+	url,
+	desc,
+	typeProfile,
+	typeArticle,
+	keywords,
+}: Props) => {
+	const authorName =
+		typeArticle.author ||
+		typeProfile.nameFirst + ' ' + typeProfile.nameLast;
 	//const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
 	return (
 		<Helmet
 			htmlAttributes={{
-				lang: "en"
+				lang: 'en',
 			}}
 			title={title}
 			titleTemplate={`%s | ${config.siteName}`}
-
 			meta={[
 				{
-					name: "description",
-					content: desc
+					name: 'description',
+					content: desc,
 				},
 				{
-					name: "image",
-					content: image
+					name: 'image',
+					content: image,
 				},
 				{
-					name: "author",
+					name: 'author',
 					content: authorName,
 				},
 				/* ----
 					ARTICLE
 				---- */
 				{
-					name: "article:published_time",
+					name: 'article:published_time',
 					content: typeArticle.datePublished,
 				},
 				{
-					name: "article:modified_time",
+					name: 'article:modified_time',
 					content: typeArticle.dateModified,
 				},
 				{
-					name: "article:expiration_time",
+					name: 'article:expiration_time',
 					content: typeArticle.dateExpire,
 				},
 				{
-					name: "article:author",
+					name: 'article:author',
 					content: authorName,
 				},
 				{
-					name: "article:section",
+					name: 'article:section',
 					content: typeArticle.section,
 				},
 				{
-					name: "article:tag",
+					name: 'article:tag',
 					content: typeArticle.tag,
 				},
 				/* ----
 					PROFILE
 				---- */
 				{
-					name: "profile:first_name",
+					name: 'profile:first_name',
 					content: typeProfile.nameFirst,
 				},
 				{
-					name: "profile:last_name",
+					name: 'profile:last_name',
 					content: typeProfile.nameLast,
 				},
 				{
-					name: "profile:username",
+					name: 'profile:username',
 					content: typeProfile.username,
 				},
 				{
-					name: "profile:gender",
+					name: 'profile:gender',
 					content: typeProfile.gender,
 				},
 
@@ -109,83 +119,79 @@ const SEO = ({ title, type, image, url, desc, typeProfile, typeArticle, keywords
 					Open Graph
 				---- */
 				{
-					property: "og:site_name",
+					property: 'og:site_name',
 					content: config.siteName,
 				},
 				{
-					property: "og:locale",
+					property: 'og:locale',
 					content: config.ogLanguage,
 				},
 				{
-					property: "og:url",
+					property: 'og:url',
 					content: url,
 				},
 				{
-					property: "og:type",
+					property: 'og:type',
 					content: type,
 				},
 				{
-					property: "og:title",
+					property: 'og:title',
 					content: title,
 				},
 				{
-					property: "og:description",
+					property: 'og:description',
 					content: desc,
 				},
 				{
-					property: "og:image",
+					property: 'og:image',
 					content: image,
 				},
 				{
-					property: "og:image:alt",
+					property: 'og:image:alt',
 					content: desc,
 				},
 				/* ----
 					TWITTER
 				---- */
 				{
-					name: "twitter:card",
-					content: "summary",
+					name: 'twitter:card',
+					content: 'summary',
 				},
 				{
-					name: "twitter:creator",
+					name: 'twitter:creator',
 					content: config.twitter,
 				},
 				{
-					name: "twitter:title",
+					name: 'twitter:title',
 					content: title,
 				},
 				{
-					name: "twitter:description",
+					name: 'twitter:description',
 					content: desc,
 				},
 				{
-					name: "twitter:image",
+					name: 'twitter:image',
 					content: image,
 				},
 				{
-					name: "twitter:image:alt",
+					name: 'twitter:image:alt',
 					content: desc,
 				},
-			]
-				.concat(
-					keywords.length > 0
-						? {
-							name: "keywords",
-							content: keywords.join(", "),
-						}
-						: []
-				)
-			}
-
+			].concat(
+				keywords.length > 0
+					? {
+							name: 'keywords',
+							content: keywords.join(', '),
+					  }
+					: [],
+			)}
 		/>
-	)
-}
-
+	);
+};
 
 SEO.defaultProps = {
 	title: config.title,
-	type: "website",
+	type: 'website',
 	image: config.banner,
 	url: config.url,
 	desc: config.description,
@@ -193,20 +199,17 @@ SEO.defaultProps = {
 		nameFirst: config.nameFirst,
 		nameLast: config.nameLast,
 		username: config.alias,
-		gender: config.gender
-	}
-	,
+		gender: config.gender,
+	},
 	typeArticle: {
 		dateModified: new Date(),
 		author: config.author,
 		section: config.industry,
 	},
-	keywords: []
-}
+	keywords: [],
+};
 
-
-export default SEO
-
+export default SEO;
 
 /*
 < Schema

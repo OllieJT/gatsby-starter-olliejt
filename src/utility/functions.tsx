@@ -1,30 +1,26 @@
 /* eslint-disable */
 
-// Checks if the window is defined
-export const IS_BROWSER = typeof window !== "undefined";
+export const IS_BROWSER = typeof window !== 'undefined';
 
-// Removes or alters characters in a string to make it URL safe
 export function slugify(text: string) {
 	return text
 		.toString()
 		.toLowerCase()
-		.replace(/\s+/g, "-") // Replace spaces with -
-		.replace(/[^\w\-]+/g, "") // Remove all non-word chars
-		.replace(/\-\-+/g, "-") // Replace multiple - with single -
-		.replace(/^-+/, "") // Trim - from start of text
-		.replace(/-+$/, ""); // Trim - from end of text
+		.replace(/\s+/g, '-') // Replace spaces with -
+		.replace(/[^\w\-]+/g, '') // Remove all non-word chars
+		.replace(/\-\-+/g, '-') // Replace multiple - with single -
+		.replace(/^-+/, '') // Trim - from start of text
+		.replace(/-+$/, ''); // Trim - from end of text
 }
 
-// Takes a variety of YouTube URL types and outputs the Video ID
 export function getYoutubeID(url: string) {
-	var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
-	var match = url.match(regExp);
+	const regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+	const match = url.match(regExp);
 	return match && match[7].length == 11 ? match[7] : false;
 }
 
-// Takes an array and returns it with the items in a random order
 export function shuffle(array: Array<any>) {
-	var currentIndex = array.length,
+	let currentIndex = array.length,
 		temporaryValue,
 		randomIndex;
 
@@ -43,7 +39,6 @@ export function shuffle(array: Array<any>) {
 	return array;
 }
 
-
 export function emojiCursor(emoji: string) {
-	return (`url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>${emoji}</text></svg>") 16 0, auto;`)
+	return `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>${emoji}</text></svg>") 16 0, auto;`;
 }

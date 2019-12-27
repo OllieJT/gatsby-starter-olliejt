@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-import { getYoutubeID, IS_BROWSER } from '../utility/functions'
+import { getYoutubeID, IS_BROWSER } from '../utility/functions';
 
-const config = require("../utility/config")
+const config = require('../utility/config');
 
 interface Props {
 	url: string;
@@ -15,24 +15,33 @@ interface Props {
 	title: string;
 }
 
-export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasAnnotations, isLooped }: Props) => {
-	let thisSite = ""
+export const Video = ({
+	url,
+	width,
+	height,
+	title,
+	isAutoplay,
+	hasControls,
+	hasAnnotations,
+	isLooped,
+}: Props) => {
+	let thisSite = '';
 	//var thisPage = '';
 	if (IS_BROWSER) {
-		thisSite = window.location.origin
+		thisSite = window.location.origin;
 		//thisPage = window.location.href;
 	} else {
-		thisSite = config.url
+		thisSite = config.url;
 		//thisPage = config.url;
 	}
 
-	const ytVideoID = url && getYoutubeID(url)
-	const ytAutoplay = `&amp;autoplay=${isAutoplay ? 1 : 0}`
-	const ytAontrols = `&amp;controls=${hasControls ? 1 : 0}`
-	const ytAnnotations = `&amp;iv_load_policy=${hasAnnotations ? 3 : 1}`
-	const ytLoop = `&amp;loop=${isLooped ? 1 : 0}`
+	const ytVideoID = url && getYoutubeID(url);
+	const ytAutoplay = `&amp;autoplay=${isAutoplay ? 1 : 0}`;
+	const ytAontrols = `&amp;controls=${hasControls ? 1 : 0}`;
+	const ytAnnotations = `&amp;iv_load_policy=${hasAnnotations ? 3 : 1}`;
+	const ytLoop = `&amp;loop=${isLooped ? 1 : 0}`;
 
-	const options = ytAutoplay + ytAontrols + ytAnnotations + ytLoop
+	const options = ytAutoplay + ytAontrols + ytAnnotations + ytLoop;
 
 	return (
 		<iframe
@@ -47,7 +56,7 @@ export const Video = ({ url, width, height, title, isAutoplay, hasControls, hasA
 			allowFullScreen={true}
 			allowTransparency={true}
 		/>
-	)
-}
+	);
+};
 
-export default Video
+export default Video;

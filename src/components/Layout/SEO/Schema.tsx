@@ -1,10 +1,10 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
 // eslint-disable-next-line
 
 interface Props {
-	type: "website" | "article" | "profile";
+	type: 'website' | 'article' | 'profile';
 	title: string;
 	headline: string;
 	desc: string;
@@ -16,7 +16,6 @@ interface Props {
 	logo: string;
 	datePublished: Date;
 	dateModified: Date;
-
 }
 
 const Schema = ({
@@ -31,13 +30,13 @@ const Schema = ({
 	lang,
 	logo,
 	datePublished,
-	dateModified
+	dateModified,
 }: Props) => {
 	// schema.org in JSONLD format
 	// https://developers.google.com/search/docs/guides/intro-structured-data
 	// You can fill out the 'author', 'creator' with more data or another type (e.g. 'Organization')
 	const schemaDefault = {
-		"@context": "http://schema.org",
+		'@context': 'http://schema.org',
 		url: siteUrl,
 		mainEntityOfPage: pageUrl,
 		headline: headline,
@@ -45,70 +44,70 @@ const Schema = ({
 		description: desc,
 		name: title,
 		author: {
-			"@type": "Person",
-			name: author
+			'@type': 'Person',
+			name: author,
 		},
 		copyrightHolder: {
-			"@type": "Person",
+			'@type': 'Person',
 			name: author,
 		},
 		copyrightYear: new Date().getFullYear(),
 		creator: {
-			"@type": "Person",
+			'@type': 'Person',
 			name: author,
 		},
 		publisher: {
-			"@type": "Person",
+			'@type': 'Person',
 			name: author,
 			logo: {
-				"@type": "ImageObject",
+				'@type': 'ImageObject',
 				url: logo,
 			},
 		},
 		datePublished: datePublished,
 		dateModified: dateModified,
 		image: {
-			"@type": "ImageObject",
+			'@type': 'ImageObject',
 			url: image,
 		},
-	}
+	};
 	const schemaOrgWebPage = {
-		"@type": "WebPage",
-		schemaDefault
-	}
+		'@type': 'WebPage',
+		schemaDefault,
+	};
 	const itemListElement = [
 		{
-			"@type": "ListItem",
+			'@type': 'ListItem',
 			item: {
-				"@id": siteUrl,
-				name: "Homepage",
+				'@id': siteUrl,
+				name: 'Homepage',
 			},
 			position: 1,
 		},
-	]
-	let schemaArticle = null
-	if (type === "article") {
-		schemaArticle = {
-			"@type": "Article",
-			schemaDefault
-		},
-		// Push current blogpost into breadcrumb list
-		itemListElement.push({
-			"@type": "ListItem",
-			item: {
-				"@id": pageUrl,
-				name: title,
-			},
-			position: 2,
-		})
+	];
+	let schemaArticle = null;
+	if (type === 'article') {
+		(schemaArticle = {
+			'@type': 'Article',
+			schemaDefault,
+		}),
+			// Push current blogpost into breadcrumb list
+			itemListElement.push({
+				'@type': 'ListItem',
+				item: {
+					'@id': pageUrl,
+					name: title,
+				},
+				position: 2,
+			});
 	}
 	const breadcrumb = {
-		"@context": "http://schema.org",
-		"@type": "BreadcrumbList",
-		description: "Breadcrumbs list",
-		name: "Breadcrumbs",
+		'@context': 'http://schema.org',
+		'@type': 'BreadcrumbList',
+		description: 'Breadcrumbs list',
+		name: 'Breadcrumbs',
 		itemListElement,
-	}
+	};
 	/*
 	return ({
 		page: JSON.stringify(schemaArticle) || JSON.stringify(schemaOrgWebPage),
@@ -117,15 +116,21 @@ const Schema = ({
 
 	return (
 		<Helmet>
-			{type === "article" ? (
-				<script type="application/ld+json">{JSON.stringify(schemaArticle)}</script>
+			{type === 'article' ? (
+				<script type="application/ld+json">
+					{JSON.stringify(schemaArticle)}
+				</script>
 			) : (
-				<script type="application/ld+json">{JSON.stringify(schemaOrgWebPage)}</script>
+				<script type="application/ld+json">
+					{JSON.stringify(schemaOrgWebPage)}
+				</script>
 			)}
 
-			<script type="application/ld+json">{JSON.stringify(breadcrumb)}</script>
+			<script type="application/ld+json">
+				{JSON.stringify(breadcrumb)}
+			</script>
 		</Helmet>
-	)
-}
+	);
+};
 
-export default Schema
+export default Schema;
