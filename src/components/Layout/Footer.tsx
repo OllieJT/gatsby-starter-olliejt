@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { styledContainer } from '../../utility/styles';
+import { contain } from '../../utility/styles';
 
 const StyledFooter = styled.footer`
-	${styledContainer(true)}
+	${contain}
 `;
 
 const Footer = () => (

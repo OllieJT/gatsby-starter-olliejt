@@ -9,6 +9,7 @@ export default function useTheme(
 ) {
 	function getInitialTheme() {
 		const savedTheme = storage.getItem('theme');
+
 		return savedTheme ? JSON.parse(savedTheme) : defaultTheme;
 	}
 

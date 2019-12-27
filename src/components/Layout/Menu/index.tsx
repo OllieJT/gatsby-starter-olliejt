@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { styledContainer } from '../../../utility/styles';
+import { contain } from '../../../utility/styles';
 import ToggleMode from '../ToggleMode';
 import MenuLink from './MenuLink';
 
 const Menubar = styled.ul`
-	${styledContainer(true)};
+	${contain};
 	position: relative;
 	display: flex;
 	flex-direction: row;

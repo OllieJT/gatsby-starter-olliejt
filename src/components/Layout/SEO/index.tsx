@@ -1,8 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-//import Schema from "./Schema"
-//import { useStaticQuery, graphql } from 'gatsby';
+// import Schema from "./Schema"
+// import { useStaticQuery, graphql } from 'gatsby';
 // eslint-disable-next-line
 const config = require('../../../utility/config');
 
@@ -43,8 +43,9 @@ const SEO = ({
 }: Props) => {
 	const authorName =
 		typeArticle.author ||
-		typeProfile.nameFirst + ' ' + typeProfile.nameLast;
-	//const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
+		`${typeProfile.nameFirst} ${typeProfile.nameLast}`;
+	// const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
+
 	return (
 		<Helmet
 			htmlAttributes={{

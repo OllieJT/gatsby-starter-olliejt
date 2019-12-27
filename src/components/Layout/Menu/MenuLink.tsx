@@ -73,6 +73,7 @@ const MenuItem = ({ label, link, children, isExternal }: Props) => {
 			{children && <MdArrowDropDown />}
 		</p>
 	);
+
 	return (
 		<StyledItem>
 			{link ? (
