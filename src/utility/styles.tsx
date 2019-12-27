@@ -11,7 +11,12 @@ export const cover = css`
 	content: '';
 `;
 
-export const enableRichText = (isRestricted = false) => css`
+export const contain = css`
+	max-width: ${props => props.theme.size.pageIn};
+	padding: 0 ${props => props.theme.size.gutter};
+`;
+
+export const enableRichText = css`
 	/* ALL */
 	h1,
 	h2,
@@ -25,19 +30,7 @@ export const enableRichText = (isRestricted = false) => css`
 	dl,
 	pre,
 	legend {
-		${isRestricted
-			? `
-			width: 100%;
-			max-width: 96rem;
-			padding-left: .8rem;
-			padding-right: .8rem;
-			margin-left: auto;
-			margin-right: auto;
-			`
-			: `
-			margin-left: ${props => props.theme.size.space.small};
-			margin-right: ${props => props.theme.size.space.small};
-			`}
+		${contain};
 	}
 	iframe,
 	figure,
@@ -152,40 +145,5 @@ export const enableRichText = (isRestricted = false) => css`
 	img {
 		width: auto;
 		height: auto;
-	}
-`;
-
-export const FeatureWidgetStyles = css`
-	position: relative;
-	z-index: 5;
-	display: block;
-	align-self: stretch;
-	perspective: 500px;
-	width: 100%;
-	margin-left: auto;
-	margin-right: auto;
-	&:first-child {
-		margin-bottom: ${props => props.theme.size.space.large};
-	}
-`;
-
-export const FeatureContainerStyles = css`
-	position: relative;
-	z-index: 5;
-	align-self: center;
-	display: flex;
-	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	padding: ${props => props.theme.size.space.largest} 0;
-	max-width: none;
-	width: 100%;
-	h1,
-	h2 {
-		max-width: 800px;
-		margin: auto;
-	}
-	@media (max-width: 800px) {
-		padding: ${props => props.theme.size.space.small} 0;
 	}
 `;

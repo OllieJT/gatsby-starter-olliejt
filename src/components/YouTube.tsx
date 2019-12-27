@@ -26,13 +26,15 @@ export const Video = ({
 	isLooped,
 }: Props) => {
 	let thisSite = '';
-	//var thisPage = '';
+
+	// var thisPage = '';
+
 	if (IS_BROWSER) {
 		thisSite = window.location.origin;
-		//thisPage = window.location.href;
+		// thisPage = window.location.href;
 	} else {
 		thisSite = config.url;
-		//thisPage = config.url;
+		// thisPage = config.url;
 	}
 
 	const ytVideoID = url && getYoutubeID(url);
@@ -53,8 +55,8 @@ export const Video = ({
 			src={`https://www.youtube.com/embed/${ytVideoID}?origin=${thisSite}/${options}&amp;modestbranding=1&amp;playsinline=1&amp;rel=0`}
 			allow="autoplay"
 			frameBorder="0"
-			allowFullScreen={true}
-			allowTransparency={true}
+			allowFullScreen
+			allowTransparency
 		/>
 	);
 };

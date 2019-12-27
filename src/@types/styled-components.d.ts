@@ -1,7 +1,5 @@
 import 'styled-components';
 
-import React from 'react';
-
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		mode: string;
