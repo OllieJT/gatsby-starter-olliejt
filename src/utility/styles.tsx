@@ -10,7 +10,6 @@ export const styledCover = () => css`
 	height: 100%;
 `
 
-
 export const styledRichText = () => css`
 	iframe,
 	figure,
@@ -143,5 +142,4 @@ export const styledContainer = (isRestricted = false) => css`
 			margin-right: var(--content-padding);
 		`
 }
-
 `

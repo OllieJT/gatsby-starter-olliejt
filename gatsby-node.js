@@ -1,5 +1,21 @@
 const path = require("path")
 
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    module: {
+      rules: [
+        {
+          test: /\.(graphql|gql)$/,
+          exclude: /node_modules/,
+          loader: "graphql-tag/loader",
+        },
+      ],
+    },
+  })
+}
+
+/*
 exports.createPages = async ({ graphql, actions }) => {
   const linkResolver = require("./src/utility/linkResolver")
   const { createPage } = actions
@@ -27,3 +43,4 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     })
 }
+ */

@@ -10,10 +10,13 @@
 			"path": "src/templates"
 		},
 		{
-			"path": "src/utility",
+			"path": "src/utility"
 		},
 		{
 			"path": "static"
+		},
+		{
+			"path": "."
 		}
 	],
 	"settings": {}

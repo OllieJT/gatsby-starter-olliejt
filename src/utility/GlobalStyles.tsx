@@ -1,22 +1,5 @@
-import 'styled-components'
-
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
-
-// and extend them!
-declare module "styled-components" {
-	export interface DefaultTheme {
-		mode: string;
-		color: {
-			mono: Array<string>;
-			primary: Array<string>;
-			content: Array<string>;
-		};
-		setTheme: Function;
-	}
-}
-
-
 
 const GlobalStyle = createGlobalStyle`
 	${reset}
@@ -64,6 +47,11 @@ const GlobalStyle = createGlobalStyle`
 
 	* {
 		box-sizing: border-box;
+	}
+
+	::before,
+	::after {
+		box-sizing: inherit;
 	}
 
 	html{

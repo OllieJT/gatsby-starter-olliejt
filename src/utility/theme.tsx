@@ -42,36 +42,3 @@ export const darkMode = {
 		"hsl(220, 10%, 60%)",
 	]
 }
-
-export const size = {
-	small: ["0.4rem", "0.8rem", "1.2rem", "1.6rem", "2.4rem"],
-	medium: ["0.8rem", "1.6rem", "2.4rem", "4rem", "8rem"],
-	large: ["1.6rem", "3.2rem", "4rem", "8rem", "12rem"],
-}
-
-export const typescale = {
-	small: {
-		h6: { size: 1.2, line: 2.25 },
-		p: { size: 1.6, line: 1.75 },
-		h5: { size: 2, line: 1.6 },
-		h3: { size: 2.4, line: 1.4 },
-		h2: { size: 3.2, line: 1.3 },
-		h1: { size: 4, line: 1.2 },
-	},
-	medium: [
-		{ size: 1.6, line: 2 },
-		{ size: 2, line: 1.6 },
-		{ size: 2.4, line: 1.5 },
-		{ size: 3.2, line: 1.3 },
-		{ size: 4.8, line: 1.2 },
-		{ size: 5.6, line: 1.1 },
-	],
-	large: [
-		{ size: 2, line: 1.75 },
-		{ size: 2.4, line: 1.5 },
-		{ size: 3.6, line: 1.5 },
-		{ size: 4.8, line: 1.2 },
-		{ size: 5.6, line: 1.1 },
-		{ size: 8, line: 1.1 },
-	],
-}
