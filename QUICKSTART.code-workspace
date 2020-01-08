@@ -1,0 +1,46 @@
+{
+	"folders": [
+		{
+			"path": "src/components"
+		},
+		{
+			"path": "src/pages"
+		},
+		{
+			"path": "src/templates"
+		},
+		{
+			"path": "src/utility"
+		},
+		{
+			"name": "@Fragments",
+			"path": "src/graphql-fragments"
+		},
+		{
+			"name": "@Types",
+			"path": "src/@types/"
+		},
+		{
+			"name": "_ROOT",
+			"path": "."
+		}
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true,
+			"source.organizeImports": true
+		},
+		"eslint.enable": true,
+		"eslint.lintTask.enable": true,
+		"eslint.alwaysShowStatus": true,
+		"eslint.validate": [
+			"javascript",
+			"javascriptreact",
+			"typescript",
+			"typescriptreact"
+		],
+		"workbench.settings.useSplitJSON": true,
+		"explorer.incrementalNaming": "smart"
+	}
+}

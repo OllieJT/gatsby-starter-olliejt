@@ -1,17 +1,18 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-
+import Button from '../components/Button';
+import Container from '../components/Container';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import SEO from '../components/Layout/SEO';
-import ToggleMode from '../components/Layout/ToggleMode';
 
 interface Props {
 	data: object;
 }
 
-const IndexPage = ({ data }: Props) => (
+export default ({ data }: Props) => (
 	<Layout hasSEO={false}>
+		{console.log(data)}
 		<SEO
 			title="OllieJT"
 			keywords={[
@@ -26,10 +27,8 @@ const IndexPage = ({ data }: Props) => (
 				'gaming',
 			]}
 		/>
-		{console.log(data)}
 		<Header />
-		<ToggleMode />
-		<article style={{ maxWidth: '800px', margin: '0 auto' }}>
+		<Container isRestricted isRichText hasOuterPadding hasInnerPadding>
 			<h1>
 				Heading One
 				<br />
@@ -73,6 +72,7 @@ const IndexPage = ({ data }: Props) => (
 				same thing. Change only occurs when you work deliberately with
 				purpose toward a goal. To surpass others is fucking tough, if
 				you only do as you are told you don’t have it in you to succeed.
+				<br />
 				<br /> Design is all about fucking relationships—the
 				relationship of form and content, the relationship of elements,
 				the relationship of designer and user. Never let your guard down
@@ -89,7 +89,8 @@ const IndexPage = ({ data }: Props) => (
 				fucking good enough. Why are you fucking reading all of this?
 				Get back to work. Use your fucking hands.
 			</p>
-		</article>
+			<Button />
+		</Container>
 	</Layout>
 );
 
@@ -111,5 +112,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-export default IndexPage;

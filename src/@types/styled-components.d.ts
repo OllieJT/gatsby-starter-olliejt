@@ -1,56 +1,30 @@
 import 'styled-components';
 
+type ThemeSize = {
+	smallest: string;
+	small: string;
+	medium: string;
+	large: string;
+	largeest: string;
+};
+type ThemeColor = {
+	lightest: string;
+	lighter: string;
+	light: string;
+	medium: string;
+	dark: string;
+	darker: string;
+	darkest: string;
+};
+
 declare module 'styled-components' {
 	export interface DefaultTheme {
-		mode: string;
-		color: {
-			mono: {
-				one: string;
-				two: string;
-				three: string;
-				four: string;
-				five: string;
-				six: string;
-			};
-			content: {
-				lightest: string;
-				medium: string;
-				darkest: string;
-			};
-			primary: {
-				lightest: string;
-				medium: string;
-				darkest: string;
-			};
-			utility: {
-				red: {
-					lightest: string;
-					medium: string;
-					darkest: string;
-				};
-				green: {
-					lightest: string;
-					medium: string;
-					darkest: string;
-				};
-				blue: {
-					lightest: string;
-					medium: string;
-					darkest: string;
-				};
-			};
-		};
+		mode: 'light' | 'dark';
+		primary: ThemeColor;
+		mono: ThemeColor;
 		size: {
-			gutter: string;
-			pageOut: string;
-			pageIn: string;
-			space: {
-				smallest: string;
-				small: string;
-				medium: string;
-				large: string;
-				largest: string;
-			};
+			container: string;
+			space: ThemeSize;
 		};
 		setTheme: Function;
 	}

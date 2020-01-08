@@ -12,26 +12,11 @@ export const cover = css`
 `;
 
 export const contain = css`
-	max-width: ${props => props.theme.size.pageIn};
-	padding: 0 ${props => props.theme.size.gutter};
+	max-width: ${props => props.theme.size.container};
+	padding: 0 ${props => props.theme.size.space.small};
 `;
 
 export const enableRichText = css`
-	/* ALL */
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	dl,
-	pre,
-	legend {
-		${contain};
-	}
 	iframe,
 	figure,
 	img,
@@ -51,16 +36,25 @@ export const enableRichText = css`
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 0.25em;
+		margin-top: 0.25em;
+		margin-bottom: 0.5em;
 	}
 	p {
-		margin-top: 0.25em;
+		margin-top: 1em;
 		margin-bottom: 1em;
-		&:first-of-type {
-			margin-top: 0.25em;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		&:first-child {
+			margin-top: 0;
 		}
-		&:last-of-type {
-			margin-bottom: 0.25em;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 
@@ -85,11 +79,11 @@ export const enableRichText = css`
 		}
 		li,
 		dt {
-			color: ${props => props.theme.color.primary.medium};
-			padding-left: ${props => props.theme.size.space.medium};
+			color: ${props => props.theme.primary.medium};
+			padding-left: ${props => props.theme.primary.medium};
 		}
 		dd {
-			color: ${props => props.theme.color.mono.one};
+			color: ${props => props.theme.mono.dark};
 			opacity: 0.72;
 			padding-left: ${props => props.theme.size.space.large};
 		}
@@ -112,7 +106,7 @@ export const enableRichText = css`
 			margin-top: 0;
 			padding-left: ${props => props.theme.size.space.medium};
 			li {
-				color: ${props => props.theme.color.mono.two};
+				color: ${props => props.theme.primary.medium};
 			}
 		}
 		ul li {
