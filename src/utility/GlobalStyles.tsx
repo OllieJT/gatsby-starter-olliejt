@@ -1,7 +1,8 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle(
+	props => `
 	${reset}
 
 	* {
@@ -12,113 +13,115 @@ const GlobalStyle = createGlobalStyle`
 	::after {
 		box-sizing: inherit;
 	}
-
-	html{
+	html,body{
 		width: 100%;
 		max-width: 100vw;
 		overflow-x: hidden;
+	}
+
+	html{
 		font-size: 62.5%;
 		text-rendering: optimizeLegibility;
 		-webkit-font-smoothing: antialiased;
 		-webkit-text-size-adjust: 100%;
 		-webkit-tap-highlight-color: transparent;
-		/* @media (max-width: 600px) {
-			//font-size: 48%;
-		} */
+		@media (max-width: 600px) {
+			font-size: 50%;
+		}
 	}
 
 
 	body{
-		font-family: Rubik, Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif;
+		font-family: 'Open Sans', Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont, sans-serif;
 		font-style: normal;
-		font-weight: normal;
+		font-weight: 400;
+		font-size: .8rem;
+		line-height:  1em;
 		height: auto;
 		min-height: 100vh;
-		width: 100%;
-		max-width: 100vw;
-		background-color: ${props => props.theme.color.mono.six};
-		color: ${props => props.theme.color.mono.one};
+		background-color: ${
+			props.theme.mode === 'light'
+				? props.theme.mono.lightest
+				: props.theme.mono.darkest
+		};
+		color: ${
+			props.theme.mode === 'light'
+				? props.theme.mono.darker
+				: props.theme.mono.lighter
+		};
 		position: relative;
-		line-height: 1;
 	}
 
 
-	/**********
-	Links
-	**********/
+
 	a{
 		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
-		color: ${props => props.theme.color.primary.medium};
-		&:hover{
-			color: ${props => props.theme.color.primary.darkest};
-		}
-		&:focus{
-			color: ${props => props.theme.color.primary.darkest};
-			text-decoration: underline;
-		}
-		&:visited{
-			color: ${props => props.theme.color.primary.lightest};
+		color: ${
+			props.theme.mode === 'light'
+				? props.theme.primary.dark
+				: props.theme.primary.light
+		};;
+		border-radius: .25em;
+		transition: all .16s ease-out;
+
+		&:hover,&:focus{
+			color: ${
+				props.theme.mode === 'light'
+					? props.theme.primary.light
+					: props.theme.primary.dark
+			};
 		}
 	}
 
-	/**********
-	Typography
-	**********/
+
+
 	h1,h2,h3,h4,h5,h6,p{
-		color: ${props => props.theme.color.mono.one};
-		font-weight: 400;
 		-webkit-margin-before: 0;
 		-webkit-margin-after: 0;
-		line-height: 1.15em;
-		&strong,&b{font-weight: 600}
+		font-weight: 400;
+		&strong,&b{font-weight: 700}
+	}
+	h1,h2,h3,h4,h5,h6,button{
+		color: ${
+			props.theme.mode === 'light'
+				? props.theme.mono.darkest
+				: props.theme.mono.lightest
+		};
 	}
 	h1 {
-		font-size: 4.8rem;
-		line-height:  5.6rem;
-		font-weight: 500;
-		&strong,&b{font-weight: 600}
+		font-size: 6em;
+		line-height:  1.1em;
 		}
 	h2 {
-		font-size: 4.4rem;
-		line-height:  5.6rem;
-		font-weight: 400;
-		&strong,&b{font-weight: 500}
+		font-size:  5em;
+		line-height:  1.2em;
 		}
-	h3 {
-		font-size: 3.2rem;
-		line-height:  4rem;
-		font-weight: 500;
-		&strong,&b{font-weight: 600}
-		}
-	h4 {
-		font-size: 2.8rem;
-		line-height:  4rem;
-		font-weight: 400;
-		&strong,&b{font-weight: 500}
+	h3,h4 {
+		font-size:  4em;
+		line-height:  1.3em;
 		}
 	h5 {
-		font-size: 2rem;
-		line-height:  3.2rem;
-		font-weight: 500;
-		&strong,&b{font-weight: 600}
-		}
+		font-size:  3em;
+		line-height:  1.4em;
+	}
 	h6 {
-		font-size:  1.2rem;
-		line-height:  2.4rem;
-		font-weight: 500;;
-		&strong,&b{font-weight: 600}
-		letter-spacing: 0.12em;
+		font-size:  2em;
+		line-height:  1.4em;
+	}
+	p,li,dt,dd,button{
+		font-size: 2em;
+		line-height:  1.66em;
+	}
+	h1,h3,h5,h6{
+		font-weight: 700;
+		&strong,&b{font-weight: 800}
+	}
+	h6,button {
+		letter-spacing: 0.08em;
 		text-transform: uppercase;
 	}
-	p,li,dt,dd{
-		font-size: 1.6rem;
-		line-height:  2.4rem;
-		font-weight: 400;
-		color: ${props => props.theme.color.content.medium};
-		&strong,&b{font-weight: 500}
-	}
 
 
 
@@ -126,6 +129,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 
-`;
+`,
+);
 
 export default GlobalStyle;

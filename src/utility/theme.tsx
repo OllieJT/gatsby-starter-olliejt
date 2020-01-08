@@ -1,7 +1,5 @@
 export const size = {
-	gutter: '.8rem',
-	pageOut: '96rem',
-	pageIn: '80rem',
+	container: '80rem',
 	space: {
 		smallest: '0.8rem',
 		small: '1.6rem',
@@ -11,90 +9,98 @@ export const size = {
 	},
 };
 
+export const primary = {
+	darkest: 'hsl(320, 100%, 10%)',
+	darker: 'hsl(320, 100%, 20%)',
+	dark: 'hsl(320, 100%, 30%)',
+	medium: 'hsl(330, 100%, 50%)',
+	light: 'hsl(340, 90%, 70%)',
+	lighter: 'hsl(340, 80%, 80%)',
+	lightest: 'hsl(340, 70%, 90%)',
+};
+
+export const mono = {
+	darkest: 'hsl(240,40%,4%)',
+	darker: 'hsl(240,32%,10%)',
+	dark: 'hsl(240,24%,16%)',
+	medium: 'hsl(230,16%,32%)',
+	light: 'hsl(220,16%,64%)',
+	lighter: 'hsl(220,16%,80%)',
+	lightest: 'hsl(220,16%,98%)',
+};
+
 export const lightMode = {
-	mono: {
-		/* Lightest First */
-		one: 'hsl(215,0%,100%)',
-		two: 'hsl(215,0%,80%)',
-		three: 'hsl(215,10%,40%)',
-		four: 'hsl(215,25%,15%)',
-		five: 'hsl(215,35%,5%)',
-		six: 'hsl(215,40%,0%)',
+	background: {
+		darkest: 'hsl(215,10%,90%)',
+		dark: 'hsl(215,10%,80%)',
+		medium: 'hsl(215,0%,65%)',
+		light: 'hsl(215,0%,50%)',
+		lightest: 'hsl(215,0%,40%)',
+	},
+	foreground: {
+		darkest: 'hsl(215,40%,20%)',
+		dark: 'hsl(215,40%,15%)',
+		medium: 'hsl(215,35%,10%)',
+		light: 'hsl(215,25%,5%)',
+		lightest: 'hsl(215,25%,0%)',
 	},
 	primary: {
-		/* Clearest ON LIGHT First */
-		darkest: 'hsl(240, 29%, 20%)',
-		medium: 'hsl(240, 90%, 65%)',
-		lightest: 'hsl(240, 100%, 85%)',
+		darkest: 'hsl(320, 100%, 10%)',
+		dark: 'hsl(320, 100%, 25%)',
+		medium: 'hsl(330, 100%, 50%)',
+		light: 'hsl(340, 100%, 75%)',
+		lightest: 'hsl(340, 100%, 90%)',
 	},
-	content: {
-		/* Clearest ON LIGHT First */
-		darkest: 'hsl(215,40%,0%)',
-		medium: 'hsl(215,32%,5%)',
-		lightest: 'hsl(215,16%,24%)',
+	button: {
+		resting: {
+			background: 'hsl(320, 100%, 25%)',
+			foreground: 'hsl(340, 100%, 90%)',
+		},
+		hover: {
+			background: 'hsl(330, 100%, 50%)',
+			foreground: 'hsl(320, 100%, 10%)',
+		},
 	},
-	utility: {
-		red: {
-			/* Clearest ON LIGHT First */
-			darkest: 'hsl(350, 32%, 16%)',
-			medium: 'hsl(350, 90%, 60%)',
-			lightest: 'hsl(0, 100%, 88%)',
-		},
-		green: {
-			/* Clearest ON LIGHT First */
-			darkest: 'hsl(172, 100%, 12%)',
-			medium: 'hsl(170, 100%, 32%)',
-			lightest: 'hsl(165, 80%, 69%)',
-		},
-		blue: {
-			/* Clearest ON LIGHT First */
-			darkest: 'hsl(210, 32%, 20%)',
-			medium: 'hsl(205, 90%, 65%)',
-			lightest: 'hsl(200, 100%, 80%)',
-		},
+	link: {
+		resting: 'hsl(330, 100%, 40%)',
+		hover: 'hsl(320, 100%, 20%)',
 	},
 };
 
 export const darkMode = {
-	mono: {
-		/* Darkest First */
-		one: 'hsl(215,40%,0%)',
-		two: 'hsl(215,35%,5%)',
-		three: 'hsl(215,25%,15%)',
-		four: 'hsl(215,10%,40%)',
-		five: 'hsl(215,0%,80%)',
-		six: 'hsl(215,0%,100%)',
+	background: {
+		darkest: 'hsl(215,25%,0%)',
+		dark: 'hsl(215,25%,5%)',
+		medium: 'hsl(215,35%,10%)',
+		light: 'hsl(215,40%,15%)',
+		lightest: 'hsl(215,40%,20%)',
 	},
-	primary: [
-		/* Clearest ON DARK First */
-		'hsl(240, 100%, 85%)',
-		'hsl(240, 100%, 75%)',
-		'hsl(240, 50%, 40%)',
-	],
-	content: [
-		/* Clearest ON DARK First */
-		'hsl(215,0%,100%)',
-		'hsl(215,8%,72%)',
-		'hsl(215,8%,48%)',
-	],
-	utility: {
-		red: [
-			/* Clearest ON DARK First */
-			'hsl(0, 100%, 88%)',
-			'hsl(350, 90%, 60%)',
-			'hsl(350, 32%, 16%)',
-		],
-		green: [
-			/* Clearest ON DARK First */
-			'hsl(165, 80%, 69%)',
-			'hsl(170, 100%, 32%)',
-			'hsl(172, 100%, 12%)',
-		],
-		blue: [
-			/* Clearest ON DARK First */
-			'hsl(200, 100%, 80%)',
-			'hsl(205, 90%, 65%)',
-			'hsl(210, 32%, 20%)',
-		],
+	foreground: {
+		darkest: 'hsl(215,0%,40%)',
+		dark: 'hsl(215,0%,50%)',
+		medium: 'hsl(215,0%,65%)',
+		light: 'hsl(215,10%,80%)',
+		lightest: 'hsl(215,10%,90%)',
+	},
+	primary: {
+		darkest: 'hsl(340, 100%, 90%)',
+		dark: 'hsl(340, 100%, 75%)',
+		medium: 'hsl(330, 100%, 50%)',
+		light: 'hsl(320, 100%, 25%)',
+		lightest: 'hsl(320, 100%, 10%)',
+	},
+	button: {
+		resting: {
+			background: 'hsl(320, 100%, 25%)',
+			foreground: 'hsl(340, 100%, 90%)',
+		},
+		hover: {
+			background: 'hsl(330, 100%, 50%)',
+			foreground: 'hsl(320, 100%, 10%)',
+		},
+	},
+	link: {
+		resting: 'hsl(330, 100%, 50%)',
+		hover: 'hsl(340, 100%, 75%)',
 	},
 };

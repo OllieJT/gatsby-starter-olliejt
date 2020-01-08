@@ -1,6 +1,5 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import SEO from '../components/Layout/SEO';
@@ -26,7 +25,6 @@ const IndexPage = ({ data }: Props) => (
 				'gaming',
 			]}
 		/>
-		{console.log(data)}
 		<Header />
 		<ToggleMode />
 		<article style={{ maxWidth: '800px', margin: '0 auto' }}>

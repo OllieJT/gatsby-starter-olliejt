@@ -1,8 +1,7 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
-
 import { emojiCursor } from '../../utility/functions';
-import { darkMode, lightMode } from '../../utility/theme';
+import { mono, primary, size } from '../../utility/theme';
 
 const ToggleButton = styled.button`
 	position: relative;
@@ -59,8 +58,18 @@ export default function ToggleMode() {
 					onClick={() =>
 						theme.setTheme(
 							theme.mode === 'dark'
-								? { mode: 'light', color: lightMode }
-								: { mode: 'dark', color: darkMode },
+								? {
+										mode: 'light',
+										primary,
+										mono,
+										size,
+								  }
+								: {
+										mode: 'dark',
+										primary,
+										mono,
+										size,
+								  },
 						)
 					}>
 					<h6>

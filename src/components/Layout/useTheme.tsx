@@ -1,11 +1,15 @@
-// eslint-disable-next-line
+/* eslint-disable no-shadow */
 import storage from 'local-storage-fallback';
 import { useEffect, useState } from 'react';
-
-import { darkMode } from '../../utility/theme';
+import { mono, primary, size } from '../../utility/theme';
 
 export default function useTheme(
-	defaultTheme = { mode: 'dark', color: darkMode },
+	defaultTheme = {
+		mode: 'dark',
+		primary,
+		mono,
+		size,
+	},
 ) {
 	function getInitialTheme() {
 		const savedTheme = storage.getItem('theme');
@@ -21,7 +25,8 @@ export default function useTheme(
 
 	return {
 		...theme,
-		// eslint-disable-next-line
+		// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+		// @ts-ignore: Unreachable code error
 		setTheme: ({ setTheme, ...theme }) => _setTheme(theme),
 	};
 }

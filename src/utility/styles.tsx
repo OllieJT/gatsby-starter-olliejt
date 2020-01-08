@@ -12,8 +12,8 @@ export const cover = css`
 `;
 
 export const contain = css`
-	max-width: ${props => props.theme.size.pageIn};
-	padding: 0 ${props => props.theme.size.gutter};
+	max-width: ${props => props.theme.size.container};
+	padding: 0 ${props => props.theme.size.space.small};
 `;
 
 export const enableRichText = css`
