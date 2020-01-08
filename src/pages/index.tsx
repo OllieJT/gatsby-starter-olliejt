@@ -1,5 +1,6 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import Button from '../components/Button';
 import Container from '../components/Container';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
@@ -71,6 +72,7 @@ export default ({ data }: Props) => (
 				same thing. Change only occurs when you work deliberately with
 				purpose toward a goal. To surpass others is fucking tough, if
 				you only do as you are told you don’t have it in you to succeed.
+				<br />
 				<br /> Design is all about fucking relationships—the
 				relationship of form and content, the relationship of elements,
 				the relationship of designer and user. Never let your guard down
@@ -87,6 +89,7 @@ export default ({ data }: Props) => (
 				fucking good enough. Why are you fucking reading all of this?
 				Get back to work. Use your fucking hands.
 			</p>
+			<Button />
 		</Container>
 	</Layout>
 );
