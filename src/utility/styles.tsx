@@ -85,11 +85,11 @@ export const enableRichText = css`
 		}
 		li,
 		dt {
-			color: ${props => props.theme.color.primary.medium};
-			padding-left: ${props => props.theme.size.space.medium};
+			color: ${props => props.theme.primary.medium};
+			padding-left: ${props => props.theme.primary.medium};
 		}
 		dd {
-			color: ${props => props.theme.color.mono.one};
+			color: ${props => props.theme.mono.dark};
 			opacity: 0.72;
 			padding-left: ${props => props.theme.size.space.large};
 		}
@@ -112,7 +112,7 @@ export const enableRichText = css`
 			margin-top: 0;
 			padding-left: ${props => props.theme.size.space.medium};
 			li {
-				color: ${props => props.theme.color.mono.two};
+				color: ${props => props.theme.primary.medium};
 			}
 		}
 		ul li {

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { contain } from '../../../utility/styles';
 import ToggleMode from '../ToggleMode';
 import MenuLink from './MenuLink';
@@ -21,7 +20,7 @@ const Menubar = styled.ul`
 	}
 `;
 
-const Menu = () => (
+export default () => (
 	<Menubar role="navigation">
 		<MenuLink label="Home" link="/" />
 		<MenuLink label="Dropdown" link="/dropdown">
@@ -40,5 +39,3 @@ const Menu = () => (
 		</li>
 	</Menubar>
 );
-
-export default Menu;

@@ -9,8 +9,9 @@ interface Props {
 	data: object;
 }
 
-const IndexPage = ({ data }: Props) => (
+export default ({ data }: Props) => (
 	<Layout hasSEO={false}>
+		{console.log(data)}
 		<SEO
 			title="OllieJT"
 			keywords={[
@@ -109,5 +110,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-export default IndexPage;

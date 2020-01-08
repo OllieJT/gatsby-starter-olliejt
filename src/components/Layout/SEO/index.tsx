@@ -4,36 +4,36 @@ import Helmet from 'react-helmet';
 // import Schema from "./Schema"
 // import { useStaticQuery, graphql } from 'gatsby';
 // eslint-disable-next-line
-const config = require('../../../utility/config');
+const config = require('../../../utility/config.js');
 
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 interface Props {
-	title: string;
-	type: ['website', 'article', 'profile'];
-	image: string;
-	url: string;
-	desc: string;
-	typeProfile: {
+	title?: string;
+	type?: 'website' | 'article' | 'profile';
+	image?: string;
+	url?: string;
+	desc?: string;
+	typeProfile?: {
 		nameFirst: string;
-		nameLast: string;
-		username: string;
-		gender: ['male', 'female'];
+		nameLast?: string;
+		username?: string;
+		gender?: ['male', 'female'];
 	};
-	typeArticle: {
+	typeArticle?: {
 		datePublished: Date;
 		dateModified: Date;
-		dateExpire: Date;
+		dateExpire?: Date;
 		author: string;
-		section: string;
-		tag: string;
+		section?: string;
+		tag?: string;
 	};
-	keywords: Array<string>;
+	keywords?: Array<string>;
 }
 
-const SEO = ({
+export default ({
 	title,
-	type,
+	type = 'website',
 	image,
 	url,
 	desc,
@@ -42,8 +42,9 @@ const SEO = ({
 	keywords,
 }: Props) => {
 	const authorName =
-		typeArticle.author ||
-		`${typeProfile.nameFirst} ${typeProfile.nameLast}`;
+		(typeArticle && typeArticle.author) ||
+		config.author ||
+		`${config.nameFirst} ${config.nameLast}`;
 	// const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
 
 	return (
@@ -71,15 +72,15 @@ const SEO = ({
 				---- */
 				{
 					name: 'article:published_time',
-					content: typeArticle.datePublished,
+					content: typeArticle && typeArticle.datePublished,
 				},
 				{
 					name: 'article:modified_time',
-					content: typeArticle.dateModified,
+					content: typeArticle && typeArticle.dateModified,
 				},
 				{
 					name: 'article:expiration_time',
-					content: typeArticle.dateExpire,
+					content: typeArticle && typeArticle.dateExpire,
 				},
 				{
 					name: 'article:author',
@@ -87,30 +88,30 @@ const SEO = ({
 				},
 				{
 					name: 'article:section',
-					content: typeArticle.section,
+					content: typeArticle && typeArticle.section,
 				},
 				{
 					name: 'article:tag',
-					content: typeArticle.tag,
+					content: typeArticle && typeArticle.tag,
 				},
 				/* ----
 					PROFILE
 				---- */
 				{
 					name: 'profile:first_name',
-					content: typeProfile.nameFirst,
+					content: typeProfile && typeProfile.nameFirst,
 				},
 				{
 					name: 'profile:last_name',
-					content: typeProfile.nameLast,
+					content: typeProfile && typeProfile.nameLast,
 				},
 				{
 					name: 'profile:username',
-					content: typeProfile.username,
+					content: typeProfile && typeProfile.username,
 				},
 				{
 					name: 'profile:gender',
-					content: typeProfile.gender,
+					content: typeProfile && typeProfile.gender,
 				},
 
 				/* ----
@@ -179,7 +180,7 @@ const SEO = ({
 					content: desc,
 				},
 			].concat(
-				keywords.length > 0
+				keywords && keywords.length > 0
 					? {
 							name: 'keywords',
 							content: keywords.join(', '),
@@ -189,28 +190,6 @@ const SEO = ({
 		/>
 	);
 };
-
-SEO.defaultProps = {
-	title: config.title,
-	type: 'website',
-	image: config.banner,
-	url: config.url,
-	desc: config.description,
-	typeProfile: {
-		nameFirst: config.nameFirst,
-		nameLast: config.nameLast,
-		username: config.alias,
-		gender: config.gender,
-	},
-	typeArticle: {
-		dateModified: new Date(),
-		author: config.author,
-		section: config.industry,
-	},
-	keywords: [],
-};
-
-export default SEO;
 
 /*
 < Schema
@@ -224,7 +203,7 @@ export default SEO;
 	pageUrl = { url }
 	lang = { config.ogLanguage }
 	logo = { config.logo }
-	datePublished = { typeArticle.datePublished }
-	dateModified = { typeArticle.dateModified }
+	datePublished = { typeArticle && typeArticle.datePublished }
+	dateModified = { typeArticle && typeArticle.dateModified }
 />
  */

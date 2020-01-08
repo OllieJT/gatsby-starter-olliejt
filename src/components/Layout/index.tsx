@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import styled, { ThemeProvider } from 'styled-components';
-
 import GlobalStyle from '../../utility/GlobalStyles';
 import Footer from './Footer';
 import Menu from './Menu';
@@ -31,13 +30,13 @@ const ContentContainer = styled.main`
 	flex-shrink: 0;
 `;
 
-const Layout = ({ children, hasSEO }: Props) => {
+export default ({ children, hasSEO }: Props) => {
 	const theme = useTheme();
 
 	return (
 		<ThemeProvider theme={theme}>
 			<GlobalStyle />
-			{!hasSEO && <SEO title="Hello World" />}
+			{!hasSEO && <SEO />}
 			<PageContainer>
 				<Menu />
 				<ContentContainer id="reach-skip-nav">
@@ -48,5 +47,3 @@ const Layout = ({ children, hasSEO }: Props) => {
 		</ThemeProvider>
 	);
 };
-
-export default Layout;

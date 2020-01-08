@@ -5,9 +5,9 @@ import styled from 'styled-components';
 
 interface Props {
 	label: string;
-	link: string;
-	children: ReactNode;
-	isExternal: boolean;
+	link?: string;
+	children?: ReactNode;
+	isExternal?: boolean;
 }
 
 const StyledItem = styled.li`
@@ -66,7 +66,7 @@ const StyledItemLink = styled(Link)`
 	}
 `;
 
-const MenuItem = ({ label, link, children, isExternal }: Props) => {
+export default ({ label, link, children, isExternal = false }: Props) => {
 	const inside = (
 		<p>
 			{label}
@@ -96,11 +96,3 @@ const MenuItem = ({ label, link, children, isExternal }: Props) => {
 		</StyledItem>
 	);
 };
-
-MenuItem.defaultProps = {
-	link: null,
-	children: null,
-	isExternal: false,
-};
-
-export default MenuItem;

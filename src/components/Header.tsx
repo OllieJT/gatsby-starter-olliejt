@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { contain } from '../utility/styles';
 
 const StyledHeader = styled.footer`
 	${contain}
 `;
 
-const Header = () => (
+export default () => (
 	<StyledHeader role="banner">
 		<h1>HTML5 Test Page</h1>
 		<p>
@@ -16,5 +15,3 @@ const Header = () => (
 		</p>
 	</StyledHeader>
 );
-
-export default Header;

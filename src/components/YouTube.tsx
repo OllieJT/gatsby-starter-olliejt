@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { getYoutubeID, IS_BROWSER } from '../utility/functions';
 
 const config = require('../utility/config');
@@ -15,7 +14,7 @@ interface Props {
 	title: string;
 }
 
-export const Video = ({
+export default ({
 	url,
 	width,
 	height,
@@ -60,5 +59,3 @@ export const Video = ({
 		/>
 	);
 };
-
-export default Video;
