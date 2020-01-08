@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { contain } from '../../../utility/styles';
-import ToggleMode from '../ToggleMode';
 import MenuLink from './MenuLink';
 
 const Menubar = styled.ul`
@@ -34,8 +33,5 @@ export default () => (
 			</MenuLink>
 		</MenuLink>
 		<MenuLink label="404 Error" link="/404" />
-		<li>
-			<ToggleMode />
-		</li>
 	</Menubar>
 );

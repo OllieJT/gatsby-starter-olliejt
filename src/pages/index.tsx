@@ -1,9 +1,9 @@
 import { graphql } from 'gatsby';
 import React from 'react';
+import Container from '../components/Container';
 import Header from '../components/Header';
 import Layout from '../components/Layout';
 import SEO from '../components/Layout/SEO';
-import ToggleMode from '../components/Layout/ToggleMode';
 
 interface Props {
 	data: object;
@@ -27,8 +27,7 @@ export default ({ data }: Props) => (
 			]}
 		/>
 		<Header />
-		<ToggleMode />
-		<article style={{ maxWidth: '800px', margin: '0 auto' }}>
+		<Container isRestricted isRichText hasOuterPadding hasInnerPadding>
 			<h1>
 				Heading One
 				<br />
@@ -88,7 +87,7 @@ export default ({ data }: Props) => (
 				fucking good enough. Why are you fucking reading all of this?
 				Get back to work. Use your fucking hands.
 			</p>
-		</article>
+		</Container>
 	</Layout>
 );
 

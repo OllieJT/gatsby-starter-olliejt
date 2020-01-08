@@ -15,7 +15,6 @@ const ToggleButton = styled.button`
 	border: 0px solid transparent;
 	background-color: transparent;
 	padding: var(--size-space-smallest) var(--size-space-small);
-	font-size: 40px;
 	overflow: hidden;
 	cursor: ${props =>
 		props.theme.mode === 'dark' ? emojiCursor('☀️') : emojiCursor('🌙')};

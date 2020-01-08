@@ -17,21 +17,6 @@ export const contain = css`
 `;
 
 export const enableRichText = css`
-	/* ALL */
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	p,
-	ul,
-	ol,
-	dl,
-	pre,
-	legend {
-		${contain};
-	}
 	iframe,
 	figure,
 	img,
@@ -51,16 +36,25 @@ export const enableRichText = css`
 	h4,
 	h5,
 	h6 {
-		margin-bottom: 0.25em;
+		margin-top: 0.25em;
+		margin-bottom: 0.5em;
 	}
 	p {
-		margin-top: 0.25em;
+		margin-top: 1em;
 		margin-bottom: 1em;
-		&:first-of-type {
-			margin-top: 0.25em;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		&:first-child {
+			margin-top: 0;
 		}
-		&:last-of-type {
-			margin-bottom: 0.25em;
+		&:last-child {
+			margin-bottom: 0;
 		}
 	}
 
