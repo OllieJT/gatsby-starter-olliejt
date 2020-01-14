@@ -1,10 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { contain } from '../../utility/styles';
 
-const StyledFooter = styled.footer`
-	${contain}
-`;
+const StyledFooter = styled.footer``;
 
 export default () => (
 	<StyledFooter role="contentinfo">

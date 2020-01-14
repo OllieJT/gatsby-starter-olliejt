@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import { enableRichText } from '../utility/styles';
+import enableRichText from '../utility/styles/richtext';
 
 interface Props {
 	isRestricted?: boolean;
@@ -23,11 +23,7 @@ const StyledOuterContainer = styled.div<Props>(
 	justify-content: center;
 	> div{
 		width: 100%;
-		${
-			props.isRestricted
-				? `max-width: ${props.theme.size.container};`
-				: 'max-width: none;'
-		};
+		${props.isRestricted ? 'max-width: var(--size-container-main);' : 'max-width: none;'};
 		${props.isRichText && enableRichText};
 		background: ${props.innerBackground};
 		padding: ${props.hasInnerPadding && '4em'};
@@ -35,7 +31,7 @@ const StyledOuterContainer = styled.div<Props>(
 	}
 	background: ${props.outerBackground};
 	${props.hasOuterPadding && 'padding: 4em;'}
-`,
+`
 );
 
 export default ({
@@ -56,7 +52,8 @@ export default ({
 		innerBackground={innerBackground}
 		outerBackground={outerBackground}
 		hasInnerPadding={hasInnerPadding}
-		hasOuterPadding={hasOuterPadding}>
+		hasOuterPadding={hasOuterPadding}
+	>
 		<div>{children}</div>
 	</StyledOuterContainer>
 );
