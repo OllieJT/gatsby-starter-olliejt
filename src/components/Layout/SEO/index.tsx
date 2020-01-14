@@ -185,7 +185,7 @@ export default ({
 							name: 'keywords',
 							content: keywords.join(', '),
 					  }
-					: [],
+					: []
 			)}
 		/>
 	);

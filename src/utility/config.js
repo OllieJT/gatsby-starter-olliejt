@@ -10,8 +10,7 @@ module.exports = {
 	---- */
 	headline: 'Ollie Taylor, Digital Designer', // Headline for schema.org JSONLD
 	title: 'Ollie Taylor', // Navigation and Site Title
-	description:
-		'A digital designer who builds online experiences for gamers and esports',
+	description: 'A digital designer who builds online experiences for gamers and esports',
 	banner: 'src/images/photo-shanghai-s.jpg', // Used for SEO
 	/* ----
 		BRAND

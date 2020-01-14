@@ -4,6 +4,7 @@ import { darkTheme, lightTheme } from './themes';
 
 const GlobalStyle = createGlobalStyle`
 	${reset}
+
 	:root {
 		${props => (props.theme.mode === 'light' ? lightTheme : darkTheme)};
 

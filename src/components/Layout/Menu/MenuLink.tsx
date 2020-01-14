@@ -78,11 +78,7 @@ export default ({ label, link, children, isExternal = false }: Props) => {
 		<StyledItem>
 			{link ? (
 				isExternal ? (
-					<StyledItemLink
-						as="a"
-						href={link}
-						target="_blank"
-						rel="noopener noreferrer">
+					<StyledItemLink as="a" href={link} target="_blank" rel="noopener noreferrer">
 						{inside}
 					</StyledItemLink>
 				) : (
