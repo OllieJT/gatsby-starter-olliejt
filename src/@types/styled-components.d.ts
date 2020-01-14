@@ -20,12 +20,6 @@ type ThemeColor = {
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		mode: 'light' | 'dark';
-		primary: ThemeColor;
-		mono: ThemeColor;
-		size: {
-			container: string;
-			space: ThemeSize;
-		};
 		setTheme: Function;
 	}
 }

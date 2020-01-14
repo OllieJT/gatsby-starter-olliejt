@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
 import { emojiCursor } from '../../utility/functions';
-import { mono, primary, size } from '../../utility/theme';
 
 const ToggleButton = styled.button`
 	position: relative;
@@ -16,8 +15,7 @@ const ToggleButton = styled.button`
 	background-color: transparent;
 	padding: var(--size-space-smallest) var(--size-space-small);
 	overflow: hidden;
-	cursor: ${props =>
-		props.theme.mode === 'dark' ? emojiCursor('☀️') : emojiCursor('🌙')};
+	cursor: ${props => (props.theme.mode === 'dark' ? emojiCursor('☀️') : emojiCursor('🌙'))};
 	transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 	.mode {
@@ -33,11 +31,9 @@ const ToggleButton = styled.button`
 	}
 
 	&:hover {
-		background-color: ${props =>
-			props.theme.mode === 'dark' ? 'white' : 'black'};
+		background-color: ${props => (props.theme.mode === 'dark' ? 'white' : 'black')};
 		* {
-			color: ${props =>
-				props.theme.mode === 'dark' ? 'black' : 'white'};
+			color: ${props => (props.theme.mode === 'dark' ? 'black' : 'white')};
 		}
 		.mode span {
 			transform: translateY(-100%);
@@ -59,26 +55,17 @@ export default function ToggleMode() {
 							theme.mode === 'dark'
 								? {
 										mode: 'light',
-										primary,
-										mono,
-										size,
 								  }
 								: {
 										mode: 'dark',
-										primary,
-										mono,
-										size,
-								  },
+								  }
 						)
-					}>
+					}
+				>
 					<h6>
 						<span className="mode">
-							<span>
-								{theme.mode === 'dark' ? 'dark' : 'light'}
-							</span>
-							<span>
-								{theme.mode === 'dark' ? 'light' : 'dark'}
-							</span>
+							<span>{theme.mode === 'dark' ? 'dark' : 'light'}</span>
+							<span>{theme.mode === 'dark' ? 'light' : 'dark'}</span>
 						</span>
 						mode
 					</h6>

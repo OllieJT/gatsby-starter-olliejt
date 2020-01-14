@@ -1,15 +1,11 @@
 /* eslint-disable no-shadow */
 import storage from 'local-storage-fallback';
 import { useEffect, useState } from 'react';
-import { mono, primary, size } from '../../utility/theme';
 
 export default function useTheme(
 	defaultTheme = {
 		mode: 'dark',
-		primary,
-		mono,
-		size,
-	},
+	}
 ) {
 	function getInitialTheme() {
 		const savedTheme = storage.getItem('theme');
