@@ -20,6 +20,8 @@ export const lightTheme = css`
 	--color-background-primary-medium: hsl(320, 100%, 25%);
 	--color-background-primary-dim: hsl(320, 100%, 15%);
 	--color-background-primary-dimmer: hsl(320, 100%, 5%);
+
+	--color-background-scrim: hsla(240, 40%, 4%, 0.72);
 `;
 export const darkTheme = css`
 	--color-text-mono-bright: hsl(200, 16%, 98%);
@@ -41,4 +43,6 @@ export const darkTheme = css`
 	--color-background-primary-medium: hsl(45, 100%, 25%);
 	--color-background-primary-dim: hsl(40, 100%, 15%);
 	--color-background-primary-dimmer: hsl(35, 100%, 5%);
+
+	--color-background-scrim: hsla(200, 40%, 4%, 0.72);
 `;
