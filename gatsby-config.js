@@ -3,7 +3,6 @@ require('dotenv').config({
 	path: '.env', //`.env.${process.env.NODE_ENV}`
 });
 const config = require('./src/utility/config');
-const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
 	pathPrefix: config.pathPrefix,
@@ -53,7 +52,7 @@ module.exports = {
 				name: config.title,
 				short_name: config.siteName,
 				description: config.description,
-				start_url: pathPrefix,
+				start_url: config.pathPrefix,
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
 				display: 'standalone',

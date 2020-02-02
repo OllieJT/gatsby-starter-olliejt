@@ -9,7 +9,7 @@ module.exports = {
 		SKIPNAVID: HTML ID for the element that screen readers(a11y) can skip to for the main content
 	*/
 	siteName: 'OllieJT',
-	url: 'https://olliejt.com',
+	siteUrl: 'https://olliejt.com',
 	pathPrefix: '',
 	skipNavId: 'reach-skip-nav',
 	siteLanguage: 'en',
