@@ -4,6 +4,9 @@ import useMenu from '../../../hooks/use-menu';
 import LinkList from './LinkList';
 import ToggleMenu from './ToggleMenu';
 
+interface Menu {
+	menuBreakpoint?: string;
+}
 
 const Menubar = styled.nav`
 	position: sticky;
@@ -16,16 +19,17 @@ const Menubar = styled.nav`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	background-color: var(--color-background-mono-dimmer);
 `;
 
-export default () => {
+export default ({ menuBreakpoint = '800px' }: Menu) => {
 	const menu = useMenu();
 
 	return (
 		<Menubar role="navigation">
 			<h6>GATSBY-STARTER-OLLIEJT</h6>
-			<ToggleMenu menuBreakpoint="800px" setMenu={menu} label="Menu" />
-			<LinkList menuBreakpoint="800px" setMenu={menu} />
+			<ToggleMenu menuBreakpoint={menuBreakpoint} setMenu={menu} label="Menu" />
+			<LinkList menuBreakpoint={menuBreakpoint} setMenu={menu} />
 		</Menubar>
 	);
 };
