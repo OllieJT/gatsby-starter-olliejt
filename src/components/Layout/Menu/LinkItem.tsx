@@ -20,7 +20,7 @@ const StyledItem = styled.li`
 		width: 100%;
 		transform: translateY(-100%);
 		opacity: 0;
-		transition: all 0.24s cubic-bezier(0.075, 0.82, 0.165, 1);
+		transition: all 0.24s var(--animation-curve-1);
 		z-index: 400;
 		svg {
 			transform: rotate(-90deg);
