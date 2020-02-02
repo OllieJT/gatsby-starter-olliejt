@@ -1,59 +1,91 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import enableRichText from '../utility/styles/richtext';
 
-interface Props {
-	isRestricted?: boolean;
+interface InsideContainer {
+	insidePadding?: number | boolean;
+	insideBackground?: string;
+	insideClassName?: string;
 	isRichText?: boolean;
 	isLifted?: boolean;
-	hasInnerPadding?: boolean;
-	hasOuterPadding?: boolean;
-
-	innerBackground?: string;
-	outerBackground?: string;
-	children: ReactNode;
+	isRestricted?: boolean;
+}
+interface OutsideContainer {
+	outsidePadding?: number | boolean;
+	outsideBackground?: string;
+	outsideClassName?: string;
+	zIndex?: number;
 }
 
-const StyledOuterContainer = styled.div<Props>(
-	props => `
+export interface ContainerProps extends InsideContainer, OutsideContainer {
+	children: React.ReactNode;
+}
+
+const ContainerInside = styled.div<InsideContainer>`
+	//border: 1px solid purple;
+
 	width: 100%;
+
+	${props => props.isRichText && enableRichText};
+	${props => props.isLifted && 'transform: translateY(-4em);'}
+	max-width: ${props => (props.isRestricted ? 'var(--size-container-main)' : 'none')};
+	background: ${props => props.insideBackground};
+	padding: ${props =>
+		props.insidePadding === false ? '0' : props.insidePadding === true ? '4em 0' : `${props.insidePadding}em 0`};
+
+`;
+
+const ContainerOutside = styled.div<OutsideContainer>`
+	//border: 1px solid blue;
+
+	position: relative;
+	width: 100%;
+	max-width: none;
+	z-index: ${props => props.zIndex};
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	> div{
-		width: 100%;
-		${props.isRestricted ? 'max-width: var(--size-container-main);' : 'max-width: none;'};
-		${props.isRichText && enableRichText};
-		background: ${props.innerBackground};
-		padding: ${props.hasInnerPadding && '4em'};
-		${props.isLifted && 'margin-top: -8em;'}
-	}
-	background: ${props.outerBackground};
-	${props.hasOuterPadding && 'padding: 4em;'}
-`
-);
+	align-self: center;
+
+	background: ${props => props.outsideBackground};
+	padding: ${props =>
+		props.outsidePadding === false ? '0' : props.outsidePadding === true ? '4em 0' : `${props.outsidePadding}em 0`};
+`;
 
 export default ({
+	insidePadding = 0,
+	insideBackground = 'transparent',
+	insideClassName = '',
+
+	outsidePadding = 0,
+	outsideBackground = 'transparent',
+	outsideClassName = '',
+	zIndex = 500,
+
 	isRestricted = false,
 	isRichText = false,
 	isLifted = false,
-	hasInnerPadding,
-	hasOuterPadding,
-	innerBackground = 'transparent',
-	outerBackground = 'transparent',
+
 	children,
-}: Props) => (
-	<StyledOuterContainer
-		role="banner"
-		isRestricted={isRestricted}
-		isRichText={isRichText}
-		isLifted={isLifted}
-		innerBackground={innerBackground}
-		outerBackground={outerBackground}
-		hasInnerPadding={hasInnerPadding}
-		hasOuterPadding={hasOuterPadding}
+}: ContainerProps) => (
+	<ContainerOutside
+		role="group"
+		outsidePadding={outsidePadding}
+		outsideBackground={outsideBackground}
+		className={`container container-outside ${outsideClassName}`}
+		zIndex={zIndex}
 	>
-		<div>{children}</div>
-	</StyledOuterContainer>
+		<ContainerInside
+			insidePadding={insidePadding}
+			insideBackground={insideBackground}
+			className={`container container-inside ${insideClassName}`}
+			isRestricted={isRestricted}
+			isRichText={isRichText}
+			isLifted={isLifted}
+		>
+			{children}
+		</ContainerInside>
+	</ContainerOutside>
 );
