@@ -7,30 +7,7 @@ const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
 	pathPrefix: config.pathPrefix,
-	siteMetadata: {
-		siteName: config.siteName,
-		siteUrl: config.url + config.pathPrefix, // For gatsby-plugin-sitemap
-		pathPrefix,
-
-		siteLanguage: config.siteLanguage,
-		ogLanguage: config.ogLanguage,
-
-		title: config.title,
-		headline: config.headline,
-		description: config.description,
-		banner: config.banner,
-		logo: config.logo,
-
-		author: config.author,
-		nameFirst: config.nameFirst,
-		nameLast: config.nameLast,
-		gender: config.gender,
-
-		alias: config.alias,
-		twitter: config.twitter,
-		facebook: config.facebook,
-		discord: config.twitter,
-	},
+	siteMetadata: config,
 	plugins: [
 		`gatsby-plugin-typescript`,
 		{

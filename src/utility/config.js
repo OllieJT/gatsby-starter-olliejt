@@ -1,40 +1,67 @@
 /* eslint-disable */
 module.exports = {
-	pathPrefix: '/', // Prefix for all links. If you deploy your site to example.com/portfolio your pathPrefix should be "portfolio"
-	url: 'https://olliejt.com', // Domain of your site. No trailing slash!
-	siteName: 'OllieJT', // shortname for manifest. MUST be shorter than 12 characters
-	siteLanguage: 'en', // Language Tag on <html> element
-	ogLanguage: 'en_US', // Facebook Language
-	/* ----
+	/*
+		SITE_SETTINGS
+
+		SITENAME: hortname for manifest. MUST be shorter than 12 characters
+		URL: Website domain with no trailing slash
+		PATHPREFIX: Prefix for all links. example.com/portfolio would be "portfolio"
+		SKIPNAVID: HTML ID for the element that screen readers(a11y) can skip to for the main content
+	*/
+	siteName: 'OllieJT',
+	url: 'https://olliejt.com',
+	pathPrefix: '',
+	skipNavId: 'reach-skip-nav',
+	siteLanguage: 'en',
+	ogLanguage: 'en_US',
+
+	/*
 		METADATA
-	---- */
-	headline: 'Ollie Taylor, Digital Designer', // Headline for schema.org JSONLD
-	title: 'Ollie Taylor', // Navigation and Site Title
+
+		TITLE: Human readable name of the website
+		HEADLINE: Caption or CTA for SEO
+	*/
+	title: 'OllieJT',
+	headline: 'Web Designer & Developer',
 	description: 'A digital designer who builds online experiences for gamers and esports',
-	banner: 'src/images/photo-shanghai-s.jpg', // Used for SEO
-	/* ----
+	banner: 'src/images/photo-shanghai-s.jpg',
+
+	/*
 		BRAND
-	---- */
-	author: 'Ollie Taylor', // Author for schemaORGJSONLD
-	logo: 'src/images/logo.png', // Used for SEO
+
+		LOGO: Full logo image link
+		FAVICON: Browser and app icon
+		THEMECOLOR: PWA Brand Color
+		BACKGROUNDCOLOR: PWA Neutral Color
+		INDUSTRY: Business Sector
+	*/
+	logo: 'src/images/logo.png',
+	favicon: 'src/images/manifest-icon.png', // Used for manifest favicon generation
 	themeColor: '#FF3D1F',
 	backgroundColor: '#141414',
-	industry: '',
-	/* ----
-	PROFILE
-	---- */
+	industry: 'Design',
+
+	/*
+		PROFILE
+
+		AUTHOR: Full Name
+	*/
+	author: 'Ollie Taylor',
 	nameFirst: 'Ollie',
 	nameLast: 'Taylor',
-	gender: 'male', // [male, femaile]
-	/* ----
-	SOCIAL
-	---- */
+	gender: 'male',
+
+	/*
+		SOCIAL
+
+		ALIAS: Username
+		...url
+	*/
 	alias: 'TheOllieJT',
 	twitter: '@TheOllieJT', // Twitter Username
 	facebook: '', // Facebook Site Name
+	discord: '',
 
 	// JSONLD / Manifest
-	favicon: 'src/images/manifest-icon.png', // Used for manifest favicon generation
 	googleAnalyticsID: 'UA-00000000-0',
-	skipNavId: 'reach-skip-nav', // ID for the "Skip to content" a11y feature
 };
