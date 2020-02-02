@@ -2,7 +2,9 @@ import { Link } from 'gatsby';
 import React, { ReactNode } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import styled from 'styled-components';
-
+// TODO: Cleanup this file
+// TODO: Simplify dropdown
+// TODO: Cleanup close button
 interface Props {
 	label: string;
 	link?: string;

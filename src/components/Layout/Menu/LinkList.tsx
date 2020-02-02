@@ -127,6 +127,7 @@ export default ({ menuBreakpoint = '800px', setMenu }: LinkList) => (
 			</MenuLink>
 		</MenuLink>
 		<MenuLink label="404 Error" link="/404" />
+
 		<li className={`close-menu ${setMenu.isOpen ? '' : 'hidden'}`}>
 			<button onClick={setMenu.toggleMenu} type="button">
 				<h6>

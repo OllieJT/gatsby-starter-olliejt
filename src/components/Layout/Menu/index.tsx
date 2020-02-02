@@ -4,6 +4,7 @@ import useMenu from '../../../hooks/use-menu';
 import LinkList from './LinkList';
 import ToggleMenu from './ToggleMenu';
 
+
 const Menubar = styled.nav`
 	position: sticky;
 	top: 0px;
@@ -24,7 +25,6 @@ export default () => {
 		<Menubar role="navigation">
 			<h6>GATSBY-STARTER-OLLIEJT</h6>
 			<ToggleMenu menuBreakpoint="800px" setMenu={menu} label="Menu" />
-
 			<LinkList menuBreakpoint="800px" setMenu={menu} />
 		</Menubar>
 	);

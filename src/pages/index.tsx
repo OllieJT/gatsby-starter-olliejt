@@ -28,7 +28,7 @@ export default ({ data }: Props) => (
 			]}
 		/>
 		<Header />
-		<Container isRestricted isRichText hasOuterPadding hasInnerPadding>
+		<Container isRestricted isRichText insidePadding outsidePadding>
 			<h1>
 				Heading One
 				<br />
