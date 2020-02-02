@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import MenuLink from './LinkItem';
 
+// TODO: Cleanup this file
+// TODO: Cleanup close button
 interface StyleProps {
 	menuBreakpoint: string;
 }
-interface LinkList extends StyleProps {
-	setMenu: any;
+interface LinkList {
+	setMenu: SetMenu;
 }
 
 const MenuLinkList = styled.ul<StyleProps>`
@@ -30,17 +32,11 @@ const MenuLinkList = styled.ul<StyleProps>`
 	background-color: var(--color-background-mono-dimmer);
 	transition: right 0.24s var(--animation-curve-1);
 
-	li {
-		border: 2x solid blue !important;
-		position: relative;
-		display: flex;
-		align-items: stretch;
-		justify-content: stretch;
-	}
 	&.is-open {
 		right: 0;
 	}
-	.close-menu {
+
+	li.close-menu {
 		position: absolute !important;
 		top: 0;
 		right: 100%;
@@ -95,6 +91,7 @@ const MenuLinkList = styled.ul<StyleProps>`
 			background: transparent;
 		}
 	}
+
 	@media (min-width: ${props => props.menuBreakpoint}) {
 		position: relative;
 		top: auto;
@@ -113,27 +110,31 @@ const MenuLinkList = styled.ul<StyleProps>`
 	}
 `;
 
-export default ({ menuBreakpoint = '800px', setMenu }: LinkList) => (
-	<MenuLinkList role="navigation" menuBreakpoint={menuBreakpoint} className={`${setMenu.isOpen ? 'is-open' : ''}`}>
-		<MenuLink label="Home" link="/" />
-		<MenuLink label="Dropdown" link="/dropdown">
-			<MenuLink label="One" link="/one" />
-			<MenuLink label="Two" link="/two" />
-			<MenuLink label="Three" link="/three" />
-			<MenuLink label="Four">
-				<MenuLink label="Alpha" link="/one" />
-				<MenuLink label="Bravo" link="/two" />
-				<MenuLink label="Charlie" link="/three" />
-			</MenuLink>
-		</MenuLink>
-		<MenuLink label="404 Error" link="/404" />
+export default ({ setMenu }: LinkList) => {
+	const { breakpoint, isOpen, toggleMenu } = setMenu;
 
-		<li className={`close-menu ${setMenu.isOpen ? '' : 'hidden'}`}>
-			<button onClick={setMenu.toggleMenu} type="button">
-				<h6>
-					<MdClose />
-				</h6>
-			</button>
-		</li>
-	</MenuLinkList>
-);
+	return (
+		<MenuLinkList role="navigation" menuBreakpoint={breakpoint} className={`${isOpen ? 'is-open' : ''}`}>
+			<MenuLink label="Home" link="/" />
+			<MenuLink label="Dropdown" link="/dropdown">
+				<MenuLink label="One" link="/one" />
+				<MenuLink label="Two" link="/two" />
+				<MenuLink label="Three" link="/three" />
+				<MenuLink label="Four">
+					<MenuLink label="Alpha" link="/one" />
+					<MenuLink label="Bravo" link="/two" />
+					<MenuLink label="Charlie" link="/three" />
+				</MenuLink>
+			</MenuLink>
+			<MenuLink label="404 Error" link="/404" />
+
+			<li className={`close-menu ${isOpen ? '' : 'hidden'}`}>
+				<button onClick={toggleMenu} type="button">
+					<h6>
+						<MdClose />
+					</h6>
+				</button>
+			</li>
+		</MenuLinkList>
+	);
+};

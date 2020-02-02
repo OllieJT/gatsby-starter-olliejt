@@ -4,11 +4,10 @@ import styled from 'styled-components';
 
 interface Props {
 	label: string;
-	setMenu: any;
+	setMenu: SetMenu;
 	iconBefore?: React.ReactNode;
 	iconAfter?: React.ReactNode;
 	hasLabel?: boolean;
-	menuBreakpoint: string;
 }
 
 interface StyleProps {
@@ -83,20 +82,13 @@ const ToggleMenu = styled.button<StyleProps>`
 	}
 `;
 
-export default ({
-	label,
-	setMenu,
-	menuBreakpoint,
-	iconBefore = <MdMenu />,
-	iconAfter = <MdClose />,
-	hasLabel = false,
-}: Props) => (
+export default ({ label, setMenu, iconBefore = <MdMenu />, iconAfter = <MdClose />, hasLabel = false }: Props) => (
 	<ToggleMenu
 		as="button"
 		onClick={setMenu.toggleMenu}
 		type="button"
 		isOpen={setMenu.isOpen}
-		menuBreakpoint={menuBreakpoint}
+		menuBreakpoint={setMenu.breakpoint}
 	>
 		<p>
 			<span className={`button-icon ${setMenu.isOpen ? 'is-active' : ''}`}>
