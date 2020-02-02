@@ -24,6 +24,7 @@ const PageContainer = styled.div`
 		height: auto;
 		flex-grow: 1;
 		flex-shrink: 0;
+		overflow-x: hidden;
 	}
 `;
 
