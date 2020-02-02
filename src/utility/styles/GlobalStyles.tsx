@@ -232,7 +232,6 @@ const GlobalStyle = createGlobalStyle`
 		line-height: 1.4em;
 	}
 	p,
-	li,
 	dt,
 	dd
 	 {

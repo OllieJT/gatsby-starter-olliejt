@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdClose } from 'react-icons/md';
 import MenuLink from './LinkItem';
-import useMenu from '../../../hooks/use-menu';
 
 interface StyleProps {
 	menuBreakpoint: string;

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuLink from './LinkItem';
 import useMenu from '../../../hooks/use-menu';
 import LinkList from './LinkList';
 import ToggleMenu from './ToggleMenu';

@@ -16,7 +16,7 @@ interface StyleProps {
 	menuBreakpoint: string;
 }
 
-export const ToggleMenu = styled.button<StyleProps>`
+const ToggleMenu = styled.button<StyleProps>`
 	display: flex;
 	position: relative;
 	z-index: 9999999;
