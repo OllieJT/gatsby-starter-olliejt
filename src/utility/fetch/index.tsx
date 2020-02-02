@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useReducer } from 'react';
-import { Action, requestFailed, requestStarted, requestSuccessful } from './get/actions';
-import reducer from './get/reducer';
+import { Action, requestFailed, requestStarted, requestSuccessful } from '../../hooks/use-get-data/actions';
+import reducer from '../../hooks/use-get-data/reducer';
 
 interface Props {
 	url: string;

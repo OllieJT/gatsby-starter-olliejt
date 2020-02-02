@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable import/prefer-default-export */
-import useGet from './get';
+import useGet from '../../hooks/use-get-data';
 
 /*= ========
 	Query Utilities
