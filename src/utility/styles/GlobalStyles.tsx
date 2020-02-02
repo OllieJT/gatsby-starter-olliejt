@@ -30,8 +30,9 @@ const GlobalStyle = createGlobalStyle`
 		--text-heading-space-top: 0;
 		--text-heading-space-bottom: 0;
 
-		--font-weight-regular: 700;
-		--font-weight-bold: 700;
+		--font-weight-regular: 400;
+		--font-weight-medium: 700;
+		--font-weight-bold: 800;
 
 		--size-space-smallest: 0.8rem;
 		--size-space-small: 1.6rem;
@@ -73,7 +74,7 @@ const GlobalStyle = createGlobalStyle`
 		font-family: 'Open Sans', Roboto, Helvetica, Segoe UI, -apple-system, BlinkMacSystemFont,
 			sans-serif;
 		font-style: normal;
-		font-weight: 400;
+		font-weight: var(--font-weight-regular);
 		font-size: 0.8rem;
 		line-height: 1em;
 		height: auto;
@@ -81,6 +82,7 @@ const GlobalStyle = createGlobalStyle`
 		background-color: var(--color-background-mono-dimmer);
 		color: var(--color-text-mono-medium);
 		position: relative;
+		background-color: rgb(100,0,0);
 	}
 
 	a {
@@ -116,10 +118,10 @@ const GlobalStyle = createGlobalStyle`
 	h5,
 	h6,
 	p {
-		font-weight: 400;
+		font-weight: var(--font-weight-regular);
 		&strong,
 		&b {
-			font-weight: 700;
+			font-weight: var(--font-weight-medium);
 		}
 
 		svg {
@@ -132,7 +134,7 @@ const GlobalStyle = createGlobalStyle`
 
 		strong,
 		b {
-			font-weight: 700;
+			font-weight: var(--font-weight-medium);
 		}
 		strong {
 			color: var(--color-text-mono-bright);
@@ -174,7 +176,7 @@ const GlobalStyle = createGlobalStyle`
 			line-height: 1em;
 			padding: 0.3em;
 			border-radius: 0.25em;
-			font-weight: 700;
+			font-weight: var(--font-weight-medium);
 		}
 		mark {
 			color: var(--color-text-primary-bright);
@@ -245,10 +247,10 @@ const GlobalStyle = createGlobalStyle`
 	h3,
 	h5,
 	h6 {
-		font-weight: 700;
+		font-weight: var(--font-weight-medium);
 		&strong,
 		&b {
-			font-weight: 800;
+			font-weight: var(--font-weight-bold);
 		}
 	}
 	h6,button
