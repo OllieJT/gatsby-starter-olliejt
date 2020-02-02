@@ -2,12 +2,6 @@
 /* eslint-disable no-shadow */
 import { useState } from 'react';
 
-interface SetMenu {
-	isOpen: boolean;
-	setMenu: Function;
-	toggleMenu: any;
-}
-
 export default function useMenu(defaultState = false): SetMenu {
 	const [isOpen, setMenu] = useState(defaultState);
 	function toggleMenu() {
@@ -18,5 +12,6 @@ export default function useMenu(defaultState = false): SetMenu {
 		isOpen,
 		setMenu,
 		toggleMenu,
+		breakpoint: '800px',
 	};
 }
