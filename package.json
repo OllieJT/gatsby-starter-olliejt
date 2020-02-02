@@ -1,6 +1,7 @@
 {
-	"name": "olliejt-gatsby-quickstarter",
+	"name": "gatsby-starter-olliejt",
 	"private": true,
+	"license": "NONE",
 	"description": "OllieJT Gatsby Quickstarter",
 	"version": "0.2.0",
 	"author": "Ollie Taylor <contact@olliejt.com>",
@@ -91,9 +92,9 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/OllieJT/olliejt-gatsby-quickstart"
+		"url": "https://github.com/OllieJT/gatsby-starter-olliejt"
 	},
 	"bugs": {
-		"url": "https://github.com/OllieJT/olliejt-gatsby-quickstart/issues"
+		"url": "https://github.com/OllieJT/gatsby-starter-olliejt/issues"
 	}
 }
