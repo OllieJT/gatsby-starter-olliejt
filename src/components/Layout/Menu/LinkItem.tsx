@@ -22,8 +22,8 @@ const StyledItem = styled.li`
 		width: 100%;
 		transform: translateY(-100%);
 		opacity: 0;
-		transition: all 0.24s var(--animation-curve-1);
 		z-index: 400;
+		transition: transform 0.24s var(--animation-curve-1), opacity 0.24s var(--animation-curve-1);
 		svg {
 			transform: rotate(-90deg);
 		}

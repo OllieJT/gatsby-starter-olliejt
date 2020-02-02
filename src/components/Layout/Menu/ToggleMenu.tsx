@@ -39,7 +39,7 @@ const ToggleMenu = styled.button<StyleProps>`
 	.button-icon,
 	.icon-before,
 	.icon-after {
-		transition: all 0.24s var(--animation-curve-1);
+		transition: opacity 0.24s var(--animation-curve-1), transform 0.24s var(--animation-curve-1);
 	}
 	.icon-before,
 	.icon-after {

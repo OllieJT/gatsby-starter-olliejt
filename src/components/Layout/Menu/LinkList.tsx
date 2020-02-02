@@ -28,7 +28,7 @@ const MenuLinkList = styled.ul<StyleProps>`
 	align-items: stretch;
 
 	background-color: var(--color-background-mono-dimmer);
-	transition: all 0.24s var(--animation-curve-1);
+	transition: right 0.24s var(--animation-curve-1);
 
 	li {
 		border: 2x solid blue !important;
@@ -74,7 +74,7 @@ const MenuLinkList = styled.ul<StyleProps>`
 			h6,
 			p {
 				transform: scale(0.8);
-				transition: all 0.24s var(--animation-curve-1);
+				transition: transform 0.24s var(--animation-curve-1);
 			}
 			&:hover {
 				h1,

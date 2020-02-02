@@ -85,7 +85,7 @@ const GlobalStyle = createGlobalStyle`
 		text-decoration: none;
 		cursor: pointer;
 		color: var(--color-text-primary-dark);
-		transition: all 0.16s ease-out;
+		transition: color 0.16s ease-out;
 
 		&:hover,
 		&:focus {
