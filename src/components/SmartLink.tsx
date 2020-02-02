@@ -9,14 +9,14 @@ interface Props extends SmartLink {
 export default ({ children, isExternal = false, link, className }: Props) =>
 	link ? (
 		isExternal ? (
-			<a href={link} target="_blank" rel="noopener noreferrer" className={`button-link ${className}`}>
+			<a href={link} target="_blank" rel="noopener noreferrer" className={`smart-link ${className}`}>
 				{children}
 			</a>
 		) : (
-			<Link to={link} className={`button-link ${className}`}>
+			<Link to={link} className={`smart-link ${className}`}>
 				{children}
 			</Link>
 		)
 	) : (
-		<div className={`button-link ${className}`}>{children}</div>
+		<div className={`smart-link ${className}`}>{children}</div>
 	);
