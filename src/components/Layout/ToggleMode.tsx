@@ -16,7 +16,7 @@ const ToggleButton = styled.button`
 	padding: var(--size-space-smallest) var(--size-space-small);
 	overflow: hidden;
 	cursor: ${props => (props.theme.mode === 'dark' ? emojiCursor('☀️') : emojiCursor('🌙'))};
-	transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: all 0.4s var(--animation-curve-1);
 
 	.mode {
 		display: inline-flex;
@@ -26,7 +26,7 @@ const ToggleButton = styled.button`
 		justify-content: flex-start;
 		span:last-child {
 			opacity: 0;
-			transition: all 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+			transition: all 0.4s var(--animation-curve-1);
 		}
 	}
 

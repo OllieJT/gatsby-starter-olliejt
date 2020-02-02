@@ -37,6 +37,8 @@ const GlobalStyle = createGlobalStyle`
 		--size-space-largeest: 8rem;
 
 		--size-container-main: 80rem;
+
+		--animation-curve-1: cubic-bezier(0.075, 0.82, 0.165, 1);
 	}
 
 	* {
