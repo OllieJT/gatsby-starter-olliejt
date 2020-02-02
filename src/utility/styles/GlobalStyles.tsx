@@ -30,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
 		--text-heading-space-top: 0;
 		--text-heading-space-bottom: 0;
 
+		--font-weight-regular: 700;
+		--font-weight-bold: 700;
+
 		--size-space-smallest: 0.8rem;
 		--size-space-small: 1.6rem;
 		--size-space-medium: 2.4rem;
