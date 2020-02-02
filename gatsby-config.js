@@ -24,11 +24,11 @@ module.exports = {
 	plugins: [
 		`gatsby-plugin-typescript`,
 		{
-			resolve: "gatsby-plugin-eslint",
+			resolve: 'gatsby-plugin-eslint',
 			options: {
 				test: /\.js$|\.jsx$|\.tsx$|\.ts$/,
 				exclude: /(node_modules|.cache|public)/,
-				stages: ["develop"],
+				stages: ['develop'],
 				options: {
 					emitWarning: true,
 					failOnError: false,
