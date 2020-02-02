@@ -8,6 +8,22 @@ const GlobalStyle = createGlobalStyle`
 	:root {
 		${props => (props.theme.mode === 'light' ? lightTheme : darkTheme)};
 
+		--color-text-red-bright: hsl(350, 80%, 64%);
+		--color-text-red-medium: hsl(350, 80%, 50%);
+		--color-text-red-dim: hsl(350, 100%, 12%);
+
+		--color-text-blue-bright: hsl(210, 80%, 72%);
+		--color-text-blue-medium: hsl(210, 80%, 50%);
+		--color-text-blue-dim: hsl(210, 80%, 16%);
+
+		--color-text-green-bright: hsl(170, 90%, 64%);
+		--color-text-green-medium: hsl(170, 100%, 32%);
+		--color-text-green-dim: hsl(170, 100%, 12%);
+
+		--color-text-yellow-bright: hsl(45, 90%, 72%);
+		--color-text-yellow-medium: hsl(45, 100%, 42%);
+		--color-text-yellow-dim: hsl(45, 100%, 12%);
+
 		--text-content-space-top: 0;
 		--text-content-space-bottom: 0;
 
