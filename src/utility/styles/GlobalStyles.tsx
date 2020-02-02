@@ -82,7 +82,6 @@ const GlobalStyle = createGlobalStyle`
 		background-color: var(--color-background-mono-dimmer);
 		color: var(--color-text-mono-medium);
 		position: relative;
-		background-color: rgb(100,0,0);
 	}
 
 	a {

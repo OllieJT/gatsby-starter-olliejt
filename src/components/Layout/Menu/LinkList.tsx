@@ -48,7 +48,6 @@ const MenuLinkList = styled.ul<StyleProps>`
 		height: 100%;
 		cursor: pointer;
 		background: var(--color-background-scrim);
-		//background-color: rgba(200, 0, 0, 0.4);
 
 		outline: none;
 		border-width: 0;
