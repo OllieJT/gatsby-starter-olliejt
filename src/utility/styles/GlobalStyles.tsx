@@ -207,8 +207,7 @@ const GlobalStyle = createGlobalStyle`
 	h3,
 	h4,
 	h5,
-	h6,
-	button {
+	h6 {
 		color: var(--color-text-mono-bright);
 	}
 	h1 {
@@ -235,8 +234,8 @@ const GlobalStyle = createGlobalStyle`
 	p,
 	li,
 	dt,
-	dd,
-	button {
+	dd
+	 {
 		font-size: 2em;
 		line-height: 1.66em;
 	}
@@ -250,8 +249,8 @@ const GlobalStyle = createGlobalStyle`
 			font-weight: 800;
 		}
 	}
-	h6,
-	button {
+	h6,button
+	 {
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 	}
