@@ -1,10 +1,10 @@
-import { Link } from 'gatsby';
 import React, { ReactNode } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import styled from 'styled-components';
 // TODO: Cleanup this file
 // TODO: Simplify dropdown
 // TODO: Cleanup close button
+import SmartLink from '../../SmartLink';
 interface Props {
 	label: string;
 	link?: string;
@@ -69,26 +69,16 @@ const StyledItemLink = styled(Link)`
 `;
 
 export default ({ label, link, children, isExternal = false }: Props) => {
-	const inside = (
-		<p>
-			{label}
-			{children && <MdArrowDropDown />}
-		</p>
-	);
+	const { breakpoint } = useMenu();
 
 	return (
-		<StyledItem>
-			{link ? (
-				isExternal ? (
-					<StyledItemLink as="a" href={link} target="_blank" rel="noopener noreferrer">
-						{inside}
-					</StyledItemLink>
-				) : (
-					<StyledItemLink to={link}>{inside}</StyledItemLink>
-				)
-			) : (
-				<StyledItemLink as="div">{inside}</StyledItemLink>
-			)}
+		<StyledItem menuBreakpoint={breakpoint}>
+			<SmartLink isExternal={isExternal} link={link} className={`menu-link ${children ? 'group-title' : ''}`}>
+				<p>
+					{label}
+					{children && <MdArrowDropDown />}
+				</p>
+			</SmartLink>
 
 			{children && <ul>{children}</ul>}
 		</StyledItem>
