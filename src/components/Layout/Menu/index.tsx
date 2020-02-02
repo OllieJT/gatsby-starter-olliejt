@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { contain } from '../../../utility/styles';
 import MenuLink from './MenuLink';
 
 const Menubar = styled.ul`
-	${contain};
 	position: relative;
 	display: flex;
 	flex-direction: row;

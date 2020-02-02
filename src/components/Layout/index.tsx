@@ -1,11 +1,10 @@
 import React, { ReactNode } from 'react';
-import styled, { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../../utility/GlobalStyles';
+import styled from 'styled-components';
 import Footer from './Footer';
 import Menu from './Menu';
 import SEO from './SEO';
 import ToggleTheme from './ToggleMode';
-import useTheme from './useTheme';
+import Provider from './Provider';
 
 interface Props {
 	children: ReactNode;
@@ -28,19 +27,14 @@ const PageContainer = styled.div`
 	}
 `;
 
-export default ({ children, hasSEO }: Props) => {
-	const theme = useTheme();
-
-	return (
-		<ThemeProvider theme={theme}>
-			<GlobalStyle />
-			{!hasSEO && <SEO />}
-			<PageContainer role="group">
-				<Menu />
-				<main id="reach-skip-nav">{children}</main>
-				<Footer />
-				<ToggleTheme />
-			</PageContainer>
-		</ThemeProvider>
-	);
-};
+export default ({ children, hasSEO }: Props) => (
+	<Provider>
+		{!hasSEO && <SEO />}
+		<PageContainer role="group">
+			<Menu />
+			<main id="reach-skip-nav">{children}</main>
+			<Footer />
+			<ToggleTheme />
+		</PageContainer>
+	</Provider>
+);

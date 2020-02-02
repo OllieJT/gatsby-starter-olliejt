@@ -1,5 +1,4 @@
 /* eslint-disable */
-
 export const IS_BROWSER = typeof window !== 'undefined';
 
 export function slugify(text: string) {
@@ -11,6 +10,15 @@ export function slugify(text: string) {
 		.replace(/\-\-+/g, '-') // Replace multiple - with single -
 		.replace(/^-+/, '') // Trim - from start of text
 		.replace(/-+$/, ''); // Trim - from end of text
+}
+
+export function cleanUrl(text: string): string {
+	return text
+		.toString()
+		.toLowerCase()
+		.replace('https://', '')
+		.replace('http://', '')
+		.replace('www.', '');
 }
 
 export function getYoutubeID(url: string) {
@@ -45,4 +53,8 @@ export function emojiCursor(emoji: string) {
 
 export function stringList(string: string): string {
 	return string.replace(/(^,)|(,$)/g, '').replace(/(^&)|(&$)/g, '');
+}
+
+export function generateKey(pre: string): string {
+	return `${pre}_${new Date().getTime()}`;
 }
