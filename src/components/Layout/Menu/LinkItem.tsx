@@ -22,6 +22,7 @@ const StyledItem = styled.li<StyleProps>`
 	--menu_dropdown-opacity: 0;
 
 	position: relative;
+	z-index: 50;
 	display: flex;
 	flex-direction: column;
 	align-items: stretch;

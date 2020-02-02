@@ -20,7 +20,8 @@ const MenuLinkList = styled.ul<StyleProps>`
 	bottom: 0;
 	left: auto;
 
-	width: 100%;
+	width: auto;
+	min-width: 240px;
 	max-width: 85vw;
 	height: 100%;
 
@@ -30,38 +31,47 @@ const MenuLinkList = styled.ul<StyleProps>`
 	align-items: stretch;
 
 	background-color: var(--color-background-mono-dimmer);
-	transition: right 0.24s var(--animation-curve-1);
+	transition: right 3.24s var(--animation-curve-1);
 
 	&.is-open {
 		right: 0;
 	}
 
-	li.close-menu {
-		position: absolute !important;
+	button.close-menu {
+		position: fixed;
+		z-index: 0;
 		top: 0;
-		right: 100%;
+		left: 0;
 		overflow: visible;
 
-		width: 15vw;
-		height: 100vh;
+		width: 100%;
+		height: 100%;
 		cursor: pointer;
-		background: linear-gradient(to left, var(--color-background-scrim) 25%, transparent 125%);
+		background: var(--color-background-scrim);
+		//background-color: rgba(200, 0, 0, 0.4);
 
-		> button {
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			cursor: pointer;
-			overflow: visible;
+		outline: none;
+		border-width: 0;
 
-			display: flex;
-			align-items: center;
-			justify-content: center;
-
-			outline: none;
-			border-width: 0;
-			background: transparent;
-
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		p {
+			font-size: 2em;
+			transform: scale(0.8);
+			transition: transform 0.24s var(--animation-curve-1);
+			background-color: var(--color-background-mono-dimmer);
+			line-height: 1em;
+			padding: 1em;
+			border-radius: 4em;
+		}
+		&:hover {
 			h1,
 			h2,
 			h3,
@@ -69,26 +79,14 @@ const MenuLinkList = styled.ul<StyleProps>`
 			h5,
 			h6,
 			p {
-				transform: scale(0.8);
-				transition: transform 0.24s var(--animation-curve-1);
-			}
-			&:hover {
-				h1,
-				h2,
-				h3,
-				h4,
-				h5,
-				h6,
-				p {
-					transform: scale(1);
-				}
+				transform: scale(1);
+				color: var(--color-text-primary-bright);
+				background-color: var(--color-background-primary-dimmer);
 			}
 		}
 
 		&.hidden {
 			visibility: hidden;
-			display: none;
-			background: transparent;
 		}
 	}
 
@@ -128,13 +126,11 @@ export default ({ setMenu }: LinkList) => {
 			</MenuLink>
 			<MenuLink label="404 Error" link="/404" />
 
-			<li className={`close-menu ${isOpen ? '' : 'hidden'}`}>
-				<button onClick={toggleMenu} type="button">
-					<h6>
-						<MdClose />
-					</h6>
-				</button>
-			</li>
+			<button onClick={toggleMenu} type="button" className={`close-menu ${isOpen ? '' : 'hidden'}`}>
+				<h6>
+					<MdClose />
+				</h6>
+			</button>
 		</MenuLinkList>
 	);
 };
