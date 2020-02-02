@@ -33,9 +33,7 @@ export default ({ url, headers, structure }: Props) => {
 					throw new Error(`${response.status} ${response.statusText}`);
 				}
 
-				response
-					.json()
-					.then((data: Action) => dispatch(requestSuccessful({ data, structure })));
+				response.json().then((data: Action) => dispatch(requestSuccessful({ data, structure })));
 
 				// dispatch(requestSuccessful({ data }));
 			} catch (e) {
@@ -51,7 +49,7 @@ export default ({ url, headers, structure }: Props) => {
 		return () => {
 			abortController.abort();
 		};
-	}, [url]);
+	}, [headers, structure, url]);
 
 	return state;
 };

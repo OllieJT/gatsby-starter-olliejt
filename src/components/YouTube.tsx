@@ -14,16 +14,7 @@ interface Props {
 	title: string;
 }
 
-export default ({
-	url,
-	width,
-	height,
-	title,
-	isAutoplay,
-	hasControls,
-	hasAnnotations,
-	isLooped,
-}: Props) => {
+export default ({ url, width, height, title, isAutoplay, hasControls, hasAnnotations, isLooped }: Props) => {
 	let thisSite = '';
 
 	// var thisPage = '';

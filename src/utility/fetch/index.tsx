@@ -48,7 +48,7 @@ export default ({ url, headers }: Props) => {
 		return () => {
 			abortController.abort();
 		};
-	}, [url]);
+	}, [headers, url]);
 
 	return state;
 };

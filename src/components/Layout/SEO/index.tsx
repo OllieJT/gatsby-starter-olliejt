@@ -31,20 +31,8 @@ interface Props {
 	keywords?: Array<string>;
 }
 
-export default ({
-	title,
-	type = 'website',
-	image,
-	url,
-	desc,
-	typeProfile,
-	typeArticle,
-	keywords,
-}: Props) => {
-	const authorName =
-		(typeArticle && typeArticle.author) ||
-		config.author ||
-		`${config.nameFirst} ${config.nameLast}`;
+export default ({ title, type = 'website', image, url, desc, typeProfile, typeArticle, keywords }: Props) => {
+	const authorName = (typeArticle && typeArticle.author) || config.author || `${config.nameFirst} ${config.nameLast}`;
 	// const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
 
 	return (

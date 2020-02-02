@@ -27,16 +27,14 @@ const PageContainer = styled.div`
 	}
 `;
 
-export default ({ children, hasSEO }: Props) => {
-	return (
-		<Provider>
-			{!hasSEO && <SEO />}
-			<PageContainer role="group">
-				<Menu />
-				<main id="reach-skip-nav">{children}</main>
-				<Footer />
-				<ToggleTheme />
-			</PageContainer>
-		</Provider>
-	);
-};
+export default ({ children, hasSEO }: Props) => (
+	<Provider>
+		{!hasSEO && <SEO />}
+		<PageContainer role="group">
+			<Menu />
+			<main id="reach-skip-nav">{children}</main>
+			<Footer />
+			<ToggleTheme />
+		</PageContainer>
+	</Provider>
+);
