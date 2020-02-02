@@ -1,25 +1,35 @@
 /* eslint-disable */
-require("dotenv").config({
-	path: ".env", //`.env.${process.env.NODE_ENV}`
-})
-const config = require("./src/utility/config")
-const pathPrefix = config.pathPrefix === "/" ? "" : config.pathPrefix
+require('dotenv').config({
+	path: '.env', //`.env.${process.env.NODE_ENV}`
+});
+const config = require('./src/utility/config');
+const pathPrefix = config.pathPrefix === '/' ? '' : config.pathPrefix;
 
 module.exports = {
 	pathPrefix: config.pathPrefix,
 	siteMetadata: {
+		siteName: config.siteName,
 		siteUrl: config.url + config.pathPrefix, // For gatsby-plugin-sitemap
 		pathPrefix,
-		title: config.title,
-		titleAlt: config.titleAlt,
-		description: config.description,
-		banner: config.logo,
-		headline: config.headline,
+
 		siteLanguage: config.siteLanguage,
 		ogLanguage: config.ogLanguage,
+
+		title: config.title,
+		headline: config.headline,
+		description: config.description,
+		banner: config.banner,
+		logo: config.logo,
+
 		author: config.author,
+		nameFirst: config.nameFirst,
+		nameLast: config.nameLast,
+		gender: config.gender,
+
+		alias: config.alias,
 		twitter: config.twitter,
 		facebook: config.facebook,
+		discord: config.twitter,
 	},
 	plugins: [
 		`gatsby-plugin-typescript`,
@@ -36,33 +46,32 @@ module.exports = {
 			},
 		},
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: "images",
+				name: 'images',
 				path: `${__dirname}/src/images`,
 			},
 		},
 		{
-			resolve: "gatsby-source-filesystem",
+			resolve: 'gatsby-source-filesystem',
 			options: {
-				name: "data",
+				name: 'data',
 				path: `${__dirname}/src/data`,
 			},
 		},
-		"gatsby-plugin-react-helmet",
-		"gatsby-plugin-sharp",
-		"gatsby-transformer-sharp",
-		"gatsby-transformer-remark",
-		"gatsby-plugin-styled-components",
-		"gatsby-transformer-json",
+		'gatsby-plugin-react-helmet',
+		'gatsby-plugin-sharp',
+		'gatsby-transformer-sharp',
+		'gatsby-plugin-styled-components',
+		'gatsby-transformer-json',
 		{
-			resolve: "gatsby-plugin-netlify-cache",
+			resolve: 'gatsby-plugin-netlify-cache',
 			options: {
-				extraDirsToCache: ["src/images"],
+				extraDirsToCache: ['src/images'],
 			},
 		},
 		{
-			resolve: "gatsby-plugin-manifest",
+			resolve: 'gatsby-plugin-manifest',
 			options: {
 				name: config.title,
 				short_name: config.siteName,
@@ -70,11 +79,10 @@ module.exports = {
 				start_url: pathPrefix,
 				background_color: config.backgroundColor,
 				theme_color: config.themeColor,
-				display: "standalone",
+				display: 'standalone',
 				icon: config.favicon,
 			},
 		},
-		//`gatsby-plugin-offline`,
 		{
 			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {
@@ -85,10 +93,10 @@ module.exports = {
 					},
 					{
 						family: `Bai Jamjuree`,
-						variants: [`400`, `700`]
+						variants: [`400`, `700`],
 					},
 				],
 			},
-		}
+		},
 	],
-}
+};
