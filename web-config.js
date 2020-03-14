@@ -16,6 +16,14 @@ module.exports = {
 	ogLanguage: 'en_US',
 
 	/*
+		DESIGN_SETTINGS
+	*/
+	fontName: 'Sen',
+	fontRegular: 400,
+	fontMedium: 700,
+	fontBold: 800,
+
+	/*
 		METADATA
 
 		TITLE: Human readable name of the website
@@ -24,7 +32,7 @@ module.exports = {
 	title: 'OllieJT',
 	headline: 'Web Designer & Developer',
 	description: 'A digital designer who builds online experiences for gamers and esports',
-	banner: 'src/images/photo-shanghai-s.jpg',
+	banner: 'static/img/photo-shanghai-s.jpg',
 
 	/*
 		BRAND
@@ -35,8 +43,8 @@ module.exports = {
 		BACKGROUNDCOLOR: PWA Neutral Color
 		INDUSTRY: Business Sector
 	*/
-	logo: 'src/images/logo.png',
-	favicon: 'src/images/manifest-icon.png', // Used for manifest favicon generation
+	logo: 'static/img/logo.png',
+	favicon: 'static/img/manifest-icon.png', // Used for manifest favicon generation
 	themeColor: '#FF3D1F',
 	backgroundColor: '#141414',
 	industry: 'Design',
@@ -58,10 +66,16 @@ module.exports = {
 		...url
 	*/
 	alias: 'TheOllieJT',
-	twitter: '@TheOllieJT', // Twitter Username
-	facebook: '', // Facebook Site Name
-	discord: '',
+	socials: [
+		{
+			platform: 'twitter',
+			username: '@TheOllieJT',
+			url: 'https://www.twitter.com/TheOllieJT/',
+		},
+	],
 
 	// JSONLD / Manifest
-	googleAnalyticsID: 'UA-00000000-0',
+	googleAnalyticsID: '',
+	companyTwitterID: '427323948',
+	companyTwitterUsername: 'TheOllieJT',
 };
