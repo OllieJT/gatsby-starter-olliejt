@@ -57,7 +57,7 @@ const StyledItem = styled.li<StyleProps>`
 
 		transform: var(--menu_dropdown-position);
 		opacity: var(--menu_dropdown-opacity);
-		transition: transform 0.24s var(--animation-curve-1), opacity 0.24s var(--animation-curve-1);
+		transition: transform 0.24s var(--transition-primary), opacity 0.24s var(--transition-primary);
 
 		svg {
 			transform: rotate(-90deg);

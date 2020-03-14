@@ -16,14 +16,6 @@ module.exports = {
 	ogLanguage: 'en_US',
 
 	/*
-		DESIGN_SETTINGS
-	*/
-	fontName: 'Sen',
-	fontRegular: 400,
-	fontMedium: 700,
-	fontBold: 800,
-
-	/*
 		METADATA
 
 		TITLE: Human readable name of the website
