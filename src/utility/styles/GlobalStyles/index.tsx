@@ -17,9 +17,9 @@ const GlobalStyle = createGlobalStyle`
 		--size-space-small: 1.6rem;
 		--size-space-medium: 2.4rem;
 		--size-space-large: 2.4rem;
-		--size-space-largeest: 8rem;
+		--size-space-largest: 8rem;
 
-		--size-container-main: 80rem;
+		--size-container-main: 120rem;
 
 		--transition-primary: cubic-bezier(0, 0.8, 	0.2, 0.9); // Punchy
 		--transition-secondary: cubic-bezier(0, 2, 0.5, 0.5); // Bouncy
@@ -59,8 +59,8 @@ const GlobalStyle = createGlobalStyle`
 		line-height: 1em;
 		height: auto;
 		min-height: 100vh;
-		background-color: var(--color-background-mono-dimmer);
-		color: var(--color-text-mono-medium);
+		background-color: var(--color-background-mono-bottom);
+		color: var(--color-text-mono-middle);
 		position: relative;
 	}
 
@@ -68,12 +68,12 @@ const GlobalStyle = createGlobalStyle`
 		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
-		color: var(--color-text-primary-dark);
+		color: var(--color-text-primary-low);
 		transition: color 0.16s ease-out;
 
 		&:hover,
 		&:focus {
-			color: var(--color-text-primary-bright);
+			color: var(--color-text-primary-high);
 		}
 	}
 
@@ -143,17 +143,17 @@ const GlobalStyle = createGlobalStyle`
 			font-weight: var(--font-weight-medium);
 		}
 		mark {
-			color: var(--color-text-primary-bright);
-			background-color: var(--color-background-primary-dim);
+			color: var(--color-text-primary-high);
+			background-color: var(--color-background-primary-low);
 		}
 		code {
 			font-style: italic;
-			color: var(--color-text-mono-bright);
-			background-color: var(--color-background-mono-dim);
+			color: var(--color-text-mono-high);
+			background-color: var(--color-background-mono-low);
 		}
 
 		em {
-			color: var(--color-text-primary-medium);
+			color: var(--color-text-primary-middle);
 		}
 		u {
 			text-decoration: underline;

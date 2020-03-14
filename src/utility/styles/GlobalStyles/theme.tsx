@@ -27,7 +27,8 @@ export const themeLight = css`
 	--color-background-mono-high: hsl(230, 16%, 32%);
 	--color-background-mono-middle: hsl(240, 24%, 16%);
 	--color-background-mono-low: hsl(240, 32%, 10%);
-	--color-background-mono-bottom: hsl(240, 40%, 4%);
+	--color-background-mono-lower: hsl(240, 40%, 4%);
+	--color-background-mono-bottom: black;
 	--color-background-mono-mask: hsla(240, 80%, 4%, 0.56);
 
 	--color-text-primary-high: hsl(340, 90%, 70%);
@@ -52,7 +53,8 @@ export const themeDark = css`
 	--color-background-mono-high: hsl(200, 16%, 32%);
 	--color-background-mono-middle: hsl(200, 24%, 16%);
 	--color-background-mono-low: hsl(200, 32%, 10%);
-	--color-background-mono-bottom: hsl(200, 40%, 4%);
+	--color-background-mono-lower: hsl(200, 32%, 10%);
+	--color-background-mono-bottom: black;
 	--color-background-mono-mask: hsla(200, 80%, 4%, 0.56);
 
 	--color-text-primary-high: hsl(55, 90%, 70%);

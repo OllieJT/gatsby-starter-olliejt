@@ -22,7 +22,7 @@ const ToggleMenu = styled.button<StyleProps>`
 	width: auto;
 	padding: var(--size-space-small);
 	cursor: pointer;
-	background-color: var(--color-background-mono-dimmer);
+	background-color: var(--color-background-mono-bottom);
 	z-index: 500;
 	border: 0;
 	outline: none;
@@ -30,7 +30,7 @@ const ToggleMenu = styled.button<StyleProps>`
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
-		color: var(--color-text-mono-bright);
+		color: var(--color-text-mono-high);
 	}
 	svg {
 		font-size: 1.2em;
@@ -68,9 +68,9 @@ const ToggleMenu = styled.button<StyleProps>`
 		}
 	}
 	&:hover {
-		background-color: var(--color-background-primary-dimmer);
+		background-color: var(--color-background-primary-lower);
 		p {
-			color: var(--color-text-primary-bright);
+			color: var(--color-text-primary-high);
 		}
 
 		.button-icon {

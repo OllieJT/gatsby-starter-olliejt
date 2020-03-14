@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import useMenu from '../../../hooks/use-menu';
+import useMenu from '../../hooks/use-menu';
 import LinkList from './LinkList';
 import ToggleMenu from './ToggleMenu';
 
@@ -15,7 +15,7 @@ const Menubar = styled.nav`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--color-background-mono-dimmer);
+	background-color: var(--color-background-mono-bottom);
 `;
 
 export default () => {

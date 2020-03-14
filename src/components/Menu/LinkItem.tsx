@@ -1,8 +1,8 @@
 import React, { ReactNode } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import styled from 'styled-components';
-import SmartLink from '../../SmartLink';
-import useMenu from '../../../hooks/use-menu';
+import SmartLink from '../SmartLink';
+import useMenu from '../../hooks/use-menu';
 
 interface StyleProps {
 	menuBreakpoint: string;
@@ -15,9 +15,9 @@ interface Props {
 }
 
 const StyledItem = styled.li<StyleProps>`
-	--menu_link-accent-color: var(--color-background-mono-dim);
-	--menu_link-background-color: var(--color-background-mono-dimmer);
-	--menu_link-text-color: var(--color-text-mono-dim);
+	--menu_link-accent-color: var(--color-background-mono-low);
+	--menu_link-background-color: var(--color-background-mono-bottom);
+	--menu_link-text-color: var(--color-text-mono-low);
 	--menu_dropdown-position: translateY(-100%);
 	--menu_dropdown-opacity: 0;
 
@@ -65,8 +65,8 @@ const StyledItem = styled.li<StyleProps>`
 	}
 
 	&:hover {
-		--menu_link-background-color: var(--color-background-primary-dim);
-		--menu_link-text-color: var(--color-text-mono-bright);
+		--menu_link-background-color: var(--color-background-primary-low);
+		--menu_link-text-color: var(--color-text-mono-high);
 		--menu_dropdown-position: translateY(0);
 		--menu_dropdown-opacity: 1;
 	}
@@ -87,7 +87,7 @@ const StyledItem = styled.li<StyleProps>`
 			border-top: 1px solid var(--menu_link-accent-color);
 			cursor: auto;
 			p {
-				color: var(--color-text-mono-bright);
+				color: var(--color-text-mono-high);
 				font-weight: var(--font-weight-bold);
 			}
 		}

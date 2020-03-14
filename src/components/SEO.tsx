@@ -1,11 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import useSiteMetadata from '../hooks/use-site-medadata';
 
 // import Schema from "./Schema"
-// import { useStaticQuery, graphql } from 'gatsby';
-// eslint-disable-next-line
-const config = require('../../../utility/config.js');
-
 // Complete tutorial: https://www.gatsbyjs.org/docs/add-seo-component/
 
 interface Props {
@@ -18,7 +15,7 @@ interface Props {
 		nameFirst: string;
 		nameLast?: string;
 		username?: string;
-		gender?: ['male', 'female'];
+		gender?: 'male' | 'female';
 	};
 	typeArticle?: {
 		datePublished: Date;
@@ -32,6 +29,7 @@ interface Props {
 }
 
 export default ({ title, type = 'website', image, url, desc, typeProfile, typeArticle, keywords }: Props) => {
+	const config = useSiteMetadata();
 	const authorName = (typeArticle && typeArticle.author) || config.author || `${config.nameFirst} ${config.nameLast}`;
 	// const pageUrl = `${config.url}${pathname ? pathname : "/"}`,
 
@@ -102,9 +100,6 @@ export default ({ title, type = 'website', image, url, desc, typeProfile, typeAr
 					content: typeProfile && typeProfile.gender,
 				},
 
-				/* ----
-					TWITTER
-				---- */
 				/* ----
 					Open Graph
 				---- */

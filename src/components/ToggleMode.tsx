@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { ThemeConsumer } from 'styled-components';
-import { emojiCursor } from '../../utility/functions';
+import { emojiCursor } from '../utility/functions';
 
 const ToggleButton = styled.button`
 	position: relative;

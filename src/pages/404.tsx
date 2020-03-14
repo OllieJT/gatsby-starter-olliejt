@@ -1,6 +1,6 @@
 import * as React from 'react';
-import Layout from '../components/Layout';
-import SEO from '../components/Layout/SEO';
+import Layout from '../wrappers/Layout';
+import SEO from '../components/SEO';
 
 export default () => (
 	<Layout>

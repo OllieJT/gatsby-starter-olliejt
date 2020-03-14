@@ -1,9 +1,9 @@
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import Footer from './Footer';
-import Menu from './Menu';
-import SEO from './SEO';
-import ToggleTheme from './ToggleMode';
+import Footer from '../components/Footer';
+import Menu from '../components/Menu';
+import SEO from '../components/SEO';
+import ToggleTheme from '../components/ToggleMode';
 import Provider from './Provider';
 
 interface Props {
@@ -32,10 +32,13 @@ export default ({ children, hasSEO }: Props) => (
 	<Provider>
 		{!hasSEO && <SEO />}
 		<PageContainer role="group">
+			{/* DELETE BELOW */}
 			<Menu />
+			<ToggleTheme />
+			{/* DELETE ABOVE */}
+
 			<main id="reach-skip-nav">{children}</main>
 			<Footer />
-			<ToggleTheme />
 		</PageContainer>
 	</Provider>
 );

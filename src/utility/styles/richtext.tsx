@@ -41,11 +41,11 @@ export default css`
 		}
 		li,
 		dt {
-			color: var(--color-text-primary-medium);
+			color: var(--color-text-primary-middle);
 			padding-left: 1em;
 		}
 		dd {
-			color: var(--color-text-mono-dim);
+			color: var(--color-text-mono-low);
 			opacity: 0.72;
 			padding-left: var(--size-space-large);
 		}
@@ -68,7 +68,7 @@ export default css`
 			margin-top: 0;
 			padding-left: var(--size-space-medium);
 			li {
-				color: var(--color-text-primary-medium);
+				color: var(--color-text-primary-middle);
 			}
 		}
 		ul li {
@@ -80,5 +80,65 @@ export default css`
 	}
 	ol li {
 		list-style-type: decimal;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p {
+		a {
+			display: inline;
+			color: var(--color-text-primary-dim);
+			&:hover {
+				color: var(--color-text-primary-medium);
+				text-decoration: underline;
+			}
+		}
+		mark {
+			color: var(--color-text-primary-dim);
+			background-color: var(--color-text-primary-bright);
+		}
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		color: var(--color-text-mono-high);
+	}
+	p {
+		color: var(--color-text-mono-middle);
+	}
+
+	h1 {
+		font-size: var(--font-size-large-title);
+		line-height: 1.5em;
+	}
+	h2 {
+		font-size: var(--font-size-large-subtitle);
+		line-height: 1.5em;
+	}
+	h3 {
+		font-size: var(--font-size-small-title);
+		line-height: 1.5em;
+	}
+	h4 {
+		font-size: var(--font-size-small-subtitle);
+		line-height: 1.5em;
+	}
+	h5 {
+		font-size: var(--font-size-body-title);
+		line-height: 1.5em;
+	}
+	h6 {
+		font-size: var(--font-size-small-label);
+		line-height: 1.5em;
+	}
+	p {
+		font-size: var(--font-size-body-large);
+		line-height: 1.5em;
 	}
 `;

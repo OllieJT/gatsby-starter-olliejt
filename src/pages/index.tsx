@@ -3,8 +3,8 @@ import React from 'react';
 import Button from '../components/Button';
 import Container from '../components/Container';
 import Header from '../components/Header';
-import Layout from '../components/Layout';
-import SEO from '../components/Layout/SEO';
+import Layout from '../wrappers/Layout';
+import SEO from '../components/SEO';
 
 interface Props {
 	data: object;

@@ -30,8 +30,8 @@ const MenuLinkList = styled.ul<StyleProps>`
 	justify-content: flex-start;
 	align-items: stretch;
 
-	background-color: var(--color-background-mono-dimmer);
-	transition: right 3.24s var(--animation-curve-1);
+	background-color: var(--color-background-mono-bottom);
+	transition: right 3.24s var(--transition-primary);
 
 	&.is-open {
 		right: 0;
@@ -47,7 +47,7 @@ const MenuLinkList = styled.ul<StyleProps>`
 		width: 100%;
 		height: 100%;
 		cursor: pointer;
-		background: var(--color-background-scrim);
+		background: var(--color-background-mono-scrim);
 
 		outline: none;
 		border-width: 0;
@@ -64,8 +64,8 @@ const MenuLinkList = styled.ul<StyleProps>`
 		p {
 			font-size: 2em;
 			transform: scale(0.8);
-			transition: transform 0.24s var(--animation-curve-1);
-			background-color: var(--color-background-mono-dimmer);
+			transition: transform 0.24s var(--transition-primary);
+			background-color: var(--color-background-mono-bottom);
 			line-height: 1em;
 			padding: 1em;
 			border-radius: 4em;
@@ -79,8 +79,8 @@ const MenuLinkList = styled.ul<StyleProps>`
 			h6,
 			p {
 				transform: scale(1);
-				color: var(--color-text-primary-bright);
-				background-color: var(--color-background-primary-dimmer);
+				color: var(--color-text-primary-high);
+				background-color: var(--color-background-primary-lower);
 			}
 		}
 

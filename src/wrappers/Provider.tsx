@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../../utility/styles/GlobalStyles';
-import useTheme from './useTheme';
+import GlobalStyle from '../utility/styles/GlobalStyles';
+import useTheme from '../hooks/use-theme';
 
 interface Props {
 	children: ReactNode;
