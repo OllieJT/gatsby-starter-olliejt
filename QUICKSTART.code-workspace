@@ -14,10 +14,10 @@
 	},
 	"files.exclude": {
 		".prettierrc.json": true,
-		"package.json": true,
+		"package.json": false,
 		"tsconfig.json": true,
-		"*static": true,
-		"*static.*": true,
+		"*static": false,
+		"*static.*": false,
 		".eslintrc.json": true,
 		".eslintignore": true,
 		"QUICKSTART.code-workspace": true
