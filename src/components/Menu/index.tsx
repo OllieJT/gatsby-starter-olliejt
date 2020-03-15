@@ -15,7 +15,7 @@ const Menubar = styled.nav`
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	background-color: var(--color-background-mono-bottom);
+	background-color: var(--color-level-bottom);
 `;
 
 export default () => {

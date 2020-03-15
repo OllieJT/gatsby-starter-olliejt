@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
 		--size-space-large: 2.4rem;
 		--size-space-largest: 8rem;
 
-		--size-container-main: 120rem;
+		--size-container-main: 88rem;
 
 		--transition-primary: cubic-bezier(0, 0.8, 	0.2, 0.9); // Punchy
 		--transition-secondary: cubic-bezier(0, 2, 0.5, 0.5); // Bouncy
@@ -59,8 +59,8 @@ const GlobalStyle = createGlobalStyle`
 		line-height: 1em;
 		height: auto;
 		min-height: 100vh;
-		background-color: var(--color-background-mono-bottom);
-		color: var(--color-text-mono-middle);
+		background-color: var(--color-level-bottom);
+		color: var(--color-content-middle);
 		position: relative;
 	}
 
@@ -68,12 +68,12 @@ const GlobalStyle = createGlobalStyle`
 		display: inline-block;
 		text-decoration: none;
 		cursor: pointer;
-		color: var(--color-text-primary-low);
+		color: var(--color-primary-middle);
 		transition: color 0.16s ease-out;
 
 		&:hover,
 		&:focus {
-			color: var(--color-text-primary-high);
+			color: var(--color-primary-higher);
 		}
 	}
 
@@ -133,8 +133,14 @@ const GlobalStyle = createGlobalStyle`
 			font-size: 85%;
 		}
 
-		mark,
+		mark {
+			color: var(--color-primary-higher);
+			background-color: var(--color-primary-low);
+		}
 		code {
+			font-style: italic;
+			color: var(--color-content-high);
+			background-color: var(--color-level-low);
 			padding: 0 0.2em;
 			font-size: 0.8em;
 			line-height: 1em;
@@ -142,18 +148,9 @@ const GlobalStyle = createGlobalStyle`
 			border-radius: 0.25em;
 			font-weight: var(--font-weight-medium);
 		}
-		mark {
-			color: var(--color-text-primary-high);
-			background-color: var(--color-background-primary-low);
-		}
-		code {
-			font-style: italic;
-			color: var(--color-text-mono-high);
-			background-color: var(--color-background-mono-low);
-		}
 
 		em {
-			color: var(--color-text-primary-middle);
+			color: var(--color-primary-high);
 		}
 		u {
 			text-decoration: underline;
@@ -178,7 +175,7 @@ const GlobalStyle = createGlobalStyle`
 	h4,
 	h5,
 	h6 {
-		color: var(--color-text-mono-high);
+		color: var(--color-content-high);
 		line-height: 1em;
 	}
 	h1 {
@@ -200,7 +197,7 @@ const GlobalStyle = createGlobalStyle`
 		font-size: var(--font-size-small-label);
 	}
 	p{
-		color: var(--color-text-mono-middle);
+		color: var(--color-content-middle);
 		line-height: 1.5em;
 		font-size: var(--font-size-content-main);
 	}

@@ -15,9 +15,9 @@ interface Props {
 }
 
 const StyledItem = styled.li<StyleProps>`
-	--menu_link-accent-color: var(--color-background-mono-low);
-	--menu_link-background-color: var(--color-background-mono-bottom);
-	--menu_link-text-color: var(--color-text-mono-low);
+	--menu_link-accent-color: var(--color-level-low);
+	--menu_link-background-color: var(--color-level-bottom);
+	--menu_link-text-color: var(--color-content-low);
 	--menu_dropdown-position: translateY(-100%);
 	--menu_dropdown-opacity: 0;
 
@@ -65,8 +65,8 @@ const StyledItem = styled.li<StyleProps>`
 	}
 
 	&:hover {
-		--menu_link-background-color: var(--color-background-primary-low);
-		--menu_link-text-color: var(--color-text-mono-high);
+		--menu_link-background-color: var(--color-primary-low);
+		--menu_link-text-color: var(--color-content-high);
 		--menu_dropdown-position: translateY(0);
 		--menu_dropdown-opacity: 1;
 	}
@@ -87,7 +87,7 @@ const StyledItem = styled.li<StyleProps>`
 			border-top: 1px solid var(--menu_link-accent-color);
 			cursor: auto;
 			p {
-				color: var(--color-text-mono-high);
+				color: var(--color-content-high);
 				font-weight: var(--font-weight-bold);
 			}
 		}
