@@ -1,8 +1,7 @@
 import React, { ReactNode } from 'react';
 import { MdArrowDropDown } from 'react-icons/md';
 import styled from 'styled-components';
-import SmartLink from '../SmartLink';
-import useMenu from '../../hooks/use-menu';
+import { useMenu, SmartLink } from 'gatsby-theme-loadup';
 
 interface StyleProps {
 	menuBreakpoint: string;

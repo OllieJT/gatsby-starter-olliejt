@@ -10,6 +10,10 @@ module.exports = {
 	siteMetadata: config,
 	plugins: [
 		{
+			resolve: `gatsby-theme-loadup`,
+			options: config,
+		},
+		{
 			resolve: `gatsby-plugin-typescript`,
 			options: {
 				isTSX: true, // defaults to false

@@ -16,6 +16,6 @@ export default css`
 	--font-size-small-label: 1.2rem; /* Heading 6 */
 
 	--font-size-content-title: 2.4rem;
-	--font-size-content-main: 2rem; /* PAragraph */
+	--font-size-content-main: 2rem; /* Paragraph */
 	--font-size-content-alt: 1.4rem;
 `;

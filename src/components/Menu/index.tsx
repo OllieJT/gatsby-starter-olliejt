@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import useMenu from '../../hooks/use-menu';
+import { useMenu } from 'gatsby-theme-loadup';
 import LinkList from './LinkList';
 import ToggleMenu from './ToggleMenu';
 

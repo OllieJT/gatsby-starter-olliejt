@@ -1,23 +1,5 @@
 import { css } from 'styled-components';
 
-const utility = css`
-	--color-red-high: hsl(350, 80%, 64%);
-	--color-red-middle: hsl(350, 80%, 50%);
-	--color-red-low: hsl(350, 100%, 12%);
-
-	--color-blue-high: hsl(210, 80%, 72%);
-	--color-blue-middle: hsl(210, 80%, 50%);
-	--color-blue-low: hsl(210, 80%, 16%);
-
-	--color-green-high: hsl(170, 90%, 64%);
-	--color-green-middle: hsl(170, 100%, 32%);
-	--color-green-low: hsl(170, 100%, 12%);
-
-	--color-yellow-high: hsl(45, 90%, 72%);
-	--color-yellow-middle: hsl(45, 100%, 42%);
-	--color-yellow-low: hsl(45, 100%, 12%);
-`;
-
 export const themeLight = css`
 	--color-content-high: hsl(210, 30%, 5%);
 	--color-content-middle: hsl(210, 35%, 12%);
@@ -53,8 +35,6 @@ export const themeLight = css`
 	--color-yellow-high: hsl(45, 100%, 12%);
 	--color-yellow-middle: hsl(45, 100%, 42%);
 	--color-yellow-low: hsl(45, 90%, 72%);
-
-	${utility};
 `;
 export const themeDark = css`
 	--color-content-high: hsl(200, 16%, 98%);
@@ -91,6 +71,4 @@ export const themeDark = css`
 	--color-yellow-high: hsl(45, 90%, 72%);
 	--color-yellow-middle: hsl(45, 100%, 42%);
 	--color-yellow-low: hsl(45, 100%, 12%);
-
-	${utility};
 `;

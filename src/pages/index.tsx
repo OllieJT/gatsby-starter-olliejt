@@ -1,9 +1,8 @@
 import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import Container from '../components/Container';
-import Layout from '../wrappers/Layout';
-import SEO from '../components/SEO';
+import { SEO, Container } from 'gatsby-theme-loadup';
+import Layout from '../gatsby-theme-loadup/layouts/Layout';
 
 interface Props {
 	data: object;
@@ -124,7 +123,7 @@ const Demo = styled.div`
 export default ({ data }: Props) => (
 	<Layout hasSEO={false}>
 		{console.log(data)}
-		<SEO title="OllieJT" />
+		<SEO title="OllieJT" headline="Website Designer" description="I make things on the internet" />
 		<Container isRestricted>
 			<Demo>
 				<ul className="primary">

@@ -1,10 +1,8 @@
+import { Provider, ToggleTheme } from 'gatsby-theme-loadup';
 import React, { ReactNode } from 'react';
 import styled from 'styled-components';
-import Footer from '../components/Footer';
-import Menu from '../components/Menu';
-import SEO from '../components/SEO';
-import ToggleTheme from '../components/ToggleMode';
-import Provider from './Provider';
+import Menu from '../../components/Menu';
+import Footer from '../../components/Footer';
 
 interface Props {
 	children: ReactNode;
@@ -29,9 +27,8 @@ const PageContainer = styled.div`
 `;
 
 export default ({ children, hasSEO }: Props) => (
-	<Provider>
-		{!hasSEO && <SEO />}
-		<PageContainer role="group">
+	<Provider hasSEO={hasSEO}>
+		<PageContainer role="group" id="reach-skip-nav">
 			{/* DELETE BELOW */}
 			<Menu />
 			<ToggleTheme />
