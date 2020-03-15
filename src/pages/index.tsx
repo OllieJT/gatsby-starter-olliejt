@@ -57,46 +57,46 @@ const Demo = styled.div`
 	}
 	ul.red {
 		li:nth-child(1) {
-			background-color: var(--color-utility-red-low);
+			background-color: var(--color-red-low);
 		}
 		li:nth-child(2) {
-			background-color: var(--color-utility-red-middle);
+			background-color: var(--color-red-middle);
 		}
 		li:nth-child(3) {
-			background-color: var(--color-utility-red-high);
+			background-color: var(--color-red-high);
 		}
 	}
 	ul.blue {
 		li:nth-child(1) {
-			background-color: var(--color-utility-blue-low);
+			background-color: var(--color-blue-low);
 		}
 		li:nth-child(2) {
-			background-color: var(--color-utility-blue-middle);
+			background-color: var(--color-blue-middle);
 		}
 		li:nth-child(3) {
-			background-color: var(--color-utility-blue-high);
+			background-color: var(--color-blue-high);
 		}
 	}
 	ul.green {
 		li:nth-child(1) {
-			background-color: var(--color-utility-green-low);
+			background-color: var(--color-green-low);
 		}
 		li:nth-child(2) {
-			background-color: var(--color-utility-green-middle);
+			background-color: var(--color-green-middle);
 		}
 		li:nth-child(3) {
-			background-color: var(--color-utility-green-high);
+			background-color: var(--color-green-high);
 		}
 	}
 	ul.yellow {
 		li:nth-child(1) {
-			background-color: var(--color-utility-yellow-low);
+			background-color: var(--color-yellow-low);
 		}
 		li:nth-child(2) {
-			background-color: var(--color-utility-yellow-middle);
+			background-color: var(--color-yellow-middle);
 		}
 		li:nth-child(3) {
-			background-color: var(--color-utility-yellow-high);
+			background-color: var(--color-yellow-high);
 		}
 	}
 	ul.primary {

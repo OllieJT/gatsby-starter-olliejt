@@ -1,21 +1,21 @@
 import { css } from 'styled-components';
 
 const utility = css`
-	--color-utility-red-high: hsl(350, 80%, 64%);
-	--color-utility-red-middle: hsl(350, 80%, 50%);
-	--color-utility-red-low: hsl(350, 100%, 12%);
+	--color-red-high: hsl(350, 80%, 64%);
+	--color-red-middle: hsl(350, 80%, 50%);
+	--color-red-low: hsl(350, 100%, 12%);
 
-	--color-utility-blue-high: hsl(210, 80%, 72%);
-	--color-utility-blue-middle: hsl(210, 80%, 50%);
-	--color-utility-blue-low: hsl(210, 80%, 16%);
+	--color-blue-high: hsl(210, 80%, 72%);
+	--color-blue-middle: hsl(210, 80%, 50%);
+	--color-blue-low: hsl(210, 80%, 16%);
 
-	--color-utility-green-high: hsl(170, 90%, 64%);
-	--color-utility-green-middle: hsl(170, 100%, 32%);
-	--color-utility-green-low: hsl(170, 100%, 12%);
+	--color-green-high: hsl(170, 90%, 64%);
+	--color-green-middle: hsl(170, 100%, 32%);
+	--color-green-low: hsl(170, 100%, 12%);
 
-	--color-utility-yellow-high: hsl(45, 90%, 72%);
-	--color-utility-yellow-middle: hsl(45, 100%, 42%);
-	--color-utility-yellow-low: hsl(45, 100%, 12%);
+	--color-yellow-high: hsl(45, 90%, 72%);
+	--color-yellow-middle: hsl(45, 100%, 42%);
+	--color-yellow-low: hsl(45, 100%, 12%);
 `;
 
 export const themeLight = css`
@@ -31,12 +31,28 @@ export const themeLight = css`
 
 	--color-level-bottom: white;
 
-	--color-primary-higher: hsl(340, 90%, 70%);
-	--color-primary-high: hsl(330, 100%, 50%);
-	--color-primary-middle: hsl(320, 100%, 25%);
-	--color-primary-low: hsl(320, 100%, 5%);
-	--color-primary-lower: hsl(320, 100%, 5%);
+	--color-primary-higher: hsl(330, 75%, 40%);
+	--color-primary-high: hsl(330, 100%, 45%);
+	--color-primary-middle: hsl(340, 75%, 60%);
+	--color-primary-low: hsl(345, 85%, 70%);
+	--color-primary-lower: hsl(350, 80%, 75%);
 	--color-primary-mask: hsla(320, 80%, 4%, 0.56);
+
+	--color-red-high: hsl(350, 100%, 12%);
+	--color-red-middle: hsl(350, 80%, 50%);
+	--color-red-low: hsl(350, 80%, 64%);
+
+	--color-blue-high: hsl(210, 80%, 16%);
+	--color-blue-middle: hsl(210, 80%, 50%);
+	--color-blue-low: hsl(210, 80%, 72%);
+
+	--color-green-high: hsl(170, 100%, 12%);
+	--color-green-middle: hsl(170, 100%, 32%);
+	--color-green-low: hsl(170, 90%, 64%);
+
+	--color-yellow-high: hsl(45, 100%, 12%);
+	--color-yellow-middle: hsl(45, 100%, 42%);
+	--color-yellow-low: hsl(45, 90%, 72%);
 
 	${utility};
 `;
@@ -59,6 +75,22 @@ export const themeDark = css`
 	--color-primary-low: hsl(35, 100%, 5%);
 	--color-primary-lower: hsl(35, 100%, 5%);
 	--color-primary-mask: hsla(35, 80%, 4%, 0.56);
+
+	--color-red-high: hsl(350, 80%, 64%);
+	--color-red-middle: hsl(350, 80%, 50%);
+	--color-red-low: hsl(350, 100%, 12%);
+
+	--color-blue-high: hsl(210, 80%, 72%);
+	--color-blue-middle: hsl(210, 80%, 50%);
+	--color-blue-low: hsl(210, 80%, 16%);
+
+	--color-green-high: hsl(170, 90%, 64%);
+	--color-green-middle: hsl(170, 100%, 32%);
+	--color-green-low: hsl(170, 100%, 12%);
+
+	--color-yellow-high: hsl(45, 90%, 72%);
+	--color-yellow-middle: hsl(45, 100%, 42%);
+	--color-yellow-low: hsl(45, 100%, 12%);
 
 	${utility};
 `;
