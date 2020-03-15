@@ -1,12 +1,7 @@
 # Boilerplaye
 public/
 node_modules/
-node_modules
-
-# Storybook
-.storybook/
-storybook-static/
 
 #MISC
-src/images/
+static/
 .env

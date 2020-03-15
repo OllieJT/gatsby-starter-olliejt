@@ -22,7 +22,8 @@
 		},
 		"ecmaVersion": 2018,
 		"sourceType": "module",
-		"useJSXTextNode": true
+		"useJSXTextNode": true,
+		"project": "tsconfig.json"
 	},
 	"globals": {
 		"__PATH_PREFIX__": true,

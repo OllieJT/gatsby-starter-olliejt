@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    ".prettierrc.json": true,
+    "package.json": true,
+    "tsconfig.json": true,
+    "*static": true,
+    "*static.*": true,
+    ".eslintrc.json": true,
+    ".eslintignore": true,
+    "QUICKSTART.code-workspace": true
+  }
+}
