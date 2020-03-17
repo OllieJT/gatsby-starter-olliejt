@@ -24,7 +24,8 @@
 			"*static.*": false,
 			".eslintrc.json": true,
 			".eslintignore": true,
-			"*.code-workspace": true
+			"*.code-workspace": true,
+			"*-lock.json": true
 		}
 	}
 }
